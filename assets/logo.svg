@@ -1,0 +1,9 @@
+<svg width="240" height="40" viewBox="0 0 240 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon: Staircase Bricks -->
+  <rect x="0" y="24" width="16" height="8" rx="2" fill="#7B61FF"/>
+  <rect x="12" y="14" width="16" height="8" rx="2" fill="#7B61FF"/>
+  <rect x="24" y="4" width="16" height="8" rx="2" fill="#7B61FF"/>
+  
+  <!-- Text: MAXIMOAT -->
+  <text x="50" y="28" fill="currentColor" style="font-family:'Inter', sans-serif; font-weight:900; font-size:24px; letter-spacing:-0.02em;">MAXIMOAT</text>
+</svg>

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for UX Pro | Maximoat</title>
+    <meta name="description" content="Apply for the UX Pro bootcamp and take your design career to the next level.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="assets/mark.png">
+    <style>
+        /* Modern Split-Screen Layout Optimization */
+        body,
+        html {
+            height: 100vh;
+            overflow: hidden;
+            background-color: #1A1A1A;
+        }
+
+        /* Fixed Header */
+        .nav-fixed {
+            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: transparent;
+        }
+
+        .nav-fixed .container {
+            display: flex;
+            justify-content: flex-start;
+            padding: 0 60px;
+            max-width: 100%;
+        }
+
+        /* Split Grid Container */
+        .split-main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        /* Left Section: Static, Dark, Focused (Single Fold) */
+        .panel-left {
+            background: #1A1A1A;
+            color: white;
+            padding: 60px 60px 20px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .apply-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 100px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 16px;
+            width: fit-content;
+        }
+
+        .apply-title {
+            font-size: 2.75rem;
+            /* Further reduced from 3rem to ensure 720p fold safety */
+            line-height: 1.1;
+            margin-bottom: 16px;
+            letter-spacing: -0.04em;
+            color: white;
+        }
+
+        .apply-subtitle {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 20px;
+            max-width: 380px;
+        }
+
+        .social-proof-hero {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .proof-text {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+        }
+
+        .apply-formula {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .formula-pill {
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 0.7rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #121212;
+            display: inline-block;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        .pill-yellow {
+            background-color: #FDE047;
+        }
+
+        .pill-green {
+            background-color: #86EFAC;
+        }
+
+        .pill-peach {
+            background-color: #FDBA74;
+        }
+
+        .formula-bracket {
+            font-family: 'Merriweather', serif;
+            font-weight: 300;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .formula-plus {
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 0.9rem;
+        }
+
+        .outcome-list {
+            list-style: none;
+            display: grid;
+            gap: 12px;
+        }
+
+        .outcome-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .outcome-check {
+            width: 14px;
+            height: 14px;
+            background: var(--accent-lime);
+            color: #1A1A1A;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9px;
+            font-weight: bold;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        /* Right Section: Scrollable Form Column */
+        .panel-right {
+            background: #FDFCFB;
+            padding: 80px 80px 60px;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .application-card {
+            max-width: 440px;
+            margin: 0 auto;
+        }
+
+        .form-header h2 {
+            font-size: 1.85rem;
+            margin-bottom: 6px;
+        }
+
+        .form-header p {
+            margin-bottom: 32px;
+            opacity: 0.4;
+            font-size: 0.95rem;
+        }
+
+        /* Floating Label Optimization */
+        .form-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .form-field {
+            width: 100%;
+            padding: 24px 20px 10px;
+            border-radius: 12px;
+            border: 1.5px solid #EAEAEA;
+            background: #FAFAFA;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            display: block;
+        }
+
+        .form-field::placeholder {
+            color: transparent;
+        }
+
+        .form-label {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            font-size: 0.95rem;
+            color: #999;
+            pointer-events: none;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            transform-origin: left top;
+        }
+
+        /* Float State */
+        .form-field:focus+.form-label,
+        .form-field:not(:placeholder-shown)+.form-label {
+            top: 10px;
+            transform: translateY(0) scale(0.75);
+            color: #000;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .form-field:focus {
+            outline: none;
+            border-color: #1A1A1A;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        .submit-cta {
+            width: 100%;
+            padding: 18px;
+            background: #1a1a1a;
+            color: white;
+            font-weight: 700;
+            font-size: 1.05rem;
+            border-radius: 14px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            cursor: pointer;
+            border: none;
+            margin-top: 8px;
+        }
+
+        .submit-cta:hover {
+            background: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Mesh BG */
+        .mesh-bg-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background: radial-gradient(at 0% 0%, rgba(123, 97, 255, 0.08) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(208, 235, 151, 0.04) 0px, transparent 50%);
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 800px) {
+
+            body,
+            html {
+                overflow: auto;
+                height: auto;
+            }
+
+            .split-main {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+
+            .nav-fixed {
+                padding: 16px 0;
+                position: absolute;
+            }
+
+            .nav-fixed .container {
+                padding: 0 24px;
+            }
+
+            .panel-left {
+                padding: 80px 24px 20px;
+                height: auto;
+                min-height: auto;
+            }
+
+            .apply-tag,
+            .apply-subtitle,
+            .social-proof-hero,
+            .apply-formula,
+            .outcome-list {
+                display: none;
+            }
+
+            .apply-title {
+                font-size: 2.25rem;
+                margin-bottom: 10px;
+            }
+
+            .panel-right {
+                padding: 20px 24px 60px;
+                height: auto;
+                background: #fff;
+                border-radius: 24px 24px 0 0;
+                z-index: 10;
+            }
+
+            .form-header h2 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="nav-fixed">
+        <div class="container">
+            <a href="index.html">
+                <img src="assets/logo.svg" alt="Maximoat" height="28" style="filter: brightness(0) invert(1);">
+            </a>
+        </div>
+    </header>
+
+    <main class="split-main">
+
+        <!-- Left Column -->
+        <section class="panel-left" id="reveal-left">
+            <div class="mesh-bg-left"></div>
+            <div style="position: relative; z-index: 1;">
+                <span class="apply-tag">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <path d="M5 13l4 4L19 7" />
+                    </svg>
+                    UX Pro Bootcamp
+                </span>
+
+                <h1 class="apply-title">Step into your <br><span style="color: var(--accent-lime);">next level</span> as
+                    a designer.</h1>
+
+                <p class="apply-subtitle">Signature 4-week program for experienced designers to close skill gaps and
+                    master
+                    agency-grade workflows.</p>
+
+                <div class="apply-formula">
+                    <span class="formula-bracket">{</span>
+                    <div class="formula-pill pill-yellow">Expertise</div>
+                    <span class="formula-plus">+</span>
+                    <div class="formula-pill pill-green">Confidence</div>
+                    <span class="formula-bracket">}</span>
+                </div>
+
+                <div class="outcome-list">
+                    <div class="outcome-item">
+                        <span class="outcome-check">✓</span>
+                        <div>
+                            <strong>AI-Powered Fit Analysis</strong>
+                            <p style="font-size: 0.75rem; opacity: 0.5;">Benchmark against industry standards.</p>
+                        </div>
+                    </div>
+                    <div class="outcome-item">
+                        <span class="outcome-check">✓</span>
+                        <div>
+                            <strong>1:1 Mentorship</strong>
+                            <p style="font-size: 0.75rem; opacity: 0.5;">Direct feedback from FAANG leaders.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Right Column -->
+        <section class="panel-right" id="reveal-right">
+            <div class="application-card">
+                <div class="form-header">
+                    <h2>Check Eligibility</h2>
+                    <p>Complete the fields below to start.</p>
+                </div>
+
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <input type="text" class="form-field" id="full-name" placeholder=" " required>
+                        <label for="full-name" class="form-label">Full Name</label>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" class="form-field" id="work-email" placeholder=" " required>
+                        <label for="work-email" class="form-label">Work Email</label>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="tel" class="form-field" id="mobile-number" placeholder=" " required>
+                        <label for="mobile-number" class="form-label">Mobile Number</label>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="url" class="form-field" id="portfolio-url" placeholder=" " required>
+                        <label for="portfolio-url" class="form-label">Portfolio URL</label>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-field" id="current-role" placeholder=" " required>
+                        <label for="current-role" class="form-label">Current Role</label>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-field" id="company" placeholder=" " required>
+                        <label for="company" class="form-label">Company</label>
+                    </div>
+
+                    <div class="social-proof-hero"
+                        style="margin-bottom: 20px; display: flex; align-items: center; justify-content: center; gap: 8px; background: rgba(0,0,0,0.03); padding: 12px 20px; border-radius: 100px;">
+                        <div class="member-avatars"
+                            style="display: flex; transform: scale(0.8); transform-origin: left;">
+                            <div class="avatar-circle avatar-1"
+                                style="width: 24px; height: 24px; border-radius: 50%; border: 2px solid white; background: #FFD8A8; margin-right: -8px;">
+                            </div>
+                            <div class="avatar-circle avatar-2"
+                                style="width: 24px; height: 24px; border-radius: 50%; border: 2px solid white; background: #D0EB97; margin-right: -8px;">
+                            </div>
+                            <div class="avatar-circle avatar-3"
+                                style="width: 24px; height: 24px; border-radius: 50%; border: 2px solid white; background: #E0CFFC; margin-right: -8px;">
+                            </div>
+                            <div class="avatar-circle avatar-4"
+                                style="width: 24px; height: 24px; border-radius: 50%; border: 2px solid white; background: #B5F1F1;">
+                            </div>
+                        </div>
+                        <span class="proof-text"
+                            style="font-size: 0.75rem; color: #1a1a1a; opacity: 0.7; font-weight: 500;">+350 designers
+                            joined the elite circle</span>
+                    </div>
+
+                    <button type="submit" class="submit-cta">
+                        Continue to Application
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                </form>
+
+                <div style="margin-top: 24px; text-align: center; opacity: 0.3; font-size: 0.75rem;">
+                    &copy; 2024 Maximoat. &bull; Secure Application
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/motion@11.11.13/dist/motion.js"></script>
+    <script>
+        const { animate } = Motion;
+        animate("#reveal-left", { opacity: [0, 1], y: [20, 0] }, { duration: 0.8, easing: [0.16, 1, 0.3, 1] });
+        animate("#reveal-right", { opacity: [0, 1], y: [40, 0] }, { duration: 0.8, delay: 0.2, easing: [0.16, 1, 0.3, 1] });
+    </script>
+</body>
+
+</html>
