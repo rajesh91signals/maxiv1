@@ -272,6 +272,84 @@
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
         }
 
+        .submit-cta.btn-orange {
+            background: #ff6b00;
+        }
+
+        .submit-cta.btn-orange:hover {
+            background: #e66000;
+        }
+
+        /* Progressive Form Steps */
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+
+        /* Step 2 Specific Styles */
+        .exp-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .select-field {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23999' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 20px center;
+        }
+
+        .checkbox-group {
+            margin-top: 24px;
+        }
+
+        .checkbox-label {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .checkbox-sublabel {
+            font-size: 0.75rem;
+            color: #999;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .option-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            padding: 8px 0;
+        }
+
+        .option-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #ff6b00;
+            cursor: pointer;
+        }
+
+        .option-text {
+            font-size: 0.9rem;
+            color: #444;
+        }
+
+        .form-label-top {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+
         /* Mesh BG */
         .mesh-bg-left {
             position: absolute;
@@ -408,67 +486,136 @@
                     <p>Complete the fields below to start.</p>
                 </div>
 
-                <form action="#" method="POST">
-                    <div class="form-group">
-                        <input type="text" class="form-field" id="full-name" placeholder=" " required>
-                        <label for="full-name" class="form-label">Full Name</label>
-                    </div>
+                <form id="applyForm" action="#" method="POST">
+                    <!-- Step 1: Basic Info -->
+                    <div class="form-step active" id="step1">
+                        <div class="form-group">
+                            <input type="text" class="form-field" id="full-name" placeholder=" " required>
+                            <label for="full-name" class="form-label">Full Name *</label>
+                        </div>
 
-                    <div class="form-group">
-                        <input type="email" class="form-field" id="work-email" placeholder=" " required>
-                        <label for="work-email" class="form-label">Work Email</label>
-                    </div>
+                        <div class="form-group">
+                            <input type="email" class="form-field" id="work-email" placeholder=" " required>
+                            <label for="work-email" class="form-label">Email *</label>
+                        </div>
 
-                    <div class="form-group">
-                        <input type="tel" class="form-field" id="mobile-number" placeholder=" " required>
-                        <label for="mobile-number" class="form-label">Mobile Number</label>
-                    </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-field" id="mobile-number" placeholder=" " required>
+                            <label for="mobile-number" class="form-label">Mobile Number *</label>
+                        </div>
 
-                    <div class="form-group">
-                        <input type="url" class="form-field" id="portfolio-url" placeholder=" " required>
-                        <label for="portfolio-url" class="form-label">Portfolio URL</label>
-                    </div>
+                        <div class="form-group">
+                            <input type="url" class="form-field" id="portfolio-url" placeholder=" " required>
+                            <label for="portfolio-url" class="form-label">Portfolio Link *</label>
+                        </div>
 
-                    <div class="form-group">
-                        <input type="text" class="form-field" id="current-role" placeholder=" " required>
-                        <label for="current-role" class="form-label">Current Role</label>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" class="form-field" id="company" placeholder=" " required>
-                        <label for="company" class="form-label">Company</label>
-                    </div>
-
-                    <div class="social-proof-hero"
-                        style="margin-bottom: 20px; display: flex; align-items: center; justify-content: center; gap: 8px; background: rgba(0,0,0,0.03); padding: 12px 20px; border-radius: 100px;">
-                        <div class="member-avatars"
-                            style="display: flex; transform: scale(0.8); transform-origin: left;">
-                            <div class="avatar-circle avatar-1"
-                                style="width: 24px; height: 24px; border-radius: 50%; border: 2px solid white; background: #FFD8A8; margin-right: -8px;">
+                        <div class="social-proof-hero"
+                            style="margin-bottom: 20px; display: flex; align-items: center; justify-content: center; gap: 8px; background: rgba(0,0,0,0.03); padding: 12px 20px; border-radius: 100px;">
+                            <div class="member-avatars"
+                                style="display: flex; transform: scale(0.8); transform-origin: left;">
+                                <div class="avatar-circle avatar-1"
+                                    style="width: 24px; height: 24px; border-radius: 50%; border: 2px solid white; background: #FFD8A8; margin-right: -8px;">
+                                </div>
+                                <div class="avatar-circle avatar-2"
+                                    style="width: 24px; height: 24px; border-radius: 50%; border: 2px solid white; background: #D0EB97; margin-right: -8px;">
+                                </div>
+                                <div class="avatar-circle avatar-3"
+                                    style="width: 24px; height: 24px; border-radius: 50%; border: 2px solid white; background: #E0CFFC; margin-right: -8px;">
+                                </div>
+                                <div class="avatar-circle avatar-4"
+                                    style="width: 24px; height: 24px; border-radius: 50%; border: 2px solid white; background: #B5F1F1;">
+                                </div>
                             </div>
-                            <div class="avatar-circle avatar-2"
-                                style="width: 24px; height: 24px; border-radius: 50%; border: 2px solid white; background: #D0EB97; margin-right: -8px;">
+                            <span class="proof-text"
+                                style="font-size: 0.75rem; color: #1a1a1a; opacity: 0.7; font-weight: 500;">+350
+                                designers
+                                joined the elite circle</span>
+                        </div>
+
+                        <button type="button" class="submit-cta" id="continueBtn">
+                            Continue
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Step 2: More Info -->
+                    <div class="form-step" id="step2">
+                        <div class="form-group" style="margin-bottom: 24px;">
+                            <label class="form-label-top">LinkedIn Profile</label>
+                            <input type="text" class="form-field" id="linkedin-url"
+                                placeholder="Paste here or mention Don't Have"
+                                style="padding-top: 17px; padding-bottom: 17px;">
+                        </div>
+
+                        <div class="exp-grid">
+                            <div class="form-group">
+                                <label class="form-label-top">Total Years Of Exp. *</label>
+                                <select class="form-field select-field" id="total-exp" required
+                                    style="padding-top: 15px; padding-bottom: 15px;">
+                                    <option value="" disabled selected>Select...</option>
+                                    <option value="0-1">Less than 1 year</option>
+                                    <option value="1-3">1-3 years</option>
+                                    <option value="3-5">3-5 years</option>
+                                    <option value="5+">5+ years</option>
+                                </select>
                             </div>
-                            <div class="avatar-circle avatar-3"
-                                style="width: 24px; height: 24px; border-radius: 50%; border: 2px solid white; background: #E0CFFC; margin-right: -8px;">
-                            </div>
-                            <div class="avatar-circle avatar-4"
-                                style="width: 24px; height: 24px; border-radius: 50%; border: 2px solid white; background: #B5F1F1;">
+                            <div class="form-group">
+                                <label class="form-label-top">Relevant Of Exp. *</label>
+                                <select class="form-field select-field" id="relevant-exp" required
+                                    style="padding-top: 15px; padding-bottom: 15px;">
+                                    <option value="" disabled selected>Select...</option>
+                                    <option value="0-1">Less than 1 year</option>
+                                    <option value="1-3">1-3 years</option>
+                                    <option value="3-5">3-5 years</option>
+                                    <option value="5+">5+ years</option>
+                                </select>
                             </div>
                         </div>
-                        <span class="proof-text"
-                            style="font-size: 0.75rem; color: #1a1a1a; opacity: 0.7; font-weight: 500;">+350 designers
-                            joined the elite circle</span>
-                    </div>
 
-                    <button type="submit" class="submit-cta">
-                        Continue to Application
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </button>
+                        <div class="form-group">
+                            <label class="form-label-top">Current Location *</label>
+                            <input type="text" class="form-field" id="location" placeholder="Bengaluru/Bangalore"
+                                required style="padding-top: 17px; padding-bottom: 17px;">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label-top">Job Role Your Applying For</label>
+                            <select class="form-field select-field" id="job-role"
+                                style="padding-top: 15px; padding-bottom: 15px;">
+                                <option value="UX Designer">UX Designer</option>
+                                <option value="Product Designer">Product Designer</option>
+                                <option value="UI Designer">UI Designer</option>
+                                <option value="User Researcher">User Researcher</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">What are your primary goals *</label>
+                            <span class="checkbox-sublabel">Select at least one goal</span>
+
+                            <label class="option-item">
+                                <input type="checkbox" name="goals" value="portfolio">
+                                <span class="option-text">Improving my portfolio</span>
+                            </label>
+                            <label class="option-item">
+                                <input type="checkbox" name="goals" value="skills">
+                                <span class="option-text">Improve my design skills</span>
+                            </label>
+                            <label class="option-item">
+                                <input type="checkbox" name="goals" value="storytelling">
+                                <span class="option-text">Master storytelling & interviews</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="submit-cta btn-orange" id="submitBtn">
+                            Submit
+                        </button>
+                    </div>
                 </form>
 
                 <div style="margin-top: 24px; text-align: center; opacity: 0.3; font-size: 0.75rem;">
@@ -484,6 +631,50 @@
         const { animate } = Motion;
         animate("#reveal-left", { opacity: [0, 1], y: [20, 0] }, { duration: 0.8, easing: [0.16, 1, 0.3, 1] });
         animate("#reveal-right", { opacity: [0, 1], y: [40, 0] }, { duration: 0.8, delay: 0.2, easing: [0.16, 1, 0.3, 1] });
+
+        // Multi-step form logic
+        const step1 = document.getElementById('step1');
+        const step2 = document.getElementById('step2');
+        const continueBtn = document.getElementById('continueBtn');
+        const applyForm = document.getElementById('applyForm');
+
+        continueBtn.addEventListener('click', () => {
+            // Basic validation for Step 1
+            const inputs = step1.querySelectorAll('input[required]');
+            let valid = true;
+            inputs.forEach(input => {
+                if (!input.checkValidity()) {
+                    input.reportValidity();
+                    valid = false;
+                }
+            });
+
+            if (valid) {
+                // Animate transition
+                animate("#step1", { opacity: 0, x: -20 }, { duration: 0.3 }).finished.then(() => {
+                    step1.classList.remove('active');
+                    step2.classList.add('active');
+                    animate("#step2", { opacity: [0, 1], x: [20, 0] }, { duration: 0.4 });
+
+                    // Update header text for Step 2
+                    document.querySelector('.form-header p').textContent = "Some more info to help you better";
+                });
+            }
+        });
+
+        applyForm.addEventListener('submit', (e) => {
+            // Special validation for goals checkbox
+            const checkboxes = document.querySelectorAll('input[name="goals"]:checked');
+            if (checkboxes.length === 0) {
+                e.preventDefault();
+                alert("Please select at least one goal.");
+                return;
+            }
+
+            // Handle form submission here
+            // e.preventDefault(); 
+            // console.log("Form Submitted!");
+        });
     </script>
 </body>
 
