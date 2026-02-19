@@ -1024,12 +1024,11 @@ button {
 /* Programs Section */
 /* Programs Section */
 .programs-grid {
-    display: flex;
-    flex-direction: column;
-    /* Strictly Stacked */
-    gap: 80px;
-    align-items: center;
-    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: stretch;
+    max-width: 1300px;
     margin: 0 auto;
 }
 
@@ -1192,48 +1191,52 @@ button {
 .flagship-card {
     background: #1A1A1A;
     /* Deep Dark */
-    padding: 60px 60px 0;
-    border-radius: 40px;
+    padding: 32px;
+    border-radius: 32px;
     position: relative;
     overflow: hidden;
     color: white;
+    display: flex;
+    flex-direction: column;
 }
 
 .flagship-card h3 {
-    font-size: 2.5rem;
+    font-size: 1.75rem;
     color: white;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     text-align: left;
 }
 
 .flagship-card p {
     color: rgba(255, 255, 255, 0.7);
-    font-size: 1.1rem;
-    margin-bottom: 32px;
+    font-size: 1rem;
+    margin-bottom: 24px;
 }
 
 .flagship-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 60px;
-    align-items: end;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    height: 100%;
 }
 
 .flagship-content {
-    padding-bottom: 60px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .flagship-benefits {
     list-style: none;
-    margin-bottom: 40px;
+    margin-bottom: 32px;
 }
 
 .flagship-benefits li {
     display: flex;
     align-items: flex-start;
-    gap: 12px;
-    margin-bottom: 16px;
-    font-size: 1.1rem;
+    gap: 8px;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
     color: rgba(255, 255, 255, 0.9);
 }
 
@@ -1285,12 +1288,13 @@ button {
 }
 
 .flagship-visual img {
-    width: 100%;
-    height: auto;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
     display: block;
-    border-radius: 24px 24px 0 0;
-    /* Anchored bottom */
-    box-shadow: 0 0 40px rgba(123, 97, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(123, 97, 255, 0.2);
+    margin-top: 24px;
 }
 
 @media (max-width: 900px) {
@@ -1305,42 +1309,46 @@ button {
 
 .job-booster-card {
     background: white;
-    padding: 60px 60px 0;
-    border-radius: 40px;
+    padding: 32px;
+    border-radius: 32px;
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
 }
 
 .job-booster-card h3 {
-    font-size: 2.5rem;
+    font-size: 1.75rem;
     color: #1A1A1A;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
     text-align: left;
 }
 
 .jb-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 40px;
-    align-items: end;
+    height: 100%;
 }
 
 .jb-content {
-    padding-bottom: 60px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .jb-benefits {
     list-style: none;
-    margin-bottom: 40px;
+    margin-bottom: 32px;
 }
 
 .jb-benefits li {
     display: flex;
     align-items: flex-start;
-    gap: 12px;
-    margin-bottom: 16px;
-    font-size: 1.1rem;
+    gap: 8px;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
     color: #333;
 }
 
@@ -1419,11 +1427,13 @@ button {
 }
 
 .jb-visual img {
-    width: 100%;
-    height: auto;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
     display: block;
-    /* subtle shadow or floating effect if desired */
-    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+    border-radius: 12px;
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
+    margin-top: 24px;
 }
 
 @media (max-width: 900px) {
