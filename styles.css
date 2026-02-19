@@ -359,9 +359,7 @@ button {
 /* Hide Pushpin on Small Stickies if needed, or keep it. Let's keep it consistent or remove.
    Usually sticky notes don't have pins in the middle, maybe a tape look?
    But user asked to remove numbers use pushpin. Let's apply pin to polaroids mostly. */
-.about-list li.small-sticky .pitch-number {
-    display: none;
-}
+
 
 /* Hero Section */
 .hero {
@@ -1480,18 +1478,22 @@ button {
 
 /* About Maximoat (FigJam Board) */
 .about-maximoat {
-    background-color: #fafbfc;
-    /* Dot grid setup */
-    background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
-    background-size: 24px 24px;
+    background-color: #F9F9F9;
+    /* Clear Dot grid setup */
+    background-image: radial-gradient(#E5E5E5 1.5px, transparent 1.5px);
+    background-size: 20px 20px;
     position: relative;
     padding: 100px 0;
     overflow: hidden;
 }
 
 .about-maximoat .container {
-    max-width: 100% !important;
-    padding: 0 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+    /* Reset to default container width */
+    position: relative;
+    z-index: 2;
+    /* Keep content above stickies if they overlap */
 }
 
 .about-grid {
@@ -1500,17 +1502,33 @@ button {
     align-items: center;
     gap: 60px;
     width: 100%;
-    /* Ensure full width */
-    max-width: none;
-    padding: 0 40px;
-    margin: 0 auto;
 }
 
 .scatter-sticky {
     position: absolute;
     z-index: 1 !important;
-    /* Background decoration level */
-    /* Make purely decorative if requested, or just remove if interaction needed. User said "decorational", but they have text. Let's keep interaction but lower z-index. Competing with hover? I'll keep pointer-events:auto for now unless user complains. Actually, "decorational" often implies no interaction. I will NOT add pointer-events: none yet. */
+}
+
+@media (min-width: 1600px) {
+    .scatter-sticky.sticky-yellow {
+        left: calc(50% - 680px) !important;
+    }
+
+    .scatter-sticky.sticky-pink {
+        right: calc(50% - 680px) !important;
+    }
+
+    .scatter-sticky.sticky-blue {
+        left: calc(50% - 640px) !important;
+    }
+
+    .scatter-sticky.sticky-peach {
+        right: calc(50% - 640px) !important;
+    }
+
+    .scatter-sticky.sticky-green {
+        left: calc(50% - 620px) !important;
+    }
 }
 
 .about-content {
@@ -1519,11 +1537,167 @@ button {
     /* Anchor for cursors */
 }
 
+.mentor-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 20px;
+    width: 100%;
+    position: relative;
+    z-index: 5;
+}
+
+.mentor-badge-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #475569;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.01em;
+}
+
+.mentor-logos-tiny {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 56px;
+    flex-wrap: wrap;
+}
+
+.mentor-logos-tiny img {
+    height: 32px;
+    width: auto;
+    filter: grayscale(1) invert(0.1) opacity(0.4);
+    transition: all 0.3s ease;
+}
+
+.mentor-logos-tiny img:hover {
+    filter: grayscale(0) invert(0) opacity(1);
+    transform: translateY(-2px);
+}
+
 .about-title {
     text-align: center;
     font-size: 3.5rem;
-    margin-bottom: 40px;
+    margin-bottom: 24px;
     line-height: 1.1;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.centered-toolbar {
+    margin: 12px auto 60px auto;
+    width: fit-content;
+}
+
+/* Trust Toolbar (FigJam Style) */
+.trust-toolbar {
+    background: white;
+    border-radius: 100px;
+    /* Pill shape */
+    padding: 6px 6px 6px 20px;
+    /* Balanced padding */
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.05),
+        0 2px 4px -1px rgba(0, 0, 0, 0.03),
+        0 0 0 1px rgba(0, 0, 0, 0.05);
+    /* Border ring */
+    height: fit-content;
+    max-width: 100%;
+}
+
+.toolbar-avatar-group {
+    display: flex;
+    align-items: center;
+    margin-right: -8px;
+}
+
+.tb-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-right: -10px;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.toolbar-divider {
+    width: 1px;
+    height: 24px;
+    background: #e5e5e5;
+}
+
+.toolbar-stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+    font-family: 'Inter', sans-serif;
+    white-space: nowrap;
+}
+
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    background: #22c55e;
+    border-radius: 50%;
+    animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+    0% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    }
+}
+
+.toolbar-btn {
+    background: #8338EC;
+    /* More vibrant FigJam Violet */
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.toolbar-btn:hover {
+    background: #7400b8;
+    transform: scale(1.02);
+}
+
+@media (max-width: 900px) {
+    .about-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .trust-toolbar {
+        width: 100%;
+        justify-content: space-between;
+    }
 }
 
 .about-title .highlight-it {
@@ -1535,12 +1709,8 @@ button {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 60px;
-    /* More space */
-    width: 95%;
-    /* Wider spread */
-    max-width: 1400px;
-    /* Limit slightly for huge screens */
+    gap: 40px;
+    width: 100%;
     margin-top: 0px;
 }
 
@@ -1549,8 +1719,8 @@ button {
 .about-list li {
     display: flex;
     flex-direction: column;
-    width: 300px;
-    /* Fixed width for Polaroid consistency */
+    width: 270px;
+    /* Reduced by 10% from 300px */
     padding: 16px 16px 32px 16px;
     background: #ffffff;
     border-radius: 4px;
@@ -1584,11 +1754,125 @@ button {
     transform: rotate(-3deg);
 }
 
-/* Hover Interaction: Bring to front and straighten */
+/* 3D Flip Card System */
+.about-list li {
+    perspective: 1000px;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    border: none !important;
+    height: 430px;
+    /* Reduced by ~10% from 480px */
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.about-list li:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.flip-card-front {
+    background: #ffffff;
+    padding: 16px 16px 32px 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.flip-card-back {
+    background: #ffffff;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: rotateY(180deg);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 2px dashed #e5e7eb;
+}
+
+/* Featured Dark Card (for Certificate) - Front face needs to be dark */
+.featured-card-dark .flip-card-front {
+    background: #09090b !important;
+    padding: 24px !important;
+    border: 2px solid #fbbf24;
+}
+
+.featured-card-dark .flip-card-back {
+    background: #09090b !important;
+    color: white;
+    border: 2px solid #fbbf24;
+}
+
+.card-back-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #18181b;
+}
+
+.featured-card-dark .card-back-content h3 {
+    color: white;
+}
+
+.card-back-content p {
+    font-size: 1rem;
+    color: #52525b;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.featured-card-dark .card-back-content p {
+    color: #a1a1aa;
+}
+
+.card-cta {
+    background: #18181b;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+}
+
+.card-cta:hover {
+    transform: translateY(-2px);
+    background: #3f3f46;
+}
+
+.featured-card-dark .card-cta {
+    background: #fbbf24;
+    color: #000;
+}
+
+.featured-card-dark .card-cta:hover {
+    background: #fcd34d;
+}
+
+/* Update hover interaction for perspective */
 .about-list li:hover {
-    transform: scale(1.05) rotate(0deg) !important;
-    z-index: 10;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    z-index: 50;
+    transform: scale(1.05) !important;
 }
 
 .about-card-visual {
@@ -1642,47 +1926,23 @@ button {
     text-align: left;
 }
 
-/* Pushpin Icon Style */
-.pitch-number {
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 28px;
-    height: 28px;
-    background: none;
-    border: none;
-    box-shadow: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    font-size: 2rem;
-    /* Size for emoji/icon if text fallback */
-}
 
-/* Use SVG background for cleaner look if preferred, but emoji is easiest for "Pushpin Icon" request. 
-   Let's use an SVG inside the HTML or CSS content for better control. 
-   Actually, the user asked to "use Pushpin icon". Let's update the HTML content 
-   and just style the container here to be a pin holder. */
-
-.pitch-number svg {
-    width: 100%;
-    height: 100%;
-    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2));
-    color: #ef4444;
-    /* Red pin default */
-}
 
 .pitch-text {
-    font-size: 1.1rem;
-    line-height: 1.5;
-    color: #444;
-    /* Dark gray like handwriting or print */
-    font-family: 'Indie Flower', 'Inter', cursive;
-    /* Fallback to Inter if Indie Flower isn't loaded, but user asked for "handwritten" vibe potentially with polaroids. Let's stick to Inter for readability but maybe a bit looser. */
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #475569;
+    /* Slate 600 */
     font-family: 'Inter', sans-serif;
-    font-weight: 500;
+    font-weight: 400;
+}
+
+.pitch-text b {
+    color: #1e293b;
+    /* Slate 900 */
+    font-weight: 700;
+    display: block;
+    margin-bottom: 4px;
 }
 
 /* Remove old video card styles */
@@ -1705,20 +1965,20 @@ button {
 /* Small Sticky Notes - Scattered Decoration */
 .small-sticky {
     width: 200px !important;
-    height: 200px !important;
+    min-height: 200px !important;
     padding: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-family: 'Indie Flower', cursive;
-    font-size: 1.5rem;
-    line-height: 1.35;
+    font-family: 'Just Another Hand', cursive;
+    font-size: 2.2rem;
+    line-height: 1.1;
     color: #4B5563;
     /* Soft pencil gray */
-    font-weight: 600;
-    line-height: 1.4;
+    font-weight: 500;
     border-radius: 2px;
+
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background: #FEF08A;
     transform: rotate(4deg);
@@ -1744,6 +2004,16 @@ button {
 .sticky-blue {
     background: #E0F2FE;
     transform: rotate(2deg);
+}
+
+.sticky-peach {
+    background: #FFEDD5;
+    /* Lighter shade of peach */
+}
+
+.sticky-green {
+    background: #DCFCE7;
+    /* Lighter shade of green */
 }
 
 .small-sticky:hover {
@@ -2194,6 +2464,74 @@ button {
     background: rgba(255, 255, 255, 0.3);
 }
 
+/* Waveform Animation */
+.waveform-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: 100%;
+    width: 100%;
+}
+
+.waveform-bar {
+    width: 8px;
+    height: 20px;
+    background: #8B5CF6;
+    /* Violet 500 */
+    border-radius: 4px;
+    animation: waveform 1s ease-in-out infinite;
+}
+
+.waveform-bar:nth-child(1) {
+    animation-delay: 0.0s;
+    height: 30px;
+}
+
+.waveform-bar:nth-child(2) {
+    animation-delay: 0.2s;
+    height: 50px;
+}
+
+.waveform-bar:nth-child(3) {
+    animation-delay: 0.4s;
+    height: 40px;
+}
+
+.waveform-bar:nth-child(4) {
+    animation-delay: 0.1s;
+    height: 60px;
+}
+
+.waveform-bar:nth-child(5) {
+    animation-delay: 0.3s;
+    height: 45px;
+}
+
+.waveform-bar:nth-child(6) {
+    animation-delay: 0.5s;
+    height: 35px;
+}
+
+.waveform-bar:nth-child(7) {
+    animation-delay: 0.2s;
+    height: 25px;
+}
+
+@keyframes waveform {
+
+    0%,
+    100% {
+        transform: scaleY(1);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: scaleY(1.5);
+        opacity: 1;
+    }
+}
+
 @media (max-width: 900px) {
     .leaders-header {
         grid-template-columns: 1fr;
@@ -2202,5 +2540,124 @@ button {
 
     .leaders-header h2 {
         font-size: 2.5rem;
+    }
+}
+
+/* Community & Networking Section */
+.community-section {
+    padding: var(--section-gap) 0;
+    background-color: #FAFAFA;
+    overflow: hidden;
+}
+
+.community-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 64px;
+}
+
+.community-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 48px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.5s var(--ease-out-expo);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 440px;
+}
+
+.community-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-primary);
+}
+
+.community-card-tag {
+    display: inline-block;
+    padding: 6px 12px;
+    background: rgba(123, 97, 255, 0.1);
+    color: var(--color-primary);
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 24px;
+    width: fit-content;
+}
+
+.community-card h3 {
+    font-size: 2.25rem;
+    margin-bottom: 20px;
+    font-family: 'Merriweather', serif;
+}
+
+.community-card p {
+    color: var(--color-text-body);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    max-width: 90%;
+}
+
+.community-visual {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    font-size: 15rem;
+    opacity: 0.03;
+    transition: all 0.8s var(--ease-out-expo);
+    pointer-events: none;
+    user-select: none;
+}
+
+.community-card:hover .community-visual {
+    opacity: 0.08;
+    transform: scale(1.1) rotate(15deg) translateY(-20px);
+}
+
+.network-avatars {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+}
+
+.network-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 3px solid white;
+    background: #eee;
+    margin-right: -12px;
+    transition: all 0.4s var(--ease-out-expo);
+    object-fit: cover;
+}
+
+.community-card:hover .network-avatar {
+    margin-right: -8px;
+}
+
+.network-avatar:hover {
+    transform: translateY(-8px) scale(1.15);
+    z-index: 10;
+}
+
+@media (max-width: 900px) {
+    .community-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .community-card {
+        padding: 32px;
+        min-height: auto;
+    }
+
+    .community-visual {
+        font-size: 10rem;
     }
 }
