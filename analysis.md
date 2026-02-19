@@ -94,3 +94,5 @@ The following assets have been extracted to the `assets/` folder:
 - **CTA**: There is a mix of Black and Orange CTAs. Harmonizing these (e.g., Orange for primary actions) could improve conversion.
 - **Visibility**: Some text has lower contrast (80% opacity), which might be an accessibility concern.
 - **Programs**: The accordions in the original design hid important selling points. In the redesign, we should default these to expanded or use a grid layout to make the value proposition immediately visible.
+
+n index

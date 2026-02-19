@@ -356,13 +356,6 @@ button {
     color: white;
 }
 
-/* Hide Pushpin on Small Stickies if needed, or keep it. Let's keep it consistent or remove.
-   Usually sticky notes don't have pins in the middle, maybe a tape look?
-   But user asked to remove numbers use pushpin. Let's apply pin to polaroids mostly. */
-.about-list li.small-sticky .pitch-number {
-    display: none;
-}
-
 /* Hero Section */
 .hero {
     min-height: 80vh;
@@ -810,6 +803,17 @@ button {
     border-top: 1px solid rgba(0, 0, 0, 0.05);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     padding: 32px 0;
+}
+
+/* Problem Stats / Quotes Module */
+.problem-stats-section {
+    padding: 100px 0;
+    background-color: var(--bg-surface);
+}
+
+.problem-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px;
     text-align: center;
 }
@@ -1413,7 +1417,537 @@ button {
     transition: transform 0.2s;
 }
 
+/* Our 360 Approach Section */
+.approach-360 {
+    padding: var(--section-gap) 0;
+    background-color: var(--bg-paper);
+}
 
+.approach-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.approach-title {
+    font-family: 'Merriweather', serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--color-text-main);
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+}
+
+.approach-subtitle {
+    font-size: 1.15rem;
+    color: var(--color-text-body);
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.approach-gallery {
+    display: flex;
+    height: 510px;
+    /* Increased by 10% from 464px */
+    gap: 20px;
+    margin: 80px auto;
+    /* Increased margin to account for stagger */
+    width: 75%;
+    max-width: 1000px;
+}
+
+.approach-item {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+    border-radius: 100px;
+    /* Pill shape */
+    cursor: pointer;
+    background-color: color-mix(in srgb, var(--pillar-color), transparent 50%);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+
+    /* Initial state for entrance animation */
+    opacity: 0;
+    pointer-events: none;
+    /* Disable until revealed */
+
+    /* Optimized transition set */
+    transition: flex 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 1.4s cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 1.2s ease,
+        background 0.8s ease 0.4s;
+}
+
+/* Staggered entrance start positions */
+.approach-item:nth-child(even) {
+    transform: translateY(-100px);
+    /* From top */
+}
+
+.approach-item:nth-child(odd) {
+    transform: translateY(100px);
+    /* From bottom */
+}
+
+/* Revealed state (triggered by JS) */
+.approach-item.revealed {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.approach-item.revealed:nth-child(even) {
+    transform: translateY(40px);
+    /* Staggered position */
+}
+
+.approach-item.revealed:nth-child(odd) {
+    transform: translateY(-20px);
+    /* Staggered position */
+}
+
+/* Staggered delays for the reveal */
+.approach-item.revealed:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.approach-item.revealed:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.approach-item.revealed:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.approach-item.revealed:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.approach-item.revealed:nth-child(5) {
+    transition-delay: 0.5s;
+}
+
+/* On hover/expand, break the stagger and center the card */
+.approach-item.revealed:hover {
+    flex: 10;
+    /* background: var(--pillar-color); REMOVED so wave can fill */
+    transform: translateY(0) scale(1.02);
+    z-index: 20;
+    transition: flex 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Pillar Colors System */
+.pillar-yellow {
+    --pillar-color: #FDE047;
+    --pillar-gradient: linear-gradient(135deg, #FDE047 0%, #EAB308 100%);
+}
+
+.pillar-green {
+    --pillar-color: #86EFAC;
+    --pillar-gradient: linear-gradient(135deg, #86EFAC 0%, #22C55E 100%);
+}
+
+.pillar-peach {
+    --pillar-color: #FDBA74;
+    --pillar-gradient: linear-gradient(135deg, #FDBA74 0%, #F97316 100%);
+}
+
+.pillar-blue {
+    --pillar-color: #818CF8;
+    --pillar-gradient: linear-gradient(135deg, #818CF8 0%, #4F46E5 100%);
+}
+
+.pillar-rose {
+    --pillar-color: #FB7185;
+    --pillar-gradient: linear-gradient(135deg, #FB7185 0%, #E11D48 100%);
+}
+
+.approach-item:hover {
+    flex: 10;
+}
+
+
+.approach-wave {
+    position: absolute;
+    top: 65%;
+    /* Partially visible in default state */
+    left: 0;
+    width: 250%;
+    height: 180%;
+    background-repeat: repeat-x;
+    background-size: 50% 100%;
+    /* Layered wave effect using mask and gradient */
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600' preserveAspectRatio='none'%3E%3Cpath d='M0,50 C200,80 200,20 400,50 C600,80 600,20 800,50 L800,600 L0,600 Z' /%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600' preserveAspectRatio='none'%3E%3Cpath d='M0,50 C200,80 200,20 400,50 C600,80 600,20 800,50 L800,600 L0,600 Z' /%3E%3C/svg%3E");
+    mask-repeat: repeat-x;
+    mask-size: 50% 100%;
+    background: linear-gradient(180deg, var(--pillar-color) 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 1;
+    transition: top 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
+    animation: liquidMotion 15s infinite linear;
+    /* linear for smooth continuous flow across blocks */
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.approach-item:hover .approach-wave {
+    top: -50%;
+    /* Ensuring full coverage while maintaining wave top */
+    opacity: 1;
+    background: var(--pillar-gradient);
+    /* Removed mask-image: none to keep the wave edge smooth during rise */
+    /* Ultra-slow, smooth cinematic rise */
+    transition: top 2.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.2s ease;
+}
+
+
+
+/* Texture overlay stays for tactical feel */
+.approach-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.08;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 2;
+}
+
+
+/* End of Approach Backgrounds */
+
+.approach-label-vertical {
+    position: absolute;
+    top: 50%;
+    /* Center vertically */
+    left: 50%;
+    /* Center horizontally */
+    transform: translate(-50%, -50%);
+    /* Precise centering */
+    z-index: 5;
+    transition: opacity 0.4s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.approach-item:hover .approach-label-vertical {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 20px));
+    /* Subtle slide out from center */
+}
+
+/* Hide labels in all other pills when one is expanded */
+.approach-gallery:hover .approach-item:not(:hover) .approach-label-vertical {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+    /* Slight scale down as they fade */
+}
+
+
+/* Base styles for labels/numbers move to global context for reuse or remain in vertical for vertical only */
+.approach-label-vertical .approach-number {
+    display: block;
+    font-family: 'Inter', monospace;
+    font-size: 0.7rem;
+    /* Reduced for better fit in center */
+    font-weight: 700;
+    color: #121212;
+    margin-top: 16px;
+    /* Space after the title */
+    opacity: 0.3;
+    letter-spacing: 0.3em;
+    position: relative;
+}
+
+.approach-label-vertical .approach-number::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    /* Adjusted for smaller font */
+    left: 50%;
+    /* Center the line */
+    transform: translateX(-50%);
+    width: 1px;
+    height: 10px;
+    /* Adjusted for smaller font */
+    background: #000;
+    opacity: 0.15;
+    /* Reduced opacity */
+}
+
+.approach-label-vertical .approach-item-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    /* Optimized for horizontal display */
+    font-weight: 800;
+    line-height: 1.2;
+    color: #121212;
+    text-align: center;
+    white-space: normal;
+    margin: 0;
+    display: block;
+    letter-spacing: -0.01em;
+}
+
+
+
+.approach-header-expanded {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+    /* Tightened margin */
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.approach-item:hover .approach-header-expanded {
+    opacity: 1;
+    transform: translateX(0);
+    /* Coordinated delay: starts as vertical exit finishes */
+    transition: opacity 0.5s ease 0.5s, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.5s;
+}
+
+
+.approach-item:hover .approach-header-expanded {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.approach-header-expanded .approach-number {
+    font-family: 'Inter', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #121212;
+    opacity: 0.5;
+    letter-spacing: 0.2em;
+}
+
+.approach-title-horizontal {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    /* Drastically smaller */
+    font-weight: 700;
+    color: #121212;
+    margin: 0;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    /* Subordinated to the para */
+}
+
+
+
+
+
+/* Internal Expansion Content */
+.approach-details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px 60px;
+    /* Reduced from 60px 80px */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10;
+    transition: opacity 0.15s ease, visibility 0.15s ease;
+}
+
+
+.approach-item:hover .approach-details {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease 0.5s, visibility 0.5s ease 0.5s;
+}
+
+.approach-copy {
+    max-width: 460px;
+    /* Tighter width for better reading */
+    position: relative;
+    z-index: 4;
+    background: none;
+    /* Removed glass */
+    backdrop-filter: none;
+    /* Removed blur */
+    padding: 0;
+    /* Removed internal padding */
+    border: none;
+    box-shadow: none;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    margin-bottom: 24px;
+    /* Added margin-bottom */
+}
+
+
+.approach-item:hover .approach-copy {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease 0.7s, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.7s;
+}
+
+.approach-copy p {
+    font-size: 1.5rem;
+    /* Focal point now */
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: #121212;
+    margin-bottom: 24px;
+    line-height: 1.35;
+    letter-spacing: -0.02em;
+}
+
+
+
+.approach-img {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 42%;
+    /* Reduced from 48% to clear text area */
+    max-height: 70%;
+    object-fit: contain;
+    border-radius: 0;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    pointer-events: none;
+    transform: translate(15px, 15px);
+}
+
+.approach-item:hover .approach-img {
+    opacity: 0.6;
+    transform: translate(-15px, -15px);
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.6s, opacity 1s ease 0.6s;
+}
+
+
+.approach-list li {
+    font-size: 1rem;
+    /* Reduced from 1.1rem */
+    color: #333;
+    margin-bottom: 12px;
+    /* Reduced from 16px */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    /* Instant hide */
+}
+
+.approach-item:hover .approach-list li:nth-child(1) {
+    transition: opacity 0.5s ease 0.8s, transform 0.5s ease 0.8s;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.approach-item:hover .approach-list li:nth-child(2) {
+    transition: opacity 0.5s ease 0.9s, transform 0.5s ease 0.9s;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.approach-item:hover .approach-list li:nth-child(3) {
+    transition: opacity 0.5s ease 1.0s, transform 0.5s ease 1.0s;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+.approach-list li::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2310B981' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+}
+
+
+@media (max-width: 1024px) {
+    .approach-details {
+        padding: 40px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        justify-content: center;
+    }
+
+    .approach-img {
+        width: 100%;
+        max-height: 180px;
+    }
+
+    .approach-copy p {
+        font-size: 1.2rem;
+        margin-bottom: 16px;
+    }
+
+    .approach-list li {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+}
+
+.approach-info-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.approach-info-content h4 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 16px;
+    color: var(--color-text-main);
+    transition: opacity 0.3s ease;
+}
+
+.approach-info-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--color-text-body);
+    transition: opacity 0.3s ease;
+}
+
+@media (max-width: 900px) {
+    .approach-gallery {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .approach-item {
+        height: 120px;
+        flex: none;
+    }
+
+    .approach-item:hover {
+        height: 300px;
+        flex: none;
+    }
+
+    .approach-title {
+        font-size: 2.5rem;
+    }
+}
 
 .jb-btn:hover {
     transform: scale(1.02);
@@ -1478,49 +2012,21 @@ button {
     transform: rotate(45deg);
 }
 
-/* About Maximoat (FigJam Board) */
+/* About Maximoat Section */
 .about-maximoat {
-    background-color: #fafbfc;
-    /* Dot grid setup */
-    background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
-    background-size: 24px 24px;
-    position: relative;
-    padding: 100px 0;
+    padding: 120px 0;
+    background: #fff;
     overflow: hidden;
 }
 
-.about-maximoat .container {
-    max-width: 100% !important;
-    padding: 0 60px;
-}
-
 .about-grid {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
     align-items: center;
-    gap: 60px;
-    width: 100%;
-    /* Ensure full width */
-    max-width: none;
-    padding: 0 40px;
-    margin: 0 auto;
-}
-
-.scatter-sticky {
-    position: absolute;
-    z-index: 1 !important;
-    /* Background decoration level */
-    /* Make purely decorative if requested, or just remove if interaction needed. User said "decorational", but they have text. Let's keep interaction but lower z-index. Competing with hover? I'll keep pointer-events:auto for now unless user complains. Actually, "decorational" often implies no interaction. I will NOT add pointer-events: none yet. */
-}
-
-.about-content {
-    width: 100%;
-    position: relative;
-    /* Anchor for cursors */
 }
 
 .about-title {
-    text-align: center;
     font-size: 3.5rem;
     margin-bottom: 40px;
     line-height: 1.1;
@@ -1532,165 +2038,128 @@ button {
 }
 
 .about-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 60px;
-    /* More space */
-    width: 95%;
-    /* Wider spread */
-    max-width: 1400px;
-    /* Limit slightly for huge screens */
-    margin-top: 0px;
+    list-style: none;
+    margin-bottom: 40px;
 }
-
-/* Removed scrollbar hiding styles */
 
 .about-list li {
     display: flex;
-    flex-direction: column;
-    width: 300px;
-    /* Fixed width for Polaroid consistency */
-    padding: 16px 16px 32px 16px;
-    background: #ffffff;
-    border-radius: 4px;
-    /* Slight rounding for paper feel */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
-    cursor: default;
-    z-index: 10;
-    /* Above all decor */
-}
-
-/* Base Rotations */
-.about-list li:nth-child(1) {
-    transform: rotate(-2deg);
-}
-
-.about-list li:nth-child(2) {
-    transform: rotate(1.5deg);
-}
-
-.about-list li:nth-child(3) {
-    transform: rotate(-1deg);
-}
-
-.about-list li:nth-child(4) {
-    transform: rotate(2.5deg);
-}
-
-.about-list li:nth-child(5) {
-    transform: rotate(-3deg);
-}
-
-/* Hover Interaction: Bring to front and straighten */
-.about-list li:hover {
-    transform: scale(1.05) rotate(0deg) !important;
-    z-index: 10;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-.about-card-visual {
-    width: 100%;
-    aspect-ratio: 1/1;
-    /* Square visual, shorter than 4/5 */
-    background: #f0f0f0;
-    border-radius: 2px;
-    /* Sharp corners for photo */
-    overflow: hidden;
-    position: relative;
+    align-items: flex-start;
+    gap: 16px;
     margin-bottom: 24px;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    /* Outline for photo edge */
+    font-size: 1.15rem;
+    color: var(--color-text-body);
 }
 
-/* Domain Badge Pills */
-.domain-pill {
-    padding: 10px 20px;
-    border-radius: 999px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06);
+.about-list li strong {
+    color: var(--color-text-main);
+    display: inline-block;
+}
+
+.about-list li .check-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: #10B981;
+    margin-top: 2px;
+}
+
+/* Video Card Styling */
+.video-card-container {
+    position: relative;
+    padding: 30px;
+    background: white;
+    border-radius: 40px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.04);
     border: 1px solid rgba(0, 0, 0, 0.02);
-    display: inline-flex;
-    transform: rotate(var(--r, 0deg));
-    margin: 4px;
+    /* overflow: hidden; REMOVED to allow shapes to bleed out slightly if needed */
+    max-width: 70%;
+    /* Reduced by 30% */
+    margin: 0 auto;
 }
 
-.domain-pill:nth-child(2n) {
-    --r: 2deg;
+/* Dotted background effect */
+.video-card-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(#eee 1px, transparent 1px);
+    background-size: 24px 24px;
+    opacity: 0.5;
+    z-index: 0;
 }
 
-.domain-pill:nth-child(2n+1) {
-    --r: -2deg;
+.about-decor {
+    position: absolute;
+    border-radius: 32px;
+    z-index: 0;
 }
 
-.domain-pill:nth-child(3n) {
-    --r: 3deg;
+.about-decor.box-1 {
+    width: 260px;
+    height: 300px;
+    background: linear-gradient(135deg, #FDE047 0%, #FDBA74 100%);
+    /* Warm Gradient */
+    top: -50px;
+    left: -70px;
+    transform: rotate(-6deg);
+    opacity: 0.6;
 }
 
-.about-card-visual video,
-.about-card-visual img {
+.about-decor.box-2 {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #E11D48 100%);
+    /* Cool to Hot Gradient */
+    bottom: -40px;
+    right: -60px;
+    border-radius: 24px;
+    opacity: 0.4;
+    transform: rotate(12deg);
+}
+
+.video-player-wrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    aspect-ratio: 4/5;
+    /* Mobile friendly vertical-ish video */
+    background: #000;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.video-player-wrapper img,
+.video-player-wrapper video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 1;
+    /* Made video more prominent than the previous muted image */
 }
 
-.about-card-content {
-    padding: 0 8px;
-    text-align: left;
-}
-
-/* Pushpin Icon Style */
-.pitch-number {
+.play-button-overlay {
     position: absolute;
-    top: -10px;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    width: 28px;
-    height: 28px;
-    background: none;
-    border: none;
-    box-shadow: none;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 10;
-    font-size: 2rem;
-    /* Size for emoji/icon if text fallback */
+    cursor: pointer;
+    transition: all 0.3s;
 }
 
-/* Use SVG background for cleaner look if preferred, but emoji is easiest for "Pushpin Icon" request. 
-   Let's use an SVG inside the HTML or CSS content for better control. 
-   Actually, the user asked to "use Pushpin icon". Let's update the HTML content 
-   and just style the container here to be a pin holder. */
-
-.pitch-number svg {
-    width: 100%;
-    height: 100%;
-    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2));
-    color: #ef4444;
-    /* Red pin default */
-}
-
-.pitch-text {
-    font-size: 1.1rem;
-    line-height: 1.5;
-    color: #444;
-    /* Dark gray like handwriting or print */
-    font-family: 'Indie Flower', 'Inter', cursive;
-    /* Fallback to Inter if Indie Flower isn't loaded, but user asked for "handwritten" vibe potentially with polaroids. Let's stick to Inter for readability but maybe a bit looser. */
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-}
-
-/* Remove old video card styles */
-.video-card-container,
-.video-player-wrapper,
-.play-button-overlay,
-.about-decor {
-    display: none;
+.play-button-overlay:hover {
+    background: var(--color-primary);
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
 .play-icon-inner {
@@ -1702,177 +2171,21 @@ button {
     margin-left: 5px;
 }
 
-/* Small Sticky Notes - Scattered Decoration */
-.small-sticky {
-    width: 200px !important;
-    height: 200px !important;
-    padding: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-family: 'Indie Flower', cursive;
-    font-size: 1.5rem;
-    line-height: 1.35;
-    color: #4B5563;
-    /* Soft pencil gray */
-    font-weight: 600;
-    line-height: 1.4;
-    border-radius: 2px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background: #FEF08A;
-    transform: rotate(4deg);
-    border: none;
-
-    /* Decoration Positioning */
+.founder-tag {
     position: absolute;
-    z-index: 1 !important;
-    /* Low z-index for background decor */
-}
-
-/* Specific sticky colors */
-.sticky-yellow {
-    background: #FEF9C3;
-    transform: rotate(3deg);
-}
-
-.sticky-pink {
-    background: #FCE7F3;
-    transform: rotate(-3deg);
-}
-
-.sticky-blue {
-    background: #E0F2FE;
-    transform: rotate(2deg);
-}
-
-.small-sticky:hover {
-    transform: scale(1.1) rotate(0deg) !important;
-    z-index: 2;
-    /* Slight lift but still below content? User said decorational. If they hover, maybe they want to read it. Let's keep it low but above other decor. */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-}
-
-.about-list li.sticky-column {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    /* Space between stacked stickies */
-    background: transparent !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    width: auto !important;
-    /* Let stickies define width */
-    border: none !important;
-    align-self: center;
-    /* Center in the flex row */
-}
-
-.about-list li.sticky-column:hover {
-    transform: none !important;
-    box-shadow: none !important;
-}
-
-/* Ensure Polaroids have their image slot visible */
-.about-list li:not(.sticky-column):not(.small-sticky) .about-card-visual {
-    display: block;
+    bottom: 24px;
+    left: 24px;
+    background: white;
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .founder-tag span {
     color: var(--color-text-light);
     font-weight: 400;
-}
-
-/* FigJam Interactive Elements */
-.about-list {
-    position: relative;
-    /* Anchor for absolute cursors/doodles */
-}
-
-/* Multiplayer Cursors */
-.cursor {
-    position: absolute;
-    pointer-events: none;
-    z-index: 50;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-    transition: transform 0.1s linear;
-    animation: cursorFloat 4s ease-in-out infinite alternate;
-}
-
-.cursor-label {
-    position: absolute;
-    left: 12px;
-    top: 12px;
-    padding: 2px 8px;
-    border-radius: 4px;
-    color: white;
-    font-size: 0.75rem;
-    font-weight: 600;
-    white-space: nowrap;
-}
-
-@keyframes cursorFloat {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    100% {
-        transform: translate(10px, 15px);
-    }
-}
-
-/* Doodles */
-.doodle {
-    position: absolute;
-    z-index: 1;
-    /* Behind items but above bg */
-    pointer-events: none;
-    opacity: 0.8;
-}
-
-/* Floating Toolbar */
-.figjam-toolbar {
-    position: absolute;
-    bottom: -60px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: white;
-    padding: 8px;
-    border-radius: 50px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05);
-    /* Soft, lifted shadow */
-    display: flex;
-    gap: 4px;
-    z-index: 40;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.tool-icon {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.tool-icon:hover {
-    background: #F3F4F6;
-}
-
-.tool-icon.active {
-    background: #E0E7FF;
-    /* Light indigo selection */
-    box-shadow: inset 0 0 0 1px #4338ca;
-}
-
-.tool-divider {
-    width: 1px;
-    background: #E5E7EB;
-    margin: 0 4px;
 }
 
 @media (max-width: 900px) {
@@ -1884,35 +2197,6 @@ button {
     .about-title {
         font-size: 2.8rem;
     }
-}
-
-/* Scattered Tool Icons */
-.scatter-icon {
-    position: absolute;
-    width: 48px;
-    height: 48px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    /* Soft shadow */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 40;
-    /* Above doodles, below cursors/modals */
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.scatter-icon img {
-    width: 32px;
-    height: 32px;
-    object-fit: contain;
-}
-
-.scatter-icon:hover {
-    transform: scale(1.2) rotate(0deg) !important;
-    z-index: 50;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
 }
 
 .footer {
