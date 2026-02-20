@@ -1,5 +1,5 @@
 /* Maximoat - Agency Grade Design System */
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Caveat:wght@400;700&display=swap');
 
 :root {
     /* Refined Palette */
@@ -1039,6 +1039,47 @@ button {
     margin-bottom: 48px;
     border: 1px solid #e2e8f0;
     position: relative;
+}
+
+.tab-pointer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.tab-pointer span {
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
+    color: #4B8BF5;
+    white-space: nowrap;
+    line-height: 1;
+}
+
+.tab-pointer svg {
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
+}
+
+.pointer-left {
+    top: -60px;
+    left: -40px;
+    transform: rotate(-10deg);
+}
+
+.pointer-right {
+    top: -60px;
+    right: -40px;
+    transform: rotate(10deg);
+}
+
+@media (max-width: 768px) {
+    .tab-pointer {
+        display: none;
+        /* Hide on mobile to avoid clutter */
+    }
 }
 
 .course-tab {
