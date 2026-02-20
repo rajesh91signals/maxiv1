@@ -1191,12 +1191,14 @@ button {
 }
 
 .programs-header h2 {
-    font-size: 3.5rem;
-    /* Larger, more impactful */
-    line-height: 1.1;
+    font-size: 2.5rem;
+    /* Reduced to look like a sub-section */
+    line-height: 1.2;
     margin-bottom: 32px;
     color: var(--color-text-main);
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
+    font-family: 'Inter', sans-serif;
+    /* Changed to sans-serif */
 }
 
 .social-proof-pill {
@@ -1686,20 +1688,17 @@ button {
 /* Trust Toolbar (FigJam Style) */
 .trust-toolbar {
     background: white;
-    border-radius: 100px;
-    /* Pill shape */
+    border-radius: 12px;
+    /* Changed to match rounded cards */
     padding: 6px 6px 6px 20px;
-    /* Balanced padding */
     display: flex;
     align-items: center;
     gap: 20px;
     box-shadow:
         0 4px 6px -1px rgba(0, 0, 0, 0.05),
-        0 2px 4px -1px rgba(0, 0, 0, 0.03),
-        0 0 0 1px rgba(0, 0, 0, 0.05);
-    /* Border ring */
+        0 2px 4px -1px rgba(0, 0, 0, 0.03);
     height: fit-content;
-    max-width: 100%;
+    max-width: fit-content;
 }
 
 .toolbar-avatar-group {
