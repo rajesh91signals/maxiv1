@@ -1103,7 +1103,7 @@ button {
     /* Stacked within panel for cleaner look */
     gap: 32px;
     align-items: stretch;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -1192,7 +1192,7 @@ button {
 
 .programs-header h2 {
     font-size: 2.5rem;
-    /* Reduced to look like a sub-section */
+    /* Clean sans-serif section title */
     line-height: 1.2;
     margin-bottom: 32px;
     color: var(--color-text-main);
@@ -1273,9 +1273,8 @@ button {
 /* Flagship Bootcamp (UX Pro) Specific Styles */
 .flagship-card {
     background: #1A1A1A;
-    /* Deep Dark */
-    padding: 32px;
-    border-radius: 32px;
+    padding: 48px;
+    border-radius: 40px;
     position: relative;
     overflow: hidden;
     color: white;
@@ -1297,10 +1296,10 @@ button {
 }
 
 .flagship-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    height: 100%;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 48px;
+    align-items: center;
 }
 
 .flagship-content {
@@ -1332,13 +1331,14 @@ button {
 
 .flagship-pricing-card {
     background: white;
-    /* Contrast against dark */
-    padding: 32px;
-    border-radius: 24px;
+    padding: 40px;
+    border-radius: 28px;
     text-align: center;
-    max-width: 340px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     color: #1A1A1A;
+    margin-left: auto;
 }
 
 .flagship-save-tag {
@@ -1381,19 +1381,24 @@ button {
 }
 
 @media (max-width: 900px) {
-    .flagship-grid {
+
+    .flagship-grid,
+    .jb-grid {
         grid-template-columns: 1fr;
+        gap: 32px;
     }
 
-    .flagship-pricing-card {
+    .flagship-pricing-card,
+    .jb-pricing-card {
         margin: 0 auto;
+        max-width: 100%;
     }
 }
 
 .job-booster-card {
     background: white;
-    padding: 32px;
-    border-radius: 32px;
+    padding: 48px;
+    border-radius: 40px;
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.05);
@@ -1409,10 +1414,10 @@ button {
 }
 
 .jb-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    height: 100%;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 48px;
+    align-items: center;
 }
 
 .jb-content {
@@ -1443,13 +1448,15 @@ button {
 }
 
 .jb-pricing-card {
-    background: #FCD34D;
-    /* Yellow */
-    padding: 32px;
-    border-radius: 24px;
+    background: #F8FAFC;
+    padding: 40px;
+    border-radius: 28px;
     text-align: center;
-    max-width: 320px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin-left: auto;
 }
 
 .jb-price-label {
@@ -1570,7 +1577,8 @@ button {
 }
 
 /* About Maximoat (FigJam Board) */
-.about-maximoat {
+.about-maximoat,
+.programs-section {
     background-color: #F9F9F9;
     /* Clear Dot grid setup */
     background-image: radial-gradient(#E5E5E5 1.5px, transparent 1.5px);
@@ -1580,7 +1588,8 @@ button {
     overflow: hidden;
 }
 
-.about-maximoat .container {
+.about-maximoat .container,
+.programs-section .container {
     max-width: 1100px;
     margin: 0 auto;
     /* Reset to default container width */
@@ -1688,8 +1697,8 @@ button {
 /* Trust Toolbar (FigJam Style) */
 .trust-toolbar {
     background: white;
-    border-radius: 12px;
-    /* Changed to match rounded cards */
+    border-radius: 100px;
+    /* Restored to pill shape */
     padding: 6px 6px 6px 20px;
     display: flex;
     align-items: center;
