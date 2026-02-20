@@ -1158,10 +1158,9 @@ button {
 .programs-grid {
     display: grid;
     grid-template-columns: 1fr;
-    /* Stacked within panel for cleaner look */
     gap: 32px;
     align-items: stretch;
-    max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -1331,13 +1330,20 @@ button {
 /* Flagship Bootcamp (UX Pro) Specific Styles */
 .flagship-card {
     background: #1A1A1A;
-    padding: 48px;
-    border-radius: 40px;
+    padding: 60px;
+    border-radius: 48px;
     position: relative;
     overflow: hidden;
     color: white;
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.flagship-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.1);
 }
 
 .flagship-card h3 {
@@ -1410,22 +1416,39 @@ button {
     margin-bottom: 24px;
 }
 
+.flagship-btn,
+.jb-btn {
+    width: 100%;
+    padding: 18px;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s var(--ease-out-expo);
+    border: none;
+    cursor: pointer;
+}
+
 .flagship-btn {
     background: #1A1A1A;
     color: white;
-    width: 100%;
-    padding: 16px;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: transform 0.2s;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .flagship-btn:hover {
-    transform: scale(1.02);
     background: #000;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.jb-btn {
+    background: #1A1A1A;
+    color: white;
+}
+
+.jb-btn:hover {
+    background: #000;
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .flagship-visual img {
@@ -1455,13 +1478,19 @@ button {
 
 .job-booster-card {
     background: white;
-    padding: 48px;
-    border-radius: 40px;
+    padding: 60px;
+    border-radius: 48px;
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    display: flex;
-    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    width: 100%;
+    transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo);
+}
+
+.job-booster-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0.15);
 }
 
 .job-booster-card h3 {
@@ -1556,23 +1585,6 @@ button {
     margin-bottom: 24px;
 }
 
-.jb-btn {
-    background: #000;
-    color: white;
-    width: 100%;
-    padding: 16px;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: transform 0.2s;
-}
-
-
-
-.jb-btn:hover {
-    transform: scale(1.02);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
 
 .jb-visual img {
     width: 100px;
