@@ -1827,6 +1827,7 @@ button {
     background: #09090b !important;
     padding: 24px !important;
     border: 2px solid #fbbf24;
+    color: white;
 }
 
 .featured-card-dark .flip-card-back {
@@ -1957,6 +1958,17 @@ button {
     font-weight: 700;
     display: block;
     margin-bottom: 4px;
+}
+
+.featured-card-dark .pitch-text {
+    color: #cbd5e1;
+    /* Slate 300 */
+    font-size: 1.1rem;
+}
+
+.featured-card-dark .pitch-text b {
+    color: #fbbf24;
+    /* Amber 400 - Matches border for consistency and pop */
 }
 
 /* Remove old video card styles */
