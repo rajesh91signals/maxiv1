@@ -1729,8 +1729,8 @@ button {
 .about-list li {
     display: flex;
     flex-direction: column;
-    width: 270px;
-    /* Reduced by 10% from 300px */
+    width: 310px;
+    /* Increased slightly to fit titles in 1 line */
     padding: 16px 16px 32px 16px;
     background: #ffffff;
     border-radius: 4px;
