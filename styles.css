@@ -1023,13 +1023,94 @@ button {
 
 /* Programs Section */
 /* Programs Section */
+/* Course Tab Module */
+.course-selector-wrapper {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.course-tabs {
+    display: inline-flex;
+    background: #f1f5f9;
+    padding: 6px;
+    border-radius: 999px;
+    margin-bottom: 48px;
+    border: 1px solid #e2e8f0;
+    position: relative;
+}
+
+.course-tab {
+    padding: 12px 24px;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    color: #64748b;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.course-tab.active {
+    color: #1e293b;
+}
+
+.tab-slider {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    height: calc(100% - 12px);
+    background: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-radius: 999px;
+    z-index: 0;
+    transition: all 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.course-panels {
+    width: 100%;
+    max-width: 1100px;
+}
+
+.course-panel {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.course-panel.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .programs-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    /* Stacked within panel for cleaner look */
     gap: 32px;
     align-items: stretch;
-    max-width: 1300px;
+    max-width: 1000px;
     margin: 0 auto;
+}
+
+/* Ensure cards take full width in tabbed mode */
+.flagship-card,
+.job-booster-card {
+    width: 100%;
 }
 
 .program-card {

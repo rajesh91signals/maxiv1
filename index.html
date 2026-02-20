@@ -470,69 +470,84 @@
                 </div>
             </div>
 
-            <div class="programs-grid">
-
-                <!-- UX Pro Card (Flagship Style) -->
-                <div class="flagship-card">
-                    <div class="flagship-grid">
-                        <div class="flagship-content">
-                            <span class="tag" style="background: rgba(255,255,255,0.1); color: white;">Flagship
-                                Bootcamp</span>
-                            <h3 class="gsap-split">Become an AI-Native Product Designer</h3>
-                            <p class="gsap-split">12 weeks to close gaps, build agency-grade portfolio & get hired
-                            </p>
-
-                            <ul class="flagship-benefits">
-                                <li>Master AI-driven design workflows</li>
-                                <li>Build 2 industrial-grade capstone projects</li>
-                                <li>1:1 Mentorship from top agency pros</li>
-                                <li>Job readiness: Mock interviews & Storytelling</li>
-                            </ul>
-
-                            <div class="flagship-pricing-card">
-                                <span class="jb-price-label">Limited seats for next cohort</span>
-                                <div class="jb-price-row">
-                                    <span class="jb-price-strike">₹1,00,000</span>
-                                    <span class="jb-price-main">₹75,000</span>
-                                </div>
-                                <span class="flagship-save-tag">Save ₹25k</span>
-                                <a href="apply.html" class="flagship-btn">Apply Now</a>
-                            </div>
-                        </div>
-
-                    </div>
+            <div class="course-selector-wrapper">
+                <div class="course-tabs" id="courseTabs">
+                    <button class="course-tab active" data-tab="bootcamp">12 Week Bootcamp</button>
+                    <button class="course-tab" data-tab="fasttrack">30 Day Fast-track</button>
+                    <div class="tab-slider" id="tabSlider"></div>
                 </div>
 
-                <!-- Job Booster Card (Mockup Style) -->
-                <div class="job-booster-card">
-                    <div class="jb-grid">
-                        <div class="jb-content">
-                            <span class="tag" style="background: rgba(0,0,0,0.05); color: #1A1A1A;">10X your Job
-                                Reach</span>
-                            <h3 class="gsap-split">Maximise your job reach & improve your chances</h3>
+                <div class="course-panels">
+                    <!-- Bootcamp Panel -->
+                    <div class="course-panel active" id="bootcampPanel">
+                        <div class="programs-grid">
+                            <div class="flagship-card">
+                                <div class="flagship-grid">
+                                    <div class="flagship-content">
+                                        <span class="tag"
+                                            style="background: rgba(255,255,255,0.1); color: white;">Flagship
+                                            Bootcamp</span>
+                                        <h3 class="gsap-split">Become an AI-Native Product Designer</h3>
+                                        <p class="gsap-split">12 weeks to close gaps, build agency-grade portfolio & get
+                                            hired</p>
 
-                            <ul class="jb-benefits">
-                                <li>Improve your discovery, get found by hiring managers</li>
-                                <li>Get coached on portfolio improvements</li>
-                                <li>Get quality job leads & hiring calls</li>
-                                <li>Weekly profile drops to active design recruiters</li>
-                                <li>Master storytelling & ace interviews</li>
-                            </ul>
+                                        <ul class="flagship-benefits">
+                                            <li>Master AI-driven design workflows</li>
+                                            <li>Build 2 industrial-grade capstone projects</li>
+                                            <li>1:1 Mentorship from top agency pros</li>
+                                            <li>Job readiness: Mock interviews & Storytelling</li>
+                                        </ul>
 
-                            <div class="jb-pricing-card">
-                                <span class="jb-price-label">Book a session with design mentor</span>
-                                <div class="jb-price-row">
-                                    <span class="jb-price-strike">₹2,500</span>
-                                    <span class="jb-price-main">₹1,000</span>
+                                        <div class="flagship-pricing-card">
+                                            <span class="jb-price-label">Limited seats for next cohort</span>
+                                            <div class="jb-price-row">
+                                                <span class="jb-price-strike">₹1,00,000</span>
+                                                <span class="jb-price-main">₹75,000</span>
+                                            </div>
+                                            <span class="flagship-save-tag">Save ₹25k</span>
+                                            <a href="apply.html" class="flagship-btn">Apply Now</a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <span class="jb-save-tag">Save 20% Today</span>
-                                <button class="jb-btn">Book Now</button>
                             </div>
                         </div>
+                    </div>
 
+                    <!-- Fast-track Panel -->
+                    <div class="course-panel" id="fasttrackPanel">
+                        <div class="programs-grid">
+                            <div class="job-booster-card">
+                                <div class="jb-grid">
+                                    <div class="jb-content">
+                                        <span class="tag" style="background: rgba(0,0,0,0.05); color: #1A1A1A;">Job
+                                            Reach Booster</span>
+                                        <h3 class="gsap-split">30 Day Fast-track: Maximise your chances</h3>
+                                        <p class="gsap-split">Intense profile optimization, storytelling mastery &
+                                            high-quality job leads</p>
+
+                                        <ul class="jb-benefits">
+                                            <li>Personalised portfolio audit & improvement plan</li>
+                                            <li>Master storytelling to ace design interviews</li>
+                                            <li>Weekly profile drops to active design recruiters</li>
+                                            <li>Get quality job leads & hiring calls directly</li>
+                                            <li>AI-powered resume & LinkedIn optimization</li>
+                                        </ul>
+
+                                        <div class="jb-pricing-card">
+                                            <span class="jb-price-label">Book a session with design mentor</span>
+                                            <div class="jb-price-row">
+                                                <span class="jb-price-strike">₹2,500</span>
+                                                <span class="jb-price-main">₹1,000</span>
+                                            </div>
+                                            <span class="jb-save-tag">Save 60% Today</span>
+                                            <button class="jb-btn">Book Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
             </div>
 
             <div class="mentor-badge" style="margin-top: 80px;">
@@ -1403,6 +1418,50 @@
                     end: "bottom top",
                     scrub: 1
                 }
+            });
+
+            // Course Tab Switching Logic
+            const tabs = document.querySelectorAll('.course-tab');
+            const panels = document.querySelectorAll('.course-panel');
+            const slider = document.getElementById('tabSlider');
+
+            function updateSlider(tab) {
+                slider.style.width = tab.offsetWidth + 'px';
+                slider.style.left = tab.offsetLeft + 'px';
+            }
+
+            // Set initial slider position
+            setTimeout(() => {
+                const activeTab = document.querySelector('.course-tab.active');
+                if (activeTab) updateSlider(activeTab);
+            }, 100);
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const target = tab.getAttribute('data-tab');
+
+                    // Update UI
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    updateSlider(tab);
+
+                    // Switch Panels
+                    panels.forEach(p => {
+                        p.classList.remove('active');
+                        if (p.id === target + 'Panel') {
+                            p.classList.add('active');
+                        }
+                    });
+
+                    // Re-run split text for the new panel
+                    runSplit();
+                });
+            });
+
+            // Re-run on resize to keep slider aligned
+            window.addEventListener('resize', () => {
+                const activeTab = document.querySelector('.course-tab.active');
+                if (activeTab) updateSlider(activeTab);
             });
         });
     </script>
