@@ -1671,23 +1671,23 @@ button {
 
 @media (min-width: 1600px) {
     .scatter-sticky.sticky-yellow {
-        left: calc(50% - 680px) !important;
+        left: calc(50% - 750px) !important;
     }
 
     .scatter-sticky.sticky-pink {
-        right: calc(50% - 680px) !important;
+        right: calc(50% - 750px) !important;
     }
 
     .scatter-sticky.sticky-blue {
-        left: calc(50% - 640px) !important;
+        left: calc(50% - 720px) !important;
     }
 
     .scatter-sticky.sticky-peach {
-        right: calc(50% - 640px) !important;
+        right: calc(50% - 720px) !important;
     }
 
     .scatter-sticky.sticky-green {
-        left: calc(50% - 620px) !important;
+        left: calc(50% - 780px) !important;
     }
 }
 
