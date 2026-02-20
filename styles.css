@@ -1052,27 +1052,44 @@ button {
 }
 
 .tab-pointer span {
-    font-family: 'Caveat', cursive;
-    font-size: 1.4rem;
+    font-family: 'Just Another Hand', cursive;
+    font-size: 2.2rem;
     color: #4B8BF5;
     white-space: nowrap;
     line-height: 1;
 }
 
 .tab-pointer svg {
-    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+    flex-shrink: 0;
 }
 
 .pointer-left {
-    top: -60px;
-    left: -40px;
-    transform: rotate(-10deg);
+    top: 50%;
+    right: 100%;
+    margin-right: 15px;
+    transform: translateY(-50%) rotate(-2deg);
+    flex-direction: row;
+    align-items: center;
 }
 
 .pointer-right {
-    top: -60px;
-    right: -40px;
-    transform: rotate(10deg);
+    top: 50%;
+    left: 100%;
+    margin-left: 15px;
+    transform: translateY(-50%) rotate(2deg);
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.pointer-left svg {
+    transform: rotate(0deg);
+    /* Pointing right naturally? Let's check path */
+}
+
+.pointer-right svg {
+    transform: scaleX(-1);
+    /* Flip to point left */
 }
 
 @media (max-width: 768px) {
