@@ -1757,11 +1757,15 @@ button {
 }
 
 .about-list li:nth-child(4) {
-    transform: rotate(2.5deg);
+    transform: rotate(1.2deg);
 }
 
 .about-list li:nth-child(5) {
-    transform: rotate(-3deg);
+    transform: rotate(-1.5deg);
+}
+
+.about-list li:nth-child(6) {
+    transform: rotate(1.8deg);
 }
 
 /* 3D Flip Card System */
