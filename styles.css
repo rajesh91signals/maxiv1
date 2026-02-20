@@ -1800,7 +1800,7 @@ button {
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    border-radius: 4px;
+    border-radius: 16px;
     display: flex;
     flex-direction: column;
 }
@@ -1894,8 +1894,8 @@ button {
     aspect-ratio: 1/1;
     /* Square visual, shorter than 4/5 */
     background: #f0f0f0;
-    border-radius: 2px;
-    /* Sharp corners for photo */
+    border-radius: 12px;
+    /* More rounded for a modern look */
     overflow: hidden;
     position: relative;
     margin-bottom: 24px;
