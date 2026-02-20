@@ -123,7 +123,7 @@
                         <div class="toolbar-divider"></div>
                         <div class="toolbar-stat">
                             <div class="status-indicator"></div>
-                            <span id="trust-count-text">238 Designers joined</span>
+                            <span id="trust-count-text">301 Designers</span>
                         </div>
                         <button class="toolbar-btn">Join</button>
                     </div>
@@ -1333,13 +1333,13 @@
             // Trust Toolbar Live Joining Animation
             const avatarGroup = document.getElementById('trust-avatars');
             const countText = document.getElementById('trust-count-text');
-            let count = 238;
+            let count = 301;
             const avatarColors = ['#F87171', '#3B82F6', '#10B981', '#F59E0B', '#8B5CF6', '#EC4899'];
             const names = ['AS', 'JD', 'MK', 'RP', 'SL', 'BT', 'GW', 'HN', 'KZ', 'MQ'];
 
             function addNewJoiner() {
                 count++;
-                countText.innerText = `${count} Designers joined`;
+                countText.innerText = `${count} Designers`;
 
                 let newElement;
                 const isInitial = Math.random() > 0.6; // 40% chance for initials
