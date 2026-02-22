@@ -1,0 +1,2043 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UX FastTrack - Job Booster | Maximoat</title>
+    <meta name="description" content="Maximize your design career with industry-grade mentorship.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="assets/mark.png">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap" rel="stylesheet">
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+    <div class="mesh-bg"></div>
+    <nav class="nav">
+        <div class="container nav-content">
+            <a href="#" class="nav-logo">
+                <img src="assets/logo.svg" alt="Maximoat" height="40">
+            </a>
+            <div class="nav-cta-hint">
+                <span>Start your transformation today</span>
+                <svg class="nav-hint-arrow" width="28" height="16" viewBox="0 0 28 16" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 8 H24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M18 2 L25 8 L18 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+            <div class="nav-right">
+                <a href="#cta" class="btn btn-primary">Book Consultation</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <style>
+        .jb-hero {
+            padding: 160px 0 80px;
+            text-align: center;
+            background: #fff;
+        }
+
+        .jb-hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: #0F172A;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+        }
+
+        .jb-hero .subtitle {
+            font-size: 1.25rem;
+            color: #475569;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        .contrast-section {
+            padding: 80px 0;
+            background: #0F172A;
+            color: white;
+            border-radius: 32px;
+            margin: 40px 20px;
+            text-align: center;
+        }
+
+        .contrast-title {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .contrast-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .contrast-hard {
+            border: 1px solid rgba(248, 113, 113, 0.2);
+            border-radius: 24px;
+            padding: 50px 40px 40px 40px;
+            background: rgba(248, 113, 113, 0.03);
+            box-shadow: inset 0 0 20px rgba(248, 113, 113, 0.02);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .contrast-smart {
+            border: 2px solid #10B981;
+            border-radius: 24px;
+            padding: 50px 40px 40px 40px;
+            background: #ffffff;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 0 8px rgba(16, 185, 129, 0.1);
+            position: relative;
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+        }
+
+        .contrast-smart:hover {
+            transform: scale(1.06);
+            box-shadow: 0 30px 50px rgba(16, 185, 129, 0.2), 0 0 0 8px rgba(16, 185, 129, 0.08);
+        }
+
+        .contrast-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #10B981;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .profile-feature {
+            padding: 80px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .pf-text {
+            flex: 1;
+        }
+
+        .pf-image {
+            flex: 1;
+            background: #f8fafc;
+            border-radius: 24px;
+            border: 1px solid #e2e8f0;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .pf-tag {
+            display: inline-block;
+            background: #E0E7FF;
+            color: #4F46E5;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+        }
+
+        .curriculum-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .feature-card {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 24px 16px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.2s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .feature-card h3 {
+            color: #0F172A;
+            font-size: 1.05rem;
+            line-height: 1.4;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .pricing-section {
+            text-align: center;
+            padding: 80px 20px;
+            background: #f8fafc;
+            border-radius: 32px;
+            margin: 40px 20px;
+        }
+
+        .price-card {
+            background: #fff;
+            border: 2px solid #0F172A;
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 400px;
+            margin: 40px auto;
+            box-shadow: 10px 10px 0 #0F172A;
+        }
+
+        @media (max-width: 768px) {
+
+            .contrast-grid,
+            .profile-feature,
+            .curriculum-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contrast-smart {
+                transform: scale(1);
+            }
+
+            .contrast-smart:hover {
+                transform: scale(1.01);
+            }
+
+            .profile-feature {
+                flex-direction: column;
+                padding: 40px 20px;
+            }
+
+            .jb-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="trust-toolbar centered-toolbar" style="margin-bottom: 24px;">
+                <div class="toolbar-avatar-group trust-avatars-list">
+                    <div class="tb-avatar" style="background: #ef4444; color: white;">R</div>
+                    <img src="https://i.pravatar.cc/100?img=33" class="tb-avatar" alt="User">
+                    <img src="https://i.pravatar.cc/100?img=47" class="tb-avatar" alt="User">
+                </div>
+                <div class="toolbar-divider"></div>
+                <div class="toolbar-stat">
+                    <div class="status-indicator"></div>
+                    <span class="trust-count-val">306 Designers</span>
+                </div>
+                <button class="toolbar-btn">Join</button>
+            </div>
+
+            <h1 class="hero-title-new" id="hero-title">Join the <span
+                    style="display: inline-flex; align-items: center;"><svg width="36" height="36" viewBox="0 0 24 24"
+                        fill="#10B981" style="margin-right: 12px; margin-bottom: 2px;"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+                    </svg><span class="animated-underline">Verified Pro Designer</span></span><br>cohort top brands hire
+                from
+                <span
+                    style="display: inline-flex; align-items: center; margin-left: 16px; vertical-align: middle; gap: 8px;">
+                    <!-- Amazon -->
+                    <span
+                        style="width: 44px; height: 44px; border-radius: 50%; border: 3px solid #f8fafc; background: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg" alt="Amazon"
+                            style="width: 20px;">
+                    </span>
+                    <!-- EY -->
+                    <span
+                        style="width: 44px; height: 44px; border-radius: 50%; border: 3px solid #f8fafc; background: #ffe600; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+                        <svg viewBox="0 0 100 100" style="width: 24px; height: 24px;">
+                            <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle"
+                                font-family="Arial, sans-serif" font-weight="900" font-size="44"
+                                fill="#1A1A24">EY</text>
+                        </svg>
+                    </span>
+                    <!-- Swiggy -->
+                    <span
+                        style="width: 44px; height: 44px; border-radius: 50%; border: 3px solid #f8fafc; background: #fc8019; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+                        <svg viewBox="0 0 100 100" style="width: 22px; height: 22px;">
+                            <path fill="#fff"
+                                d="M63.5,2.4C44.3-3.6,23.3,2.4,10.6,18c-8.8,10.8-12.2,25-9.6,39.1C3.3,69.5,12,80.7,23.1,87.9 c11,7.1,24.4,9.6,37.3,7c13.2-2.7,24.8-10.7,32-21.9c7.2-11.3,9.7-25,6.8-38.3C96.2,21.5,82.6,8.5,63.5,2.4z M52.5,75.9 c-16.1,3.4-32.3-6.9-35.6-23c-3-14.7,6.4-29.6,21.1-32.6c16-3.3,32.2,6.9,35.5,22.9C76.6,58.3,67.3,72.8,52.5,75.9z" />
+                        </svg>
+                    </span>
+                    <!-- Porter -->
+                    <span
+                        style="width: 44px; height: 44px; border-radius: 50%; border: 3px solid #f8fafc; background: #2F65CB; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+                        <span
+                            style="color: #fff; font-weight: 800; font-family: 'Inter', sans-serif; font-size: 9px; letter-spacing: 0.5px;">PORTER</span>
+                    </span>
+                </span>
+            </h1>
+            <p class="subtitle" style="max-width: 700px; margin: 0 auto; line-height: 1.6;">A high-intensity UX career
+                acceleration program designed for designers who already know
+                UX fundamentals but need <b>execution, mentoring, and hiring access</b> to land interviews fast.</p>
+
+            <div style="margin-top: 48px;">
+                <a href="#pricing" class="btn btn-primary"
+                    style="padding: 20px 60px; font-size: 1.25rem; font-weight: 700; border-radius: 100px; background: #000; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">Book
+                    Now</a>
+                <div style="margin-top: 16px;">
+                    <a href="#faq-verified-pro"
+                        style="color: #64748b; font-size: 0.9rem; font-weight: 500; text-decoration: underline; text-underline-offset: 4px;">Read
+                        more about Verify Pro program</a>
+                </div>
+            </div>
+
+
+
+
+
+            <div
+                style="margin: 60px auto 80px; max-width: 1100px; padding: 60px 40px; border-radius: 32px; background: linear-gradient(rgba(2, 6, 23, 0.85), rgba(2, 6, 23, 0.85)), url('assets/hero-thumbnail.jpg') center/cover no-repeat; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
+                <h2
+                    style="font-size: 1.8rem; margin-bottom: 50px; text-align: center; font-weight: 700; color: #f8fafc;">
+                    Got experience, still struggling with job interviews?
+                </h2>
+                <div class="contrast-grid">
+                    <div class="contrast-hard"
+                        style="border: 1px solid rgba(248, 113, 113, 0.2); border-radius: 24px; background: rgba(248, 113, 113, 0.03); box-shadow: inset 0 0 20px rgba(248, 113, 113, 0.02); position: relative; transition: all 0.3s ease;">
+                        <div class="contrast-badge" style="background: #ef4444;">
+                            The Hard Way
+                        </div>
+                        <ul
+                            style="list-style:none; padding:0; text-align:left; color:#94a3b8; font-size:1.1rem; line-height:1.6;">
+                            <li style="margin-bottom:16px; display: flex; align-items: flex-start; gap: 12px;">
+                                <span style="flex-shrink: 0;">❌</span> <span>Applying to 100+ posts, getting <b>0
+                                        callbacks</b></span>
+                            </li>
+                            <li style="margin-bottom:16px; display: flex; align-items: flex-start; gap: 12px;">
+                                <span style="flex-shrink: 0;">❌</span> <span>Sending out generic portfolios and getting
+                                    <b>ghosted</b></span>
+                            </li>
+                            <li style="margin-bottom:16px; display: flex; align-items: flex-start; gap: 12px;">
+                                <span style="flex-shrink: 0;">❌</span> <span>Lacking direction, feedback, and <b>hiring
+                                        visibility</b></span>
+                            </li>
+                            <li style="margin-bottom:16px; display: flex; align-items: flex-start; gap: 12px;">
+                                <span style="flex-shrink: 0;">❌</span> <span>Struggling to showcase your <b>real
+                                        business impact</b></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="contrast-smart">
+                        <div class="contrast-badge"
+                            style="display: flex; align-items: center; justify-content: center; gap: 6px;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+                            </svg>
+                            Verified Pro Designer Way
+                        </div>
+                        <ul
+                            style="list-style:none; padding:0; text-align:left; color:#334155; font-size:1.1rem; line-height:1.6;">
+                            <li style="margin-bottom:16px; display: flex; align-items: flex-start; gap: 12px;">
+                                <span
+                                    style="flex-shrink: 0; color:#10B981; background:#10B981; border-radius:4px; display:flex; align-items:center; justify-content:center; width:20px; height:20px; margin-top: 4px;"><svg
+                                        width="14" height="14" viewBox="0 0 24 24" fill="#fff"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                                    </svg></span>
+                                <span>Building a recruiter-ready, <b>high-converting portfolio</b></span>
+                            </li>
+                            <li style="margin-bottom:16px; display: flex; align-items: flex-start; gap: 12px;">
+                                <span
+                                    style="flex-shrink: 0; color:#10B981; background:#10B981; border-radius:4px; display:flex; align-items:center; justify-content:center; width:20px; height:20px; margin-top: 4px;"><svg
+                                        width="14" height="14" viewBox="0 0 24 24" fill="#fff"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                                    </svg></span>
+                                <span>Gaining direct access to <b>private hiring networks</b></span>
+                            </li>
+                            <li style="margin-bottom:16px; display: flex; align-items: flex-start; gap: 12px;">
+                                <span
+                                    style="flex-shrink: 0; color:#10B981; background:#10B981; border-radius:4px; display:flex; align-items:center; justify-content:center; width:20px; height:20px; margin-top: 4px;"><svg
+                                        width="14" height="14" viewBox="0 0 24 24" fill="#fff"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                                    </svg></span>
+                                <span>Developing strong <b>UX storytelling</b> & product thinking</span>
+                            </li>
+                            <li style="margin-bottom:16px; display: flex; align-items: flex-start; gap: 12px;">
+                                <span
+                                    style="flex-shrink: 0; color:#10B981; background:#10B981; border-radius:4px; display:flex; align-items:center; justify-content:center; width:20px; height:20px; margin-top: 4px;"><svg
+                                        width="14" height="14" viewBox="0 0 24 24" fill="#fff"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                                    </svg></span>
+                                <span>Getting interview-ready and <b>landing offers fast</b></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+
+
+        </div>
+    </section>
+
+
+    <!-- Program Features (Teem.fit inspired) -->
+    <section id="features" class="about-maximoat" style="padding: 100px 20px 40px; position:relative; z-index: 10;">
+
+
+
+        <div class="container text-center" style="margin-bottom: 80px;">
+            <h2
+                style="font-size: 3rem; color: #1e293b; font-weight: 800; margin-bottom: 20px; letter-spacing: -0.02em;">
+                30 Days OTP Challenge</h2>
+            <p style="color: #475569; font-size: 1.2rem; max-width: 800px; margin: 0 auto;">Not another course — a
+                guided reset. Unlearn old habits, relearn industry-grade UX, and push your skills, portfolio, and
+                confidence to the next level.</p>
+
+            <div class="scorer-input-wrapper"
+                style="margin-top: 40px; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);">
+                <div class="platform-icon-container">
+                    <img src="" alt="" class="platform-icon" id="platform-icon-2">
+                </div>
+                <input type="text" class="scorer-input" placeholder="Paste your portfolio or LinkedIn link">
+                <button class="scorer-btn">Check My Eligibility</button>
+            </div>
+        </div>
+
+        <style>
+            .pf-reverse {
+                flex-direction: row-reverse;
+            }
+
+            @media (max-width: 900px) {
+                .pf-reverse {
+                    flex-direction: column-reverse !important;
+                    gap: 40px;
+                }
+            }
+        </style>
+
+        <style>
+            .merged-features {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+                max-width: 1100px;
+                margin: 0 auto 60px auto;
+            }
+
+            @media (max-width: 900px) {
+                .merged-features {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            .phase-label {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                background: #f1f5f9;
+                color: #475569;
+                padding: 6px 16px;
+                border-radius: 100px;
+                font-size: 0.85rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                margin-bottom: 24px;
+                border: 1px solid #e2e8f0;
+            }
+
+            .phase-label span {
+                color: #4f46e5;
+            }
+        </style>
+
+        <div class="container" style="max-width: 1100px; padding: 0 20px;">
+            <div class="phase-label"><span>01.</span> Optimize</div>
+        </div>
+        <div class="merged-features" style="margin-top: 0;">
+            <!-- 1) NEW SPANNING ITEM: Decision-Ready Profile -->
+            <div style="grid-column: 1 / -1; background:#ffffff; border: 1px solid #e2e8f0; border-radius:32px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); padding:60px; display:flex; gap: 60px; align-items: center;"
+                class="profile-span-card">
+                <style>
+                    @media (max-width: 900px) {
+                        .profile-span-card {
+                            flex-direction: column;
+                            padding: 32px !important;
+                            gap: 32px !important;
+                        }
+                    }
+                </style>
+                <div style="flex: 1;">
+                    <h2
+                        style="font-size: 2.5rem; color: #0f172a; margin-bottom: 24px; line-height: 1.2; font-family: 'Inter', sans-serif; font-weight: 700; letter-spacing: -0.02em;">
+                        We don't just fix your portfolio. We build your <span class="animated-underline"
+                            style="z-index: 1;">Decision-Ready Profile.</span>
+                    </h2>
+                    <p style="color: #475569; font-size: 1.15rem; line-height: 1.6; margin-bottom: 32px;">
+                        Traditional resumes get 5 seconds of attention. We prepare you to give recruiters exactly what
+                        they need to say "Yes."
+                    </p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li
+                            style="display:flex; align-items:center; gap:16px; margin-bottom:20px; color:#334155; font-weight:600; font-size: 1.05rem;">
+                            <span
+                                style="background:#e0e7ff; padding:8px; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-size: 1.2rem;">🎨</span>
+                            Optimize your portfolio
+                        </li>
+                        <li
+                            style="display:flex; align-items:center; gap:16px; margin-bottom:20px; color:#334155; font-weight:600; font-size: 1.05rem;">
+                            <span
+                                style="background:#e0e7ff; padding:8px; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-size: 1.2rem;">🎥</span>
+                            Record video interviews
+                        </li>
+                        <li
+                            style="display:flex; align-items:center; gap:16px; margin-bottom:20px; color:#334155; font-weight:600; font-size: 1.05rem;">
+                            <span
+                                style="background:#e0e7ff; padding:8px; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-size: 1.2rem;">📊</span>
+                            Validated competency rating
+                        </li>
+                        <li
+                            style="display:flex; align-items:center; gap:16px; margin-bottom:0; color:#334155; font-weight:600; font-size: 1.05rem;">
+                            <span
+                                style="background:#e0e7ff; padding:8px; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-size: 1.2rem;">🔍</span>
+                            Fix your personal SEO and LinkedIn
+                        </li>
+                    </ul>
+                </div>
+
+                <div style="flex: 1; max-width: 450px; width: 100%;">
+                    <!-- Profile HTML Mockup -->
+                    <div
+                        style="background: #11131a; border-radius: 20px; padding: 32px; border: 1px solid rgba(255,255,255,0.06); box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.05); position: relative; font-family: 'Inter', sans-serif;">
+                        <!-- Header -->
+                        <div
+                            style="margin-bottom:20px; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:20px;">
+                            <div style="display:flex; align-items:center; gap:16px; margin-bottom: 12px;">
+                                <div
+                                    style="width:56px; height:56px; border-radius:50%; background:rgba(16,185,129,0.1); display: flex; align-items:center; justify-content:center; color:#10b981; border: 1px solid rgba(16,185,129,0.2);">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                        width="28" height="28">
+                                        <path fill-rule="evenodd"
+                                            d="M12.516 2.17a.75.75 0 00-1.032 0 11.209 11.209 0 01-7.877 3.08.75.75 0 00-.722.515A12.74 12.74 0 002.25 9.735c0 5.905 3.324 10.99 8.28 13.18a.75.75 0 00.94 0c4.956-2.19 8.28-7.275 8.28-13.18a12.74 12.74 0 00-.635-3.97.75.75 0 00-.722-.515 11.209 11.209 0 01-7.877-3.08zM10.22 13.91l4.97-4.97a.75.75 0 011.06 1.06l-5.5 5.5a.75.75 0 01-1.06 0l-2.25-2.25a.75.75 0 011.06-1.06l1.72 1.72z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div style="display: flex; align-items: center; gap: 8px; margin: 0 0 4px 0;">
+                                        <h4 style="margin:0; font-size:1.25rem; color:#f8fafc; font-weight: 700;">
+                                            Rita Kumari</h4>
+                                    </div>
+                                    <div style="font-size: 0.9rem; color: #cbd5e1;">4 Years experience as Product
+                                        Designer</div>
+                                </div>
+                            </div>
+                            <!-- Tags and Availability -->
+                            <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom: 12px;">
+                                <span
+                                    style="font-size: 0.8rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 12px;">Enterprise</span>
+                                <span
+                                    style="font-size: 0.8rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 12px;">Fintech</span>
+                                <span
+                                    style="font-size: 0.8rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 12px;">Mobile
+                                    app</span>
+                            </div>
+                            <div
+                                style="font-size: 0.85rem; color: #94a3b8; display: flex; align-items: center; gap: 6px;">
+                                <span
+                                    style="width: 8px; height: 8px; background: #10b981; border-radius: 50%; display: inline-block;"></span>
+                                Bangalore <span style="color:rgba(255,255,255,0.2); margin:0 4px;">|</span> In 15 days
+                                <span style="color:rgba(255,255,255,0.2); margin:0 4px;">|</span> On-Site / Remote
+                            </div>
+                        </div>
+
+                        <!-- Video Section -->
+                        <div
+                            style="border-radius:12px; height:160px; overflow: hidden; margin-bottom:24px; position:relative; box-shadow: inset 0 0 20px rgba(0,0,0,0.5);">
+                            <video src="assets/uxportfolio_walk.mp4" autoplay loop muted playsinline
+                                style="width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.9;"></video>
+                        </div>
+
+                        <!-- Stats with Bar Graph -->
+                        <div style="color:#d1d5db;">
+                            <div style="margin-bottom:16px;">
+                                <div
+                                    style="display:flex; justify-content:space-between; margin-bottom:6px; font-size:1rem;">
+                                    <span>Storytelling</span><span
+                                        style="color:#34d399; font-weight: 600;">90/100</span>
+                                </div>
+                                <div
+                                    style="width: 100%; background: rgba(255,255,255,0.1); height: 8px; border-radius: 4px; overflow:hidden;">
+                                    <div style="width: 90%; background: #10b981; height: 100%; border-radius: 4px;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="margin-bottom:16px;">
+                                <div
+                                    style="display:flex; justify-content:space-between; margin-bottom:6px; font-size:1rem;">
+                                    <span>Product Thinking</span><span
+                                        style="color:#34d399; font-weight: 600;">80/100</span>
+                                </div>
+                                <div
+                                    style="width: 100%; background: rgba(255,255,255,0.1); height: 8px; border-radius: 4px; overflow:hidden;">
+                                    <div style="width: 80%; background: #10b981; height: 100%; border-radius: 4px;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="margin-bottom:0;">
+                                <div
+                                    style="display:flex; justify-content:space-between; margin-bottom:6px; font-size:1rem;">
+                                    <span>Visual Craft</span><span
+                                        style="color:#34d399; font-weight: 600;">75/100</span>
+                                </div>
+                                <div
+                                    style="width: 100%; background: rgba(255,255,255,0.1); height: 8px; border-radius: 4px; overflow:hidden;">
+                                    <div style="width: 75%; background: #10b981; height: 100%; border-radius: 4px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="max-width: 1100px; padding: 0 20px; margin-top: 40px;">
+            <div class="phase-label"><span>02.</span> Transform</div>
+        </div>
+        <div class="merged-features" style="margin-top: 0;">
+            <!-- 2) Develop product design mindset and deep domain knowledge -->
+            <div
+                style="background:#ffffff; border: 1px solid #e2e8f0; border-radius:32px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); padding:32px; display:flex; flex-direction:column; overflow:hidden;">
+                <h2
+                    style="font-size: 2rem; color: #0f172a; margin-bottom: 32px; line-height: 1.2; font-family: 'Inter', sans-serif; font-weight: 600;">
+                    Develop AI product design mindset and deep domain knowledge</h2>
+
+                <div
+                    style="margin-top: auto; display: flex; justify-content: flex-end; align-items: flex-end; margin-right: -32px; margin-bottom: -32px;">
+                    <img src="assets/mentor_feed.png" alt="Portfolio Coaching"
+                        style="max-width: 63%; height: auto; object-fit: contain; object-position: bottom right; display: block;">
+                </div>
+            </div>
+            <!-- 3) 1:1 mentoring to transform your storytelling and confidence -->
+            <div
+                style="background:#ffffff; border: 1px solid #e2e8f0; border-radius:32px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); padding:32px; display:flex; flex-direction:column; overflow:hidden;">
+                <h2
+                    style="font-size: 2rem; color: #0f172a; margin-bottom: 20px; line-height: 1.2; font-family: 'Inter', sans-serif; font-weight: 600;">
+                    1:1 mentoring to transform your storytelling and confidence</h2>
+                <p style="color: #475569; font-size: 1.05rem; line-height: 1.6; margin-bottom: 32px;">Engage in
+                    deep-dive transformation sessions. Master the mindset and techniques required to elevate your design
+                    craft to professional standards.</p>
+
+                <div
+                    style="margin-top: auto; border-radius: 12px; overflow: hidden; position: relative; margin-right: -32px; margin-bottom: -32px;">
+                    <img src="assets/mentorship.png" alt="1:1 Transformation Session"
+                        style="width: 100%; height: 300px; object-fit: cover; display: block; border-left: 1px solid #e2e8f0; border-top: 1px solid #e2e8f0; border-top-left-radius: 24px;">
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="max-width: 1100px; padding: 0 20px; margin-top: 40px;">
+            <div class="phase-label"><span>03.</span> Boost</div>
+        </div>
+        <style>
+            .bento-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 40px;
+                max-width: 1100px;
+                margin: 0 auto 60px auto;
+            }
+
+            .bento-card {
+                background: #ffffff;
+                border: 1px solid #e2e8f0;
+                border-radius: 24px;
+                padding: 32px;
+                display: flex;
+                flex-direction: column;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+                position: relative;
+                overflow: hidden;
+                text-align: left;
+            }
+
+            .bento-col-2 {
+                grid-column: span 2;
+            }
+
+            .bento-title {
+                color: #0f172a;
+                font-size: 1.15rem;
+                font-weight: 500;
+                margin: 0 0 24px 0;
+                letter-spacing: -0.01em;
+                font-family: 'Inter', sans-serif;
+                line-height: 1.5;
+            }
+
+            .bento-pill {
+                padding: 8px 20px;
+                border-radius: 100px;
+                border: 1px solid;
+                font-size: 0.85rem;
+                background: rgba(0, 0, 0, 0.2);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            @media(max-width: 900px) {
+                .bento-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .bento-col-2 {
+                    grid-column: span 1;
+                }
+            }
+
+            .pill-track {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 12px;
+                margin-top: auto;
+                mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
+                -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
+            }
+
+            .job-box {
+                background: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 20px;
+                padding: 24px 12px;
+                text-align: center;
+                flex: 1;
+                color: #475569;
+                font-size: 0.95rem;
+                transition: 0.3s;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .job-box:hover {
+                background: #f1f5f9;
+                border-color: #cbd5e1;
+            }
+        </style>
+
+        <div class="bento-grid">
+            <!-- Card 1 (Span 1) -->
+            <div class="bento-card">
+                <h3 class="bento-title">Weekly boosted profile drops to premium design recruiters</h3>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: auto;">
+                    <div class="job-box">
+                        <span style="font-size: 1.8rem; display:block; margin-bottom:12px;">🏢</span>
+                        MNCs
+                    </div>
+                    <div class="job-box">
+                        <span style="font-size: 1.8rem; display:block; margin-bottom:12px;">🚀</span>
+                        Startups
+                    </div>
+                    <div class="job-box">
+                        <span style="font-size: 1.8rem; display:block; margin-bottom:12px;">🎨</span>
+                        Agencies
+                    </div>
+                    <div class="job-box">
+                        <span style="font-size: 1.8rem; display:block; margin-bottom:12px;">🏠</span>
+                        Remote
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="bento-card">
+                <h3 class="bento-title">Access exclusive hiring links and private boards not shared on LinkedIn or
+                    public platforms.</h3>
+                <div
+                    style="margin-top: auto; display: flex; justify-content: flex-end; align-items: flex-end; margin-right: -32px; margin-bottom: -32px;">
+                    <img src="assets/jb.png" alt="Premium Job Boards"
+                        style="max-width: 80%; height: auto; object-fit: contain; object-position: bottom right; display: block;">
+                </div>
+            </div>
+
+            <div class="bento-card">
+                <h3 class="bento-title" style="margin-bottom: 8px;">Get access to freelance and side-hustles</h3>
+                <p style="color: #475569; font-size: 0.9rem; line-height: 1.5; margin-bottom: 24px;">Earn while you
+                    learn with exclusive access to vetted high-ticket freelance gigs and side projects.</p>
+
+                <div
+                    style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:12px; display:flex; gap:12px; align-items:flex-start;">
+                    <div
+                        style="width:36px; height:36px; border-radius:50%; background:#f0fdf4; flex-shrink:0; display:flex; align-items:center; justify-content:center; color:#16a34a; font-weight:bold; font-size:1.2rem; border: 1px solid #dcfce7;">
+                        $</div>
+                    <div>
+                        <div
+                            style="display:flex; justify-content:space-between; margin-bottom:4px; align-items:center;">
+                            <strong style="font-size:0.85rem; color:#0f172a;">Project: Fintech Audit</strong>
+                        </div>
+                        <p style="margin:0; font-size:0.8rem; color:#16a34a; font-weight: 600;">
+                            + Rs. XX Earned</p>
+                    </div>
+                </div>
+
+                <div
+                    style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:0; display:flex; gap:12px; align-items:flex-start; position:relative; overflow:hidden;">
+                    <div
+                        style="width:36px; height:36px; border-radius:50%; background:linear-gradient(135deg, #4f46e5 0%, #3730a3 100%); flex-shrink:0; display:flex; align-items:center; justify-content:center; color:#fff; font-size:1rem; border: 1px solid rgba(79,70,229,0.2);">
+                        ✨</div>
+                    <div>
+                        <div
+                            style="display:flex; justify-content:space-between; margin-bottom:4px; align-items:center;">
+                            <strong style="font-size:0.85rem; color:#0f172a;">New Gig Invitation</strong>
+                        </div>
+                        <p style="margin:0; font-size:0.8rem; color:#475569; line-height:1.4;">
+                            "We need a designer for a quick 2-week B2B SaaS project..."</p>
+                    </div>
+                    <div
+                        style="position: absolute; bottom: 0; left: 0; right: 0; height: 30px; background: linear-gradient(to top, #ffffff, transparent);">
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Maximoat Section -->
+    <section style="background: #020617; padding: 120px 20px; position: relative; overflow: hidden;">
+        <!-- Optional: Dark Dot Grid -->
+        <div
+            style="position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 30px 30px; pointer-events: none;">
+        </div>
+
+        <div class="container" style="position: relative; z-index: 1;">
+            <div style="text-align: center; margin-bottom: 80px;">
+                <h2
+                    style="font-family: 'Merriweather', serif; font-size: 3.2rem; color: #f8fafc; margin: 0; letter-spacing: -0.02em;">
+                    Reasons to Choose <span class="animated-underline">Maximoat</span>
+                </h2>
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto 100px auto;">
+                <style>
+                    .reasons-accordion-item {
+                        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                        padding: 32px 0;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                    }
+
+                    .reasons-accordion-item:last-child {
+                        border-bottom: none;
+                    }
+
+                    .reasons-header {
+                        display: flex;
+                        align-items: center;
+                        gap: 32px;
+                        transition: all 0.3s ease;
+                    }
+
+                    .reasons-number {
+                        font-size: 1.5rem;
+                        font-weight: 900;
+                        width: 56px;
+                        height: 56px;
+                        border-radius: 16px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-shrink: 0;
+                        transition: all 0.3s ease;
+                        background: rgba(255, 255, 255, 0.05);
+                        color: #64748b;
+                    }
+
+                    .reasons-accordion-item.active .reasons-number {
+                        transform: scale(1.1);
+                        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                    }
+
+                    .reasons-title {
+                        color: #94a3b8;
+                        font-size: 1.75rem;
+                        font-weight: 800;
+                        margin: 0;
+                        letter-spacing: -0.01em;
+                        transition: all 0.3s ease;
+                    }
+
+                    .reasons-accordion-item.active .reasons-title {
+                        color: #f8fafc;
+                    }
+
+                    .reasons-content {
+                        max-height: 0;
+                        overflow: hidden;
+                        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                        padding-left: 88px;
+                        opacity: 0;
+                    }
+
+                    .reasons-accordion-item.active .reasons-content {
+                        max-height: 300px;
+                        padding-top: 24px;
+                        opacity: 1;
+                    }
+
+                    .reasons-toggle-icon {
+                        margin-left: auto;
+                        color: #64748b;
+                        transition: transform 0.3s ease;
+                    }
+
+                    .reasons-accordion-item.active .reasons-toggle-icon {
+                        transform: rotate(180deg);
+                        color: #f8fafc;
+                    }
+                </style>
+
+                <div id="reasons-accordion">
+                    <!-- Point 1: Agency & Legacy -->
+                    <div class="reasons-accordion-item active">
+                        <div class="reasons-header">
+                            <div class="reasons-number"
+                                style="background: #FDE047; color: #020617; box-shadow: 0 4px 20px rgba(253, 224, 71, 0.3);">
+                                1</div>
+                            <h3 class="reasons-title">WE ARE A UX AGENCY WITH 20 YEARS OF LEGACY</h3>
+                            <div class="reasons-toggle-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="reasons-content">
+                            <p
+                                style="color: #94a3b8; font-size: 1.15rem; line-height: 1.7; margin-bottom: 24px; max-width: 680px;">
+                                With two decades of hands-on agency leadership, we don’t just teach design—we live it.
+                                Our team at Maximoat are also practicing designers working at top agencies and global
+                                brands, ensuring you learn from the best in the business. We have also tied up with
+                                leading soft skill trainers to deliver a program that balances technical excellence with
+                                professional mastery.
+                            </p>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <div style="width: 32px; height: 1px; background: rgba(255,255,255,0.2);"></div>
+                                <span style="color: #f8fafc; font-weight: 700; font-size: 1rem;">Rajesh Kumar</span>
+                                <span style="color: #64748b; font-size: 0.85rem;">Founder, 91signals</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Point 2 -->
+                    <div class="reasons-accordion-item">
+                        <div class="reasons-header">
+                            <div class="reasons-number"
+                                style="background: #86EFAC; color: #020617; box-shadow: 0 4px 20px rgba(134, 239, 172, 0.3);">
+                                2</div>
+                            <h3 class="reasons-title">BENEFIT FROM OUR GLOBAL NETWORK</h3>
+                            <div class="reasons-toggle-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="reasons-content">
+                            <p style="color: #94a3b8; font-size: 1.15rem; line-height: 1.7; margin: 0;">
+                                Leverage our deep connections with GCCs, global brands operating in India,
+                                leading startups, and top-tier agencies. From high-impact roles to exclusive
+                                remote and freelance opportunities, we open up doors that traditional
+                                bootcamps simply can't.</p>
+                        </div>
+                    </div>
+
+                    <!-- Point 3 -->
+                    <div class="reasons-accordion-item">
+                        <div class="reasons-header">
+                            <div class="reasons-number"
+                                style="background: #FDBA74; color: #020617; box-shadow: 0 4px 20px rgba(253, 186, 116, 0.3);">
+                                3</div>
+                            <h3 class="reasons-title">WE PRIORITIZE CONFIDENCE & SOFT SKILLS</h3>
+                            <div class="reasons-toggle-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="reasons-content">
+                            <p style="color: #94a3b8; font-size: 1.15rem; line-height: 1.7; margin: 0;">
+                                Technical skills are easily learned, but mastering storytelling, clear
+                                thinking, and high-stakes presentation is what truly sets you apart. We
+                                build these core soft skills alongside agency-grade workflows to give you
+                                the unstoppable confidence to handle any professional challenge.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Testimonials -->
+            <div style="margin-top: 100px;">
+                <div style="text-align: center; margin-bottom: 60px;">
+                    <h3
+                        style="color: #94a3b8; font-size: 0.95rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;">
+                        What our fellows are saying</h3>
+                </div>
+
+                <div class="testi-carousel"
+                    style="display: flex; gap: 24px; overflow-x: auto; padding-bottom: 40px; scrollbar-width: none; -ms-overflow-style: none;">
+                    <style>
+                        .testi-carousel::-webkit-scrollbar {
+                            display: none;
+                        }
+
+                        .testi-card-premium {
+                            min-width: 360px;
+                            background: rgba(15, 23, 42, 0.6);
+                            border: 1px solid rgba(255, 255, 255, 0.1);
+                            backdrop-filter: blur(12px);
+                            border-radius: 24px;
+                            padding: 32px;
+                            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                        }
+
+                        .testi-card-premium:hover {
+                            transform: translateY(-8px);
+                            border-color: rgba(255, 255, 255, 0.2);
+                            background: rgba(15, 23, 42, 0.8);
+                        }
+                    </style>
+
+                    <!-- Testimonial 1 -->
+                    <div class="testi-card-premium">
+                        <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 24px;">
+                            <img src="https://i.pravatar.cc/150?img=11"
+                                style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 2px solid #FDE047;">
+                            <div>
+                                <h4 style="color: #f8fafc; font-size: 1.1rem; margin: 0; font-weight: 700;">Kyra
+                                    P.</h4>
+                                <p
+                                    style="color: #FDE047; margin: 0; font-size: 0.85rem; font-weight: 600; opacity: 0.9;">
+                                    Design Lead @ Google</p>
+                            </div>
+                        </div>
+                        <p
+                            style="color: #94a3b8; font-size: 1.05rem; line-height: 1.6; margin: 0; font-style: italic; font-family: 'Inter', sans-serif;">
+                            "The mentorship didn't just teach me UI; it taught me the 'Agency-Grade' rigor that
+                            eventually got me into Google's core team. Truly transformative."
+                        </p>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testi-card-premium">
+                        <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 24px;">
+                            <img src="https://i.pravatar.cc/150?img=47"
+                                style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 2px solid #86EFAC;">
+                            <div>
+                                <h4 style="color: #f8fafc; font-size: 1.1rem; margin: 0; font-weight: 700;">
+                                    Kavya M.
+                                </h4>
+                                <p
+                                    style="color: #86EFAC; margin: 0; font-size: 0.85rem; font-weight: 600; opacity: 0.9;">
+                                    Sr. Designer @ Netflix</p>
+                            </div>
+                        </div>
+                        <p
+                            style="color: #94a3b8; font-size: 1.05rem; line-height: 1.6; margin: 0; font-style: italic; font-family: 'Inter', sans-serif;">
+                            "Maximoat's focus on technical and life confidence gave me the edge to compete with
+                            global
+                            talent at the highest level. I walk into rooms knowing I belong."
+                        </p>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testi-card-premium">
+                        <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 24px;">
+                            <img src="https://i.pravatar.cc/150?img=12"
+                                style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 2px solid #FDBA74;">
+                            <div>
+                                <h4 style="color: #f8fafc; font-size: 1.1rem; margin: 0; font-weight: 700;">
+                                    Siddharth V.
+                                </h4>
+                                <p
+                                    style="color: #FDBA74; margin: 0; font-size: 0.85rem; font-weight: 600; opacity: 0.9;">
+                                    Product Designer @ Meta</p>
+                            </div>
+                        </div>
+                        <p
+                            style="color: #94a3b8; font-size: 1.05rem; line-height: 1.6; margin: 0; font-style: italic; font-family: 'Inter', sans-serif;">
+                            "I went from struggling with my portfolio to landing my dream role at Meta within 3
+                            months.
+                            They know exactly what Big Tech looks for."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing / Apply -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; color: #0F172A; margin-bottom: 24px; text-align: center;">Start Your
+                Acceleration</h2>
+
+            <p
+                style="color: #64748b; font-size: 1.05rem; font-weight: 500; max-width: 800px; margin: 0 auto 48px; text-align: center; line-height: 1.6;">
+                To maintain agency-grade quality, we strictly limit our monthly intake to 50 candidates only.
+                This isn't just a generic AI scan—our lead mentors manually audit every profile to ensure high-signal
+                feedback,
+                which is why the full review process takes up to 48 hours.
+            </p>
+
+            <style>
+                .steps-grid {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 32px;
+                    margin-top: 40px;
+                    max-width: 1100px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+
+                .step-card {
+                    background: #ffffff;
+                    border: 2px solid #0f172a;
+                    border-radius: 24px;
+                    padding: 40px;
+                    display: flex;
+                    flex-direction: column;
+                    box-shadow: 10px 10px 0 #0f172a;
+                    position: relative;
+                    z-index: 1;
+                }
+
+                .high-level-roadmap {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0;
+                    margin: 60px auto 40px;
+                    max-width: 1100px;
+                    position: relative;
+                }
+
+                .roadmap-node {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 12px;
+                    width: 250px;
+                    text-align: center;
+                    position: relative;
+                    z-index: 2;
+                }
+
+                .node-icon {
+                    width: 54px;
+                    height: 54px;
+                    background: #fff;
+                    border: 2px solid #0f172a;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.2rem;
+                    box-shadow: 4px 4px 0 #0f172a;
+                }
+
+                .node-label {
+                    font-size: 0.9rem;
+                    font-weight: 800;
+                    color: #0f172a;
+                    text-transform: uppercase;
+                    letter-spacing: 0.05em;
+                }
+
+                .node-subcopy {
+                    font-size: 0.8rem;
+                    color: #64748b;
+                    font-weight: 500;
+                    margin-top: -4px;
+                    line-height: 1.4;
+                }
+
+                .roadmap-line {
+                    flex-grow: 1;
+                    height: 2px;
+                    border-top: 2px dashed #cbd5e1;
+                    margin-top: -38px;
+                    position: relative;
+                    z-index: 1;
+                }
+
+                .process-badge {
+                    background: #0f172a;
+                    color: white;
+                    padding: 12px 24px;
+                    border-radius: 12px;
+                    text-align: center;
+                    font-size: 0.85rem;
+                    min-width: 200px;
+                    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    position: absolute;
+                    top: -42px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    z-index: 3;
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2px;
+                }
+
+                .process-badge .scan-line {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    width: 2px;
+                    background: linear-gradient(to bottom, transparent, #fbbf24, transparent);
+                    animation: scan 2s linear infinite;
+                    opacity: 0.5;
+                }
+
+                @keyframes scan {
+                    0% {
+                        left: 0;
+                    }
+
+                    100% {
+                        left: 100%;
+                    }
+                }
+
+                .step-number {
+                    font-size: 0.9rem;
+                    font-weight: 800;
+                    text-transform: uppercase;
+                    color: #64748b;
+                    letter-spacing: 0.1em;
+                    margin-bottom: 12px;
+                }
+
+                .step-title {
+                    font-size: 1.6rem;
+                    font-weight: 800;
+                    color: #0f172a;
+                    margin-bottom: 16px;
+                    line-height: 1.2;
+                }
+
+                .step-price {
+                    font-size: 2.5rem;
+                    font-weight: 800;
+                    color: #10b981;
+                    margin-bottom: 24px;
+                }
+
+                .step-desc {
+                    color: #475569;
+                    font-size: 1rem;
+                    line-height: 1.5;
+                    margin-bottom: 24px;
+                }
+
+                .step-features {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    color: #475569;
+                    font-size: 0.95rem;
+                }
+
+                .step-features li {
+                    display: flex;
+                    gap: 12px;
+                    margin-bottom: 14px;
+                    align-items: flex-start;
+                    font-weight: 500;
+                }
+
+                @media (max-width: 900px) {
+                    .steps-grid {
+                        grid-template-columns: 1fr;
+                        gap: 32px;
+                    }
+
+                    .high-level-roadmap {
+                        flex-direction: column;
+                        gap: 40px;
+                    }
+
+                    .roadmap-line {
+                        height: 40px;
+                        width: 2px;
+                        border-left: 2px dashed #cbd5e1;
+                        border-top: none;
+                        margin: -20px 0;
+                    }
+
+                    .process-badge {
+                        position: relative;
+                        top: 0;
+                        left: 0;
+                        transform: none;
+                        margin: 10px 0;
+                    }
+                }
+
+                .step-stack {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16px;
+                    margin-top: 20px;
+                }
+
+                .stack-option {
+                    background: white;
+                    border: 1px solid #e2e8f0;
+                    border-radius: 16px;
+                    padding: 24px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 12px;
+                    transition: all 0.3s ease;
+                }
+
+                .stack-option:hover {
+                    border-color: #0f172a;
+                    transform: translateY(-2px);
+                }
+
+                .option-info {
+                    text-align: left;
+                }
+
+                .option-title {
+                    font-size: 1.15rem;
+                    font-weight: 800;
+                    color: #0f172a;
+                    margin-bottom: 4px;
+                }
+
+                .option-desc {
+                    font-size: 0.9rem;
+                    color: #64748b;
+                }
+
+                .option-cta {
+                    padding: 10px 20px;
+                    background: #f1f5f9;
+                    color: #0f172a;
+                    border-radius: 8px;
+                    font-size: 0.85rem;
+                    font-weight: 700;
+                    text-decoration: none;
+                    white-space: nowrap;
+                    transition: all 0.2s;
+                }
+
+                .option-cta:hover {
+                    background: #0f172a;
+                    color: white;
+                }
+
+                .badge-qualify {
+                    display: inline-block;
+                    padding: 4px 8px;
+                    background: #f1f5f9;
+                    color: #475569;
+                    font-size: 0.75rem;
+                    font-weight: 700;
+                    border-radius: 6px;
+                    margin-top: 8px;
+                    text-transform: uppercase;
+                    letter-spacing: 0.02em;
+                }
+
+                .faq-container {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 40px 60px;
+                    margin-top: 80px;
+                    max-width: 1100px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    padding-top: 60px;
+                    border-top: 1px solid #e2e8f0;
+                }
+
+                @media (max-width: 850px) {
+                    .faq-container {
+                        grid-template-columns: 1fr;
+                        gap: 32px;
+                    }
+                }
+
+                .faq-item {
+                    border-bottom: 1px solid #f1f5f9;
+                    padding: 24px 0;
+                    text-align: left;
+                }
+
+                .faq-item:last-child {
+                    border-bottom: none;
+                }
+
+                .faq-question {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    cursor: pointer;
+                    font-weight: 700;
+                    color: #0f172a;
+                    font-size: 1.1rem;
+                    text-align: left;
+                }
+
+                .faq-answer {
+                    padding-top: 16px;
+                    color: #475569;
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    display: none;
+                    text-align: left;
+                }
+
+                .faq-item.active .faq-answer {
+                    display: block;
+                }
+            </style>
+
+            <div class="high-level-roadmap">
+                <div class="roadmap-node">
+                    <div class="node-icon">📋</div>
+                    <div class="node-label">1. Audit</div>
+                    <div class="node-subcopy">1:1 Consult & Portfolio Audit</div>
+                </div>
+                <div class="roadmap-line">
+                    <div class="process-badge">
+                        <div class="scan-line"></div>
+                        <span style="font-weight: 700;">AI + Design Expert Analysis</span>
+                        <span style="font-size: 0.7rem; opacity: 0.8;">Up to 48 hours</span>
+                    </div>
+                </div>
+                <div class="roadmap-node">
+                    <div class="node-icon">🚀</div>
+                    <div class="node-label">2. Transformation</div>
+                    <div class="node-subcopy">Execute Your Fast-Track</div>
+                </div>
+            </div>
+
+            <div class="steps-grid">
+                <!-- Step 1 -->
+                <div class="step-card">
+                    <div class="step-number">Step 01</div>
+                    <h3 class="step-title" style="margin-bottom: 24px;">Get Your Portfolio and Job Readiness Assessment
+                    </h3>
+                    <div style="text-align: left; width: 100%; margin-top: 4px;">
+                        <div
+                            style="font-weight: 800; color: #0f172a; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px;">
+                            What you get:</div>
+                        <ul class="step-features">
+                            <li><span>✓</span> 1:1 Consultation Session with Design Mentor</li>
+                            <li><span>✓</span> Expert Portfolio & Craft Audit</li>
+                            <li><span>✓</span> Gap Analysis Report with Next Steps</li>
+                        </ul>
+                    </div>
+
+                    <div
+                        style="background: linear-gradient(90deg, #FDE047 0%, #86EFAC 50%, #FDBA74 100%); border-radius: 20px; padding: 28px; color: #0f172a; margin-top: 24px; margin-bottom: 24px; box-shadow: 0 8px 30px rgba(253, 224, 71, 0.2); border: 1px solid rgba(255,255,255,0.3); position: relative;">
+                        <div
+                            style="font-size: 0.85rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 20px; color: #0f172a;">
+                            Limited Period Offer Hurry
+                        </div>
+                        <div
+                            style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
+                            <div style="display: flex; align-items: baseline; gap: 12px;">
+                                <span
+                                    style="font-size: 3rem; font-weight: 800; line-height: 1; color: #0f172a;">₹2,500</span>
+                                <span
+                                    style="text-decoration: line-through; opacity: 0.6; font-size: 1.3rem; font-weight: 600; color: #0f172a;">₹5,000</span>
+                            </div>
+                            <div
+                                style="background: rgba(0, 0, 0, 0.08); padding: 10px 16px; border-radius: 12px; font-weight: 900; font-size: 0.95rem; border: 1px solid rgba(0, 0, 0, 0.1); color: #0f172a;">
+                                50% OFF
+                            </div>
+                        </div>
+
+                        <a href="#" class="btn"
+                            style="display: block; width: 100%; padding: 20px; background: #0f172a; color: white; border-radius: 14px; text-decoration: none; text-align: center; font-size: 1.2rem; font-weight: 900; transition: transform 0.2s, background 0.2s; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"
+                            onmouseover="this.style.transform='scale(1.02)'; this.style.background='#1e293b';"
+                            onmouseout="this.style.transform='scale(1)'; this.style.background='#0f172a';">Continue to
+                            Pay</a>
+                    </div>
+                    <p
+                        style="font-size: 0.85rem; color: #64748b; margin-top: 12px; text-align: center; font-weight: 600;">
+                        Supports UPI and Credit Card payments</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-card"
+                    style="background: #f8fafc; border-style: dashed; border-color: #cbd5e1; box-shadow: none;">
+                    <div class="step-number">Step 02</div>
+                    <h3 class="step-title">The Transformation</h3>
+                    <p class="step-desc">After your audit, we'll enroll you in the program that guarantees your success
+                        based on your current skill level.</p>
+
+                    <div class="step-stack">
+                        <!-- Elite Outcome -->
+                        <div class="stack-option"
+                            style="border: 2px solid #10b981; background: #f0fdf4; box-shadow: 0 4px 20px rgba(16, 185, 129, 0.1);">
+                            <div class="option-info">
+                                <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+                                    <div class="badge-qualify" style="background: #dcfce7; color: #15803d; margin: 0;">
+                                        90+ SCORE</div>
+                                    <div class="badge-qualify"
+                                        style="background: #10b981; color: white; margin: 0; border: none; display: flex; align-items: center; gap: 4px;">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="white"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+                                        </svg>
+                                        VERIFIED PRO
+                                    </div>
+                                </div>
+                                <div class="option-title" style="color: #065f46;">Unlock Premium Hiring Path</div>
+                                <p class="option-desc">Direct push to hiring networks & premium roles.</p>
+                            </div>
+                        </div>
+
+                        <div class="stack-option">
+                            <div class="option-info">
+                                <div class="badge-qualify"
+                                    style="background: #dcfce7; color: #15803d; margin-top: 0; margin-bottom: 8px;">
+                                    70-89 Score</div>
+                                <div class="option-title">30-Day OTP</div>
+                                <p class="option-desc">Intensive profile & craft reset for pros.</p>
+                            </div>
+                        </div>
+
+                        <div class="stack-option">
+                            <div class="option-info">
+                                <div class="badge-qualify"
+                                    style="background: #fef9c3; color: #854d0e; margin-top: 0; margin-bottom: 8px;">
+                                    50-69 Score</div>
+                                <div class="option-title">12-Week Bootcamp</div>
+                                <p class="option-desc">Comprehensive agency-grade career shift.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Standalone FAQ Section -->
+            <div
+                style="margin-top: 80px; max-width: 1100px; margin-left: auto; margin-right: auto; background: #fff; border: 2px solid #0f172a; border-radius: 20px; box-shadow: 8px 8px 0 #0f172a; overflow: hidden; text-align: left;">
+                <div id="faq-toggle-header"
+                    style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: 24px 32px; background: white; transition: background 0.2s;">
+                    <h2 style="font-size: 1.5rem; font-weight: 800; color: #0f172a; margin: 0;">Frequently Asked
+                        Questions</h2>
+                    <span id="faq-section-icon"
+                        style="font-size: 1.2rem; transition: transform 0.4s; transform: rotate(-90deg);">▼</span>
+                </div>
+
+                <div id="faq-collapsible-content"
+                    style="display: none; padding: 0 32px 32px 32px; border-top: 1px solid #f1f5f9;">
+                    <!-- 1. Audience -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>1. Is this program for absolute beginners?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">No. Maximoat is designed for designers who know UX/UI basics but are
+                            struggling with portfolio craft, execution, or landing interviews.
+                            <div style="margin-top: 12px;"><a href="#pricing"
+                                    style="color: #6366f1; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: flex; align-items: center; gap: 4px;">Audit
+                                    My Skills Now →</a></div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Already completed a bootcamp (Moved from #9) -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>2. I’ve already completed a bootcamp and have a portfolio, but I'm still not getting
+                                hired. Can Maximoat help?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">This is a very common challenge. Most bootcamp portfolios end up looking
+                            "cookie-cutter" and templated, often lacking the strategic product thinking depth that
+                            top-tier companies look for. Maximoat’s expert-led audit and transformation program helps
+                            you bridge these specific gaps, moving beyond generic templates to build a "Decision-Ready"
+                            profile that truly stands out to recruiters.
+                            <div style="margin-top: 12px;"><a href="#pricing"
+                                    style="color: #6366f1; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: flex; align-items: center; gap: 4px;">Audit
+                                    My Portfolio Now →</a></div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Audit & Fee (Combined) -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>3. Why is there a ₹2,500 fee for the Audit and is it deductible?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">Unlike generic automated scans, this is an AI + Design Expert audit that
+                            requires a manual human review to produce a comprehensive Gap Analysis report. While
+                            comparable programs charge ₹10,000+, we keep this fee low and ensure it is **fully
+                            deductible** from your main program enrollment fee (30-day or 12-week).
+                            <div style="margin-top: 12px;"><a href="#pricing"
+                                    style="color: #6366f1; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: flex; align-items: center; gap: 4px;">Book
+                                    Your Expert Audit →</a></div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Timeline -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>4. When will my consultation happen?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">Your 1:1 session is typically scheduled within 48 hours of booking.
+                            You'll receive a calendar link immediately after payment.
+                            <div style="margin-top: 12px;"><a href="#pricing"
+                                    style="color: #6366f1; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: flex; align-items: center; gap: 4px;">Book
+                                    Your Audit Now →</a></div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Scoring & Verification -->
+                    <div class="faq-item" id="faq-verified-pro">
+                        <div class="faq-question">
+                            <span>5. How do I qualify for the Verified Pro badge?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">There will be an assessment that you will need to pass to qualify for
+                            the verified badge. Once you pass all our assessments, you'll receive a verified badge which
+                            industry recruiters can look up against our site.
+                            <div style="margin-top: 12px;"><a href="#pricing"
+                                    style="color: #6366f1; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: flex; align-items: center; gap: 4px;">Get
+                                    Verified Now →</a></div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>6. What happens if my score is below 50?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">If your score is below 50, we evaluate your profile on a case-by-case
+                            basis. If we identify clear opportunities for transformation within our framework, we'll
+                            reach out for a separate conversation to figure out the best next steps for your career.
+                            <div style="margin-top: 12px;"><a href="#pricing"
+                                    style="color: #6366f1; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: flex; align-items: center; gap: 4px;">Check
+                                    Eligibility Anyway →</a></div>
+                        </div>
+                    </div>
+
+                    <!-- 7. Flexibility -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>7. Can I switch programs later?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">Absolutely. Our mentors will evaluate your portfolio and suggest whether
+                            you need a fast-track reset or a deep-dive cohort.
+                            <div style="margin-top: 12px;"><a href="#pricing"
+                                    style="color: #6366f1; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: flex; align-items: center; gap: 4px;">Let
+                                    Mentors Decide for You →</a></div>
+                        </div>
+                    </div>
+
+                    <!-- 8. Placement -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>8. Do you offer placement guarantees?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">We provide high-intensity leads, direct recruiter access, and the exact
+                            craft required to get hired. We don't sell "guarantees"—we build competence that converts.
+                            <div style="margin-top: 12px;"><a href="#pricing"
+                                    style="color: #6366f1; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: flex; align-items: center; gap: 4px;">Start
+                                    My Transformation →</a></div>
+                        </div>
+                    </div>
+
+                    <!-- 9. Program Fees -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>9. What are your program fees for 30-day and 12-week bootcamp?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">The official program fees are ₹30,000 for the 30-Day Fast-Track and
+                            ₹1,00,000 for the 12-Week Bootcamp. Note that there could be time-to-time discounts
+                            available depending on your enrollment window.
+                            <div style="margin-top: 12px;"><a href="#pricing"
+                                    style="color: #6366f1; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: flex; align-items: center; gap: 4px;">Book
+                                    Your Audit to Get Started →</a></div>
+                        </div>
+                    </div>
+
+                    <!-- 10. Why Maximoat? -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>10. Why did we start Maximoat?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">Maximoat was the brainchild of Rajesh and the team at 91signals. With
+                            over 20 years in the industry, they’ve worked with countless designers and seen them grow
+                            and prosper. As AI reshapes the future, pure execution jobs will become harder to find,
+                            giving those with strong product thinking and soft skills a massive advantage. We started
+                            Maximoat to help designers stay ahead of this curve, with plans to scale to other
+                            professions soon.
+                            <div style="margin-top: 12px;"><a href="#pricing"
+                                    style="color: #6366f1; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: flex; align-items: center; gap: 4px;">Join
+                                    the Future of Design →</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <footer class="footer" id="footer" style="border-top: none; padding-top: 40px;">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="assets/logo.svg" style="filter: brightness(0); opacity: 0.6; margin-bottom: 24px;"
+                        height="30">
+                    <p>Empowering the next generation of design leaders through AI native UX Bootcamp-driven
+                        mentorship
+                        and
+                        agency-grade
+                        training.</p>
+                </div>
+                <div>
+                    <h4>Programs</h4>
+                    <a href="#">UX Pro Bootcamp</a>
+                    <a href="#">Job Booster</a>
+                    <a href="#">Mentorship</a>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Success Stories</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 80px; opacity: 0.3; font-size: 0.85rem;">
+                &copy; 2024 Maximoat. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <!-- Video Modal -->
+    <div id="videoModal"
+        style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 9999; align-items: center; justify-content: center; padding: 20px;">
+        <div
+            style="position: relative; width: 100%; max-width: 900px; aspect-ratio: 16/9; background: #000; border-radius: 12px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);">
+            <button onclick="closeVideoModal()"
+                style="position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.2); border: none; width: 40px; height: 40px; border-radius: 50%; color: white; font-size: 24px; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center;">&times;</button>
+            <video id="modalVideo" controls style="width: 100%; height: 100%;">
+                <source src="" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <script>
+        function openVideoModal(videoSrc) {
+            const modal = document.getElementById('videoModal');
+            const video = document.getElementById('modalVideo');
+            video.src = videoSrc;
+            modal.style.display = 'flex';
+            video.play();
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const video = document.getElementById('modalVideo');
+            video.pause();
+            video.src = "";
+            modal.style.display = 'none';
+        }
+
+        // Close on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeVideoModal();
+        });
+
+        // Close on clicking background
+        document.getElementById('videoModal').addEventListener('click', (e) => {
+            if (e.target.id === 'videoModal') closeVideoModal();
+        });
+    </script>
+
+    <script>
+        // Initialize animations and interactive pieces when DOM is ready
+        window.addEventListener('DOMContentLoaded', () => {
+
+            // FAQ Section Collapsibility
+            const faqHeader = document.getElementById('faq-toggle-header');
+            const faqContent = document.getElementById('faq-collapsible-content');
+            const faqSectionIcon = document.getElementById('faq-section-icon');
+
+            if (faqHeader && faqContent) {
+                faqHeader.addEventListener('click', () => {
+                    const isHidden = faqContent.style.display === 'none' || faqContent.style.display === '';
+                    faqContent.style.display = isHidden ? 'block' : 'none';
+                    faqSectionIcon.style.transform = isHidden ? 'rotate(0deg)' : 'rotate(-90deg)';
+                    faqHeader.style.background = isHidden ? '#f8fafc' : 'white';
+                });
+            }
+
+            // Individual FAQ Item Accordion Logic
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+
+                    // Close all other items
+                    faqItems.forEach(otherItem => otherItem.classList.remove('active'));
+                    document.querySelectorAll('.faq-icon').forEach(icon => icon.innerText = '+');
+
+                    if (!isActive) {
+                        item.classList.add('active');
+                        item.querySelector('.faq-icon').innerText = '−';
+                    }
+                });
+            });
+
+            // Handle Verify Pro link from hero
+            const verifyProLink = document.querySelector('a[href="#faq-verified-pro"]');
+            if (verifyProLink) {
+                verifyProLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    // 1. Open the main FAQ section if it's closed
+                    if (faqContent.style.display === 'none' || faqContent.style.display === '') {
+                        faqHeader.click();
+                    }
+
+                    // 2. Scroll to the specific FAQ item
+                    const targetItem = document.getElementById('faq-verified-pro');
+                    if (targetItem) {
+                        targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                        // 3. Open the specific item if it's not already open
+                        setTimeout(() => {
+                            if (!targetItem.classList.contains('active')) {
+                                targetItem.querySelector('.faq-question').click();
+                            }
+                        }, 500); // Small delay to allow main section to open
+                    }
+                });
+            }
+
+            // Reasons Accordion Logic
+            const reasonItems = document.querySelectorAll('.reasons-accordion-item');
+            reasonItems.forEach(item => {
+                const header = item.querySelector('.reasons-header');
+                header.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    reasonItems.forEach(i => i.classList.remove('active'));
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // Trust Toolbar Live Joining Animation
+        let count = 306;
+        const avatarColors = ['#F87171', '#3B82F6', '#10B981', '#F59E0B', '#8B5CF6', '#EC4899'];
+        const names = ['AS', 'JD', 'MK', 'RP', 'SL', 'BT', 'GW', 'HN', 'KZ', 'MQ'];
+        const MAX_AVATARS = 5;
+
+        function addNewJoiner() {
+            count++;
+
+            // Update all count displays
+            document.querySelectorAll('.trust-count-val').forEach(el => {
+                el.innerText = `${count} Designers`;
+            });
+
+            // Get all avatar groups
+            const avatarGroups = document.querySelectorAll('.trust-avatars-list');
+
+            avatarGroups.forEach(group => {
+                let newElement;
+                const isInitial = Math.random() > 0.6;
+
+                if (isInitial) {
+                    newElement = document.createElement('div');
+                    newElement.className = 'tb-avatar';
+                    newElement.innerText = names[Math.floor(Math.random() * names.length)];
+                    newElement.style.background = avatarColors[Math.floor(Math.random() * avatarColors.length)];
+                    newElement.style.color = 'white';
+                } else {
+                    newElement = document.createElement('img');
+                    const randomId = Math.floor(Math.random() * 70);
+                    newElement.src = `https://i.pravatar.cc/100?img=${randomId}`;
+                    newElement.className = 'tb-avatar';
+                }
+
+                newElement.style.opacity = '0';
+                newElement.style.transform = 'scale(0) translateX(20px)';
+
+                group.appendChild(newElement);
+
+                gsap.to(newElement, {
+                    opacity: 1,
+                    scale: 1,
+                    x: 0,
+                    duration: 0.5,
+                    ease: "back.out(1.7)"
+                });
+
+                // Maintain strict limit of MAX_AVATARS
+                if (group.children.length > MAX_AVATARS) {
+                    const first = group.children[0];
+                    gsap.to(first, {
+                        opacity: 0,
+                        scale: 0,
+                        width: 0,
+                        margin: 0,
+                        duration: 0.4,
+                        onComplete: () => first.remove()
+                    });
+                }
+            });
+        }
+
+        // Randomly add new joiners
+        setInterval(() => {
+            if (Math.random() > 0.7) {
+                addNewJoiner();
+            }
+        }, 4000);
+
+        // Initial delay
+        setTimeout(addNewJoiner, 2000);
+
+        // Placeholder Typewriter & Platform Icon Animation
+        const scorers = document.querySelectorAll('.scorer-input-wrapper');
+        const platformIconsList = [
+            "https://cdn.simpleicons.org/behance/121212",
+            "https://cdn.simpleicons.org/dribbble/121212",
+            "https://cdn.simpleicons.org/figma/121212",
+            "https://cdn.simpleicons.org/framer/121212"
+        ];
+        const finalTextString = "Paste portfolio link...";
+
+        scorers.forEach((wrapper, index) => {
+            const input = wrapper.querySelector('.scorer-input');
+            const iconContainer = wrapper.querySelector('.platform-icon-container');
+            const platformIcon = wrapper.querySelector('.platform-icon');
+
+            let iconIdx = 0;
+            let charIdx = 0;
+            let isDeletingText = false;
+            let animationsActive = true;
+
+            if (input && iconContainer && platformIcon) {
+                function startPlatformAnimation() {
+                    if (!animationsActive) return;
+                    platformIcon.src = platformIconsList[iconIdx];
+                    iconContainer.classList.add('visible');
+
+                    setTimeout(() => {
+                        if (!animationsActive) return;
+                        iconContainer.classList.remove('visible');
+                        setTimeout(() => {
+                            if (!animationsActive) return;
+                            iconIdx = (iconIdx + 1) % platformIconsList.length;
+                            startPlatformAnimation();
+                        }, 500);
+                    }, 1500);
+                }
+
+                function startTypewriter() {
+                    if (!animationsActive) return;
+                    const cursor = "|";
+                    const speed = isDeletingText ? 50 : 100;
+
+                    if (!isDeletingText && charIdx <= finalTextString.length) {
+                        input.placeholder = finalTextString.substring(0,
+                            charIdx++) + cursor;
+                    } else if (isDeletingText && charIdx >= 0) {
+                        input.placeholder = finalTextString.substring(0, charIdx--) + cursor;
+                    }
+
+                    if (charIdx > finalTextString.length) {
+                        isDeletingText = true;
+                        setTimeout(startTypewriter, 3000);
+                        return;
+                    } else if (charIdx < 0) { isDeletingText = false; setTimeout(startTypewriter, 1000); return; }
+                    setTimeout(startTypewriter, speed);
+                } input.addEventListener('focus', () => {
+                    animationsActive = false;
+                    input.placeholder = "";
+                    iconContainer.classList.remove('visible');
+                });
+
+                setTimeout(() => {
+                    if (animationsActive) {
+                        startPlatformAnimation();
+                        startTypewriter();
+                    }
+                }, 1000 + (index * 200)); // Slight stagger for multiple modules
+            }
+        });
+
+        // Header Scroll functionality
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+
+</html>
