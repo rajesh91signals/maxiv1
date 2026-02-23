@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment | Maximoat</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="assets/mark.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Merriweather:ital,wght@1,700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            background: #020617;
+            color: #f8fafc;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .payment-container {
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 32px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 1;
+        }
+
+        .mesh-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 30%, rgba(79, 70, 229, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 2.5rem;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .contact-card {
+            background: #0f172a;
+            border-radius: 20px;
+            padding: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: inline-block;
+        }
+
+        .email-link {
+            color: #818cf8;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1.2rem;
+            display: block;
+            margin-top: 8px;
+        }
+
+        .email-link:hover {
+            text-decoration: underline;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 32px;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 40px;
+            color: #64748b;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .back-btn:hover {
+            color: #f8fafc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mesh-bg"></div>
+
+    <div class="payment-container">
+        <div class="status-badge">
+            <span
+                style="width: 8px; height: 8px; background: #10b981; border-radius: 50%; display: block; animation: pulse 2s infinite;"></span>
+            Integrating Fast-Pay Gateways
+        </div>
+
+        <h1>Under Construction</h1>
+        <p>We are busy building this page and integrating secure payment gateways to provide you with a smooth checkout
+            experience.</p>
+
+        <div class="contact-card">
+            <span
+                style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; color: #64748b; font-weight: 800;">Get
+                Payment Link</span>
+            <a href="mailto:hello@91signals.com" class="email-link">hello@91signals.com</a>
+        </div>
+
+        <div>
+            <a href="job_booster.html" class="back-btn">← Back to Job Booster</a>
+        </div>
+    </div>
+
+    <style>
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+            }
+
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+            }
+
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+            }
+        }
+    </style>
+</body>
+
+</html>
