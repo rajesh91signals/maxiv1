@@ -1868,23 +1868,11 @@
                     }
                 });
             });
-        });
 
-        // Trust Toolbar Live Joining Animation
-        let count = 306;
-        const avatarColors = ['#F87171', '#3B82F6', '#10B981', '#F59E0B', '#8B5CF6', '#EC4899'];
-        const names = ['AS', 'JD', 'MK', 'RP', 'SL', 'BT', 'GW', 'HN', 'KZ', 'MQ'];
-        const MAX_AVATARS = 5;
+            // 1. GSAP Initialization
+            gsap.registerPlugin(ScrollTrigger);
 
-        function addNewJoiner() {
-            count++;
-
-            // Update all count displays
-            document.querySelectorAll('.trust-count-val').forEach(el => {
-                el.innerText = `${count} Designers`;
-            });
-
-            // 1. SCROLL REVEALS
+            // 2. SCROLL REVEALS
             const reveals = [
                 {
                     trigger: '.programs-header',
@@ -1926,7 +1914,7 @@
                 }
             });
 
-            // 2. HERO ENTRANCE (Immediate)
+            // 3. HERO ENTRANCE (Immediate)
             gsap.from(".hero-scorer-card", {
                 opacity: 0,
                 scale: 0.95,
@@ -1935,27 +1923,21 @@
                 delay: 0.6,
                 ease: "power4.out"
             });
+        });
 
-            // 3. CARD-SPECIFIC ANIMATIONS
-            document.querySelectorAll('.flagship-card, .job-booster-card, .bento-card, .profile-span-card').forEach(card => {
-                const bullets = card.querySelectorAll('ul li');
-                if (bullets.length > 0) {
-                    gsap.from(bullets, {
-                        scrollTrigger: {
-                            trigger: card,
-                            start: "top 75%",
-                        },
-                        x: -20,
-                        opacity: 0,
-                        duration: 0.8,
-                        stagger: 0.1,
-                        ease: "power2.out"
-                    });
-                }
+        // Trust Toolbar Live Joining Animation
+        let count = 306;
+        const avatarColors = ['#F87171', '#3B82F6', '#10B981', '#F59E0B', '#8B5CF6', '#EC4899'];
+        const names = ['AS', 'JD', 'MK', 'RP', 'SL', 'BT', 'GW', 'HN', 'KZ', 'MQ'];
+        const MAX_AVATARS = 5;
+
+        function addNewJoiner() {
+            count++;
+
+            // Update all count displays
+            document.querySelectorAll('.trust-count-val').forEach(el => {
+                el.innerText = `${count} Designers`;
             });
-
-            // 4. Register ScrollTrigger
-            gsap.registerPlugin(ScrollTrigger);
 
             // Get all avatar groups
             const avatarGroups = document.querySelectorAll('.trust-avatars-list');
