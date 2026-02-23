@@ -123,7 +123,7 @@
                         <div class="toolbar-divider"></div>
                         <div class="toolbar-stat">
                             <div class="status-indicator"></div>
-                            <span class="trust-count-val">301 Designers</span>
+                            <span class="trust-count-val">306 Designers</span>
                         </div>
                         <button class="toolbar-btn">Join</button>
                     </div>
@@ -476,7 +476,7 @@
                         <div class="card-content-side">
                             <div class="card-tag-row">
                                 <span class="pc-tag">12
-                                    Week Cohort</span>
+                                    Weeks Cohort</span>
                                 <span class="pc-tag">Live
                                     + On-Demand</span>
                             </div>
@@ -536,7 +536,7 @@
                                             <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
                                         </svg>
                                     </div>
-                                    <span class="bs-trigger-title">Full 12-Week Curriculum</span>
+                                    <span class="bs-trigger-title">Full 12-Weeks Curriculum</span>
                                 </div>
                                 <span class="bs-trigger-icon">
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -592,7 +592,7 @@
                                     </div>
                                     <div class="pc-b-plus">+</div>
                                     <div class="pc-breakdown-item">
-                                        <div class="pc-b-title">90 Day Job<br>Booster</div>
+                                        <div class="pc-b-title">90 Days Job<br>Booster</div>
                                         <div class="pc-b-price">&#8377;30,000</div>
                                     </div>
                                 </div>
@@ -615,7 +615,7 @@
 
                         <div class="card-content-side">
                             <div class="card-tag-row">
-                                <span class="pc-tag">30 Day FastTrack</span>
+                                <span class="pc-tag">30 Days FastTrack</span>
                                 <span class="pc-tag">Outcome Focused</span>
                             </div>
 
@@ -705,7 +705,7 @@
 
                                 <button class="pc-black-btn mt-4">Book Now</button>
                                 <a href="#" class="pc-learn-more block-link">Learn about job booster 30
-                                    day<br>program</a>
+                                    days<br>program</a>
                             </div>
                         </div>
 
@@ -1384,9 +1384,10 @@
 
 
             // Trust Toolbar Live Joining Animation
-            let count = 301;
+            let count = 306;
             const avatarColors = ['#F87171', '#3B82F6', '#10B981', '#F59E0B', '#8B5CF6', '#EC4899'];
             const names = ['AS', 'JD', 'MK', 'RP', 'SL', 'BT', 'GW', 'HN', 'KZ', 'MQ'];
+            const MAX_AVATARS = 5;
 
             function addNewJoiner() {
                 count++;
@@ -1429,15 +1430,15 @@
                         ease: "back.out(1.7)"
                     });
 
-                    // Keep only last 5-6 avatars
-                    if (group.children.length > 5) {
+                    // Maintain strict limit of MAX_AVATARS
+                    if (group.children.length > MAX_AVATARS) {
                         const first = group.children[0];
                         gsap.to(first, {
                             opacity: 0,
                             scale: 0,
                             width: 0,
                             margin: 0,
-                            duration: 0.5,
+                            duration: 0.4,
                             onComplete: () => first.remove()
                         });
                     }
@@ -1560,67 +1561,99 @@
                 <button class="bs-close" onclick="closeBottomSheet('sheet-faq-details')">&times;</button>
             </div>
             <div class="bs-body">
-                    <div class="pc-accordion" style="margin-bottom:12px; border:1px solid #e2e8f0; border-radius:12px; background:#fff;" onclick="toggleAcceleratorAccordion('who-is-this-program-for-')">
-                        <div class="pc-accordion-header" style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer;">
-                            <strong style="color: #1e293b; font-size: 1.05rem; margin:0;">Who is this program for?</strong>
-                            <span class="pc-accordion-chevron" id="who-is-this-program-for--icon" style="color: #94a3b8; font-weight:bold; font-size:1.2rem;">−</span>
-                        </div>
-                        <div id="who-is-this-program-for--content" class="pc-accordion-content open" style="overflow:hidden; transition:max-height 0.3s ease;">
-                            <div class="pc-accordion-body" style="padding: 0 20px 20px;">
-                                <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0;">For ambitious freshers, career switchers, pixel-pushers seeking complex work, and aspiring
-                        freelancers.</p>
-                            </div>
-                        </div>
+                <div class="pc-accordion"
+                    style="margin-bottom:12px; border:1px solid #e2e8f0; border-radius:12px; background:#fff;"
+                    onclick="toggleAcceleratorAccordion('who-is-this-program-for-')">
+                    <div class="pc-accordion-header"
+                        style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer;">
+                        <strong style="color: #1e293b; font-size: 1.05rem; margin:0;">Who is this program for?</strong>
+                        <span class="pc-accordion-chevron" id="who-is-this-program-for--icon"
+                            style="color: #94a3b8; font-weight:bold; font-size:1.2rem;">−</span>
                     </div>
-                    <div class="pc-accordion" style="margin-bottom:12px; border:1px solid #e2e8f0; border-radius:12px; background:#fff;" onclick="toggleAcceleratorAccordion('what-tools-will-i-learn-')">
-                        <div class="pc-accordion-header" style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer;">
-                            <strong style="color: #1e293b; font-size: 1.05rem; margin:0;">What tools will I learn?</strong>
-                            <span class="pc-accordion-chevron" id="what-tools-will-i-learn--icon" style="color: #94a3b8; font-weight:bold; font-size:1.2rem;">+</span>
-                        </div>
-                        <div id="what-tools-will-i-learn--content" class="pc-accordion-content" style="overflow:hidden; transition:max-height 0.3s ease;">
-                            <div class="pc-accordion-body" style="padding: 0 20px 20px;">
-                                <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0;">You will master an AI-native stack including NotebookLM, AI Studio, Figma AI, Jitter, and
-                        Claude/GPT-4o.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pc-accordion" style="margin-bottom:12px; border:1px solid #e2e8f0; border-radius:12px; background:#fff;" onclick="toggleAcceleratorAccordion('what-projects-will-i-build-')">
-                        <div class="pc-accordion-header" style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer;">
-                            <strong style="color: #1e293b; font-size: 1.05rem; margin:0;">What projects will I build?</strong>
-                            <span class="pc-accordion-chevron" id="what-projects-will-i-build--icon" style="color: #94a3b8; font-weight:bold; font-size:1.2rem;">+</span>
-                        </div>
-                        <div id="what-projects-will-i-build--content" class="pc-accordion-content" style="overflow:hidden; transition:max-height 0.3s ease;">
-                            <div class="pc-accordion-body" style="padding: 0 20px 20px;">
-                                <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0;">You will build two industry-grade products: an E-Learning platform and a complex FinTech
-                        experience.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pc-accordion" style="margin-bottom:12px; border:1px solid #e2e8f0; border-radius:12px; background:#fff;" onclick="toggleAcceleratorAccordion('who-are-the-mentors-')">
-                        <div class="pc-accordion-header" style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer;">
-                            <strong style="color: #1e293b; font-size: 1.05rem; margin:0;">Who are the mentors?</strong>
-                            <span class="pc-accordion-chevron" id="who-are-the-mentors--icon" style="color: #94a3b8; font-weight:bold; font-size:1.2rem;">+</span>
-                        </div>
-                        <div id="who-are-the-mentors--content" class="pc-accordion-content" style="overflow:hidden; transition:max-height 0.3s ease;">
-                            <div class="pc-accordion-body" style="padding: 0 20px 20px;">
-                                <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0;">You'll learn from experienced practitioners and agency veterans who design, ship, and lead
-                        real products.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pc-accordion" style="margin-bottom:12px; border:1px solid #e2e8f0; border-radius:12px; background:#fff;" onclick="toggleAcceleratorAccordion('will-this-help-me-get-a-job-')">
-                        <div class="pc-accordion-header" style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer;">
-                            <strong style="color: #1e293b; font-size: 1.05rem; margin:0;">Will this help me get a job?</strong>
-                            <span class="pc-accordion-chevron" id="will-this-help-me-get-a-job--icon" style="color: #94a3b8; font-weight:bold; font-size:1.2rem;">+</span>
-                        </div>
-                        <div id="will-this-help-me-get-a-job--content" class="pc-accordion-content" style="overflow:hidden; transition:max-height 0.3s ease;">
-                            <div class="pc-accordion-body" style="padding: 0 20px 20px;">
-                                <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0;">Yes, the program focuses equally on craft, portfolio building, soft skills, and direct
-                        networking with founders to make you job-ready.</p>
-                            </div>
+                    <div id="who-is-this-program-for--content" class="pc-accordion-content open"
+                        style="overflow:hidden; transition:max-height 0.3s ease;">
+                        <div class="pc-accordion-body" style="padding: 0 20px 20px;">
+                            <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0;">For ambitious
+                                freshers, career switchers, pixel-pushers seeking complex work, and aspiring
+                                freelancers.</p>
                         </div>
                     </div>
                 </div>
+                <div class="pc-accordion"
+                    style="margin-bottom:12px; border:1px solid #e2e8f0; border-radius:12px; background:#fff;"
+                    onclick="toggleAcceleratorAccordion('what-tools-will-i-learn-')">
+                    <div class="pc-accordion-header"
+                        style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer;">
+                        <strong style="color: #1e293b; font-size: 1.05rem; margin:0;">What tools will I learn?</strong>
+                        <span class="pc-accordion-chevron" id="what-tools-will-i-learn--icon"
+                            style="color: #94a3b8; font-weight:bold; font-size:1.2rem;">+</span>
+                    </div>
+                    <div id="what-tools-will-i-learn--content" class="pc-accordion-content"
+                        style="overflow:hidden; transition:max-height 0.3s ease;">
+                        <div class="pc-accordion-body" style="padding: 0 20px 20px;">
+                            <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0;">You will master
+                                an AI-native stack including NotebookLM, AI Studio, Figma AI, Jitter, and
+                                Claude/GPT-4o.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pc-accordion"
+                    style="margin-bottom:12px; border:1px solid #e2e8f0; border-radius:12px; background:#fff;"
+                    onclick="toggleAcceleratorAccordion('what-projects-will-i-build-')">
+                    <div class="pc-accordion-header"
+                        style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer;">
+                        <strong style="color: #1e293b; font-size: 1.05rem; margin:0;">What projects will I
+                            build?</strong>
+                        <span class="pc-accordion-chevron" id="what-projects-will-i-build--icon"
+                            style="color: #94a3b8; font-weight:bold; font-size:1.2rem;">+</span>
+                    </div>
+                    <div id="what-projects-will-i-build--content" class="pc-accordion-content"
+                        style="overflow:hidden; transition:max-height 0.3s ease;">
+                        <div class="pc-accordion-body" style="padding: 0 20px 20px;">
+                            <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0;">You will build
+                                two industry-grade products: an E-Learning platform and a complex FinTech
+                                experience.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pc-accordion"
+                    style="margin-bottom:12px; border:1px solid #e2e8f0; border-radius:12px; background:#fff;"
+                    onclick="toggleAcceleratorAccordion('who-are-the-mentors-')">
+                    <div class="pc-accordion-header"
+                        style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer;">
+                        <strong style="color: #1e293b; font-size: 1.05rem; margin:0;">Who are the mentors?</strong>
+                        <span class="pc-accordion-chevron" id="who-are-the-mentors--icon"
+                            style="color: #94a3b8; font-weight:bold; font-size:1.2rem;">+</span>
+                    </div>
+                    <div id="who-are-the-mentors--content" class="pc-accordion-content"
+                        style="overflow:hidden; transition:max-height 0.3s ease;">
+                        <div class="pc-accordion-body" style="padding: 0 20px 20px;">
+                            <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0;">You'll learn
+                                from experienced practitioners and agency veterans who design, ship, and lead
+                                real products.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pc-accordion"
+                    style="margin-bottom:12px; border:1px solid #e2e8f0; border-radius:12px; background:#fff;"
+                    onclick="toggleAcceleratorAccordion('will-this-help-me-get-a-job-')">
+                    <div class="pc-accordion-header"
+                        style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer;">
+                        <strong style="color: #1e293b; font-size: 1.05rem; margin:0;">Will this help me get a
+                            job?</strong>
+                        <span class="pc-accordion-chevron" id="will-this-help-me-get-a-job--icon"
+                            style="color: #94a3b8; font-weight:bold; font-size:1.2rem;">+</span>
+                    </div>
+                    <div id="will-this-help-me-get-a-job--content" class="pc-accordion-content"
+                        style="overflow:hidden; transition:max-height 0.3s ease;">
+                        <div class="pc-accordion-body" style="padding: 0 20px 20px;">
+                            <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0;">Yes, the program
+                                focuses equally on craft, portfolio building, soft skills, and direct
+                                networking with founders to make you job-ready.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1633,67 +1666,102 @@
                 <button class="bs-close" onclick="closeBottomSheet('sheet-ft-faq-details')">&times;</button>
             </div>
             <div class="bs-body">
-                    <div class="pc-accordion" style="margin-bottom:12px; border:1px solid #e2e8f0; border-radius:12px; background:#fff;" onclick="toggleAcceleratorAccordion('who-is-the-job-booster-program-for-')">
-                        <div class="pc-accordion-header" style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer;">
-                            <strong style="color: #1e293b; font-size: 1.05rem; margin:0;">Who is the Job Booster program for?</strong>
-                            <span class="pc-accordion-chevron" id="who-is-the-job-booster-program-for--icon" style="color: #94a3b8; font-weight:bold; font-size:1.2rem;">−</span>
-                        </div>
-                        <div id="who-is-the-job-booster-program-for--content" class="pc-accordion-content open" style="overflow:hidden; transition:max-height 0.3s ease;">
-                            <div class="pc-accordion-body" style="padding: 0 20px 20px;">
-                                <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0;">It is ideal for designers with basic training, self-taught designers, or career switchers
-                        struggling to get interviews.</p>
-                            </div>
+                <div class="pc-accordion"
+                    style="margin-bottom:12px; border:1px solid #e2e8f0; border-radius:12px; background:#fff;"
+                    onclick="toggleAcceleratorAccordion('who-is-the-job-booster-program-for-')">
+                    <div class="pc-accordion-header"
+                        style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer;">
+                        <strong style="color: #1e293b; font-size: 1.05rem; margin:0;">Who is the Job Booster program
+                            for?</strong>
+                        <span class="pc-accordion-chevron" id="who-is-the-job-booster-program-for--icon"
+                            style="color: #94a3b8; font-weight:bold; font-size:1.2rem;">−</span>
+                    </div>
+                    <div id="who-is-the-job-booster-program-for--content" class="pc-accordion-content open"
+                        style="overflow:hidden; transition:max-height 0.3s ease;">
+                        <div class="pc-accordion-body" style="padding: 0 20px 20px;">
+                            <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0;">It is ideal for
+                                designers with basic training, self-taught designers, or career switchers
+                                struggling to get interviews.</p>
                         </div>
                     </div>
-                    <div class="pc-accordion" style="margin-bottom:12px; border:1px solid #e2e8f0; border-radius:12px; background:#fff;" onclick="toggleAcceleratorAccordion('what-can-i-expect-in-30-days-')">
-                        <div class="pc-accordion-header" style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer;">
-                            <strong style="color: #1e293b; font-size: 1.05rem; margin:0;">What can I expect in 30 days?</strong>
-                            <span class="pc-accordion-chevron" id="what-can-i-expect-in-30-days--icon" style="color: #94a3b8; font-weight:bold; font-size:1.2rem;">+</span>
-                        </div>
-                        <div id="what-can-i-expect-in-30-days--content" class="pc-accordion-content" style="overflow:hidden; transition:max-height 0.3s ease;">
-                            <div class="pc-accordion-body" style="padding: 0 20px 20px;">
-                                <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0;">You will have a recruiter-ready portfolio, strong storytelling, a structured job
-                        strategy, and active interview calls.</p>
-                            </div>
+                </div>
+                <div class="pc-accordion"
+                    style="margin-bottom:12px; border:1px solid #e2e8f0; border-radius:12px; background:#fff;"
+                    onclick="toggleAcceleratorAccordion('what-can-i-expect-in-30-days-')">
+                    <div class="pc-accordion-header"
+                        style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer;">
+                        <strong style="color: #1e293b; font-size: 1.05rem; margin:0;">What can I expect in 30
+                            days?</strong>
+                        <span class="pc-accordion-chevron" id="what-can-i-expect-in-30-days--icon"
+                            style="color: #94a3b8; font-weight:bold; font-size:1.2rem;">+</span>
+                    </div>
+                    <div id="what-can-i-expect-in-30-days--content" class="pc-accordion-content"
+                        style="overflow:hidden; transition:max-height 0.3s ease;">
+                        <div class="pc-accordion-body" style="padding: 0 20px 20px;">
+                            <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0;">You will have a
+                                recruiter-ready portfolio, strong storytelling, a structured job
+                                strategy, and active interview calls.</p>
                         </div>
                     </div>
-                    <div class="pc-accordion" style="margin-bottom:12px; border:1px solid #e2e8f0; border-radius:12px; background:#fff;" onclick="toggleAcceleratorAccordion('is-this-a-purely-self-paced-course-')">
-                        <div class="pc-accordion-header" style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer;">
-                            <strong style="color: #1e293b; font-size: 1.05rem; margin:0;">Is this a purely self-paced course?</strong>
-                            <span class="pc-accordion-chevron" id="is-this-a-purely-self-paced-course--icon" style="color: #94a3b8; font-weight:bold; font-size:1.2rem;">+</span>
-                        </div>
-                        <div id="is-this-a-purely-self-paced-course--content" class="pc-accordion-content" style="overflow:hidden; transition:max-height 0.3s ease;">
-                            <div class="pc-accordion-body" style="padding: 0 20px 20px;">
-                                <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0;">No, you receive dedicated career mentoring, 3 live 1:1 sessions, weekly group coaching,
-                        and portfolio review clinics.</p>
-                            </div>
+                </div>
+                <div class="pc-accordion"
+                    style="margin-bottom:12px; border:1px solid #e2e8f0; border-radius:12px; background:#fff;"
+                    onclick="toggleAcceleratorAccordion('is-this-a-purely-self-paced-course-')">
+                    <div class="pc-accordion-header"
+                        style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer;">
+                        <strong style="color: #1e293b; font-size: 1.05rem; margin:0;">Is this a purely self-paced
+                            course?</strong>
+                        <span class="pc-accordion-chevron" id="is-this-a-purely-self-paced-course--icon"
+                            style="color: #94a3b8; font-weight:bold; font-size:1.2rem;">+</span>
+                    </div>
+                    <div id="is-this-a-purely-self-paced-course--content" class="pc-accordion-content"
+                        style="overflow:hidden; transition:max-height 0.3s ease;">
+                        <div class="pc-accordion-body" style="padding: 0 20px 20px;">
+                            <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0;">No, you receive
+                                dedicated career mentoring, 3 live 1:1 sessions, weekly group coaching,
+                                and portfolio review clinics.</p>
                         </div>
                     </div>
-                    <div class="pc-accordion" style="margin-bottom:12px; border:1px solid #e2e8f0; border-radius:12px; background:#fff;" onclick="toggleAcceleratorAccordion('does-the-program-help-me-find-jobs-')">
-                        <div class="pc-accordion-header" style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer;">
-                            <strong style="color: #1e293b; font-size: 1.05rem; margin:0;">Does the program help me find jobs?</strong>
-                            <span class="pc-accordion-chevron" id="does-the-program-help-me-find-jobs--icon" style="color: #94a3b8; font-weight:bold; font-size:1.2rem;">+</span>
-                        </div>
-                        <div id="does-the-program-help-me-find-jobs--content" class="pc-accordion-content" style="overflow:hidden; transition:max-height 0.3s ease;">
-                            <div class="pc-accordion-body" style="padding: 0 20px 20px;">
-                                <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0;">We provide structured job search execution, weekly recruiter profile drops, and private
-                        hiring network access.</p>
-                            </div>
+                </div>
+                <div class="pc-accordion"
+                    style="margin-bottom:12px; border:1px solid #e2e8f0; border-radius:12px; background:#fff;"
+                    onclick="toggleAcceleratorAccordion('does-the-program-help-me-find-jobs-')">
+                    <div class="pc-accordion-header"
+                        style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer;">
+                        <strong style="color: #1e293b; font-size: 1.05rem; margin:0;">Does the program help me find
+                            jobs?</strong>
+                        <span class="pc-accordion-chevron" id="does-the-program-help-me-find-jobs--icon"
+                            style="color: #94a3b8; font-weight:bold; font-size:1.2rem;">+</span>
+                    </div>
+                    <div id="does-the-program-help-me-find-jobs--content" class="pc-accordion-content"
+                        style="overflow:hidden; transition:max-height 0.3s ease;">
+                        <div class="pc-accordion-body" style="padding: 0 20px 20px;">
+                            <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0;">We provide
+                                structured job search execution, weekly recruiter profile drops, and private
+                                hiring network access.</p>
                         </div>
                     </div>
-                    <div class="pc-accordion" style="margin-bottom:12px; border:1px solid #e2e8f0; border-radius:12px; background:#fff;" onclick="toggleAcceleratorAccordion('how-do-i-enroll-in-the-program-')">
-                        <div class="pc-accordion-header" style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer;">
-                            <strong style="color: #1e293b; font-size: 1.05rem; margin:0;">How do I enroll in the program?</strong>
-                            <span class="pc-accordion-chevron" id="how-do-i-enroll-in-the-program--icon" style="color: #94a3b8; font-weight:bold; font-size:1.2rem;">+</span>
-                        </div>
-                        <div id="how-do-i-enroll-in-the-program--content" class="pc-accordion-content" style="overflow:hidden; transition:max-height 0.3s ease;">
-                            <div class="pc-accordion-body" style="padding: 0 20px 20px;">
-                                <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0;">Start with a Career Consultation & Assessment, which includes a portfolio audit and an
-                        improvement report.</p>
-                            </div>
+                </div>
+                <div class="pc-accordion"
+                    style="margin-bottom:12px; border:1px solid #e2e8f0; border-radius:12px; background:#fff;"
+                    onclick="toggleAcceleratorAccordion('how-do-i-enroll-in-the-program-')">
+                    <div class="pc-accordion-header"
+                        style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer;">
+                        <strong style="color: #1e293b; font-size: 1.05rem; margin:0;">How do I enroll in the
+                            program?</strong>
+                        <span class="pc-accordion-chevron" id="how-do-i-enroll-in-the-program--icon"
+                            style="color: #94a3b8; font-weight:bold; font-size:1.2rem;">+</span>
+                    </div>
+                    <div id="how-do-i-enroll-in-the-program--content" class="pc-accordion-content"
+                        style="overflow:hidden; transition:max-height 0.3s ease;">
+                        <div class="pc-accordion-body" style="padding: 0 20px 20px;">
+                            <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0;">Start with a
+                                Career Consultation & Assessment, which includes a portfolio audit and an
+                                improvement report.</p>
                         </div>
                     </div>
-                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

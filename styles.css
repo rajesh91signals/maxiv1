@@ -181,11 +181,11 @@ button {
         width: 95%;
         max-width: 1100px;
         padding: 12px 0;
-        background: rgba(253, 252, 251, 0.92);
+        background: #ffffff;
         backdrop-filter: blur(12px);
-        border: 1px solid rgba(0, 0, 0, 0.04);
+        border: 1px solid rgba(0, 0, 0, 0.08);
         border-radius: 100px;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     }
 }
 
@@ -197,6 +197,11 @@ button {
     padding: 10px 24px;
     font-size: 0.85rem;
     white-space: nowrap;
+}
+
+.nav-logo img {
+    height: 40px;
+    transition: height 0.85s var(--ease-out-expo);
 }
 
 .nav.scrolled .nav-logo img {
@@ -1268,7 +1273,7 @@ button {
     line-height: 1.5;
 }
 
-/* ==== Right: Visual Column (Dark themed bg) ==== */
+/* ==== Right: Visual Column (Dotted bg from index_v2.html) ==== */
 .card-visual-side {
     position: relative;
     overflow: hidden;
@@ -1277,34 +1282,9 @@ button {
     align-items: center;
     justify-content: center;
     padding: 48px 36px;
-}
-
-/* Card 1 (Bootcamp/Flagship): deep midnight-gold gradient */
-#accelerator-program .card-visual-side {
-    background:
-        radial-gradient(ellipse at 70% 20%, rgba(197, 160, 89, 0.25) 0%, transparent 60%),
-        radial-gradient(ellipse at 20% 80%, rgba(75, 139, 245, 0.15) 0%, transparent 55%),
-        linear-gradient(145deg, #0d1117 0%, #111827 50%, #0a0f1a 100%);
-}
-
-/* Card 2 (FastTrack): deep rose-navy gradient */
-#fasttrack-program .card-visual-side {
-    background:
-        radial-gradient(ellipse at 70% 20%, rgba(183, 110, 121, 0.28) 0%, transparent 60%),
-        radial-gradient(ellipse at 15% 75%, rgba(139, 92, 246, 0.15) 0%, transparent 55%),
-        linear-gradient(145deg, #0d1117 0%, #120b14 50%, #0a0f1a 100%);
-}
-
-/* Subtle decorative grid overlay */
-.card-visual-side::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 40px 40px;
-    pointer-events: none;
+    background-color: #F9F9F9;
+    background-image: radial-gradient(#E5E5E5 1.5px, transparent 1.5px);
+    background-size: 20px 20px;
 }
 
 /* Decorative glow orb */
@@ -2941,15 +2921,15 @@ button {
 /* New Pricing Cards from Images */
 .pricing-card {
     position: relative;
-    border-radius: 20px;
-    padding: 30px;
+    border-radius: 40px;
+    padding: 40px 30px;
     width: 100%;
-    max-width: 380px;
+    max-width: 420px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.15);
 }
 
 .pricing-blue {
@@ -2959,11 +2939,10 @@ button {
 }
 
 .pricing-yellow {
-    background-color: #fce78b;
-    /* Soft yellow */
+    background-color: #FDE68A;
+    /* Vibrant Amber-Yellow */
     font-family: inherit;
-    padding-top: 40px;
-    /* space for top pill */
+    padding-top: 60px;
 }
 
 /* White Breakdown Pill inside Blue Card */
@@ -3019,23 +2998,23 @@ button {
 }
 
 .pc-green-badge-small {
-    background-color: #10b981;
+    background-color: #22C55E;
     color: white;
-    font-size: 0.95rem;
-    font-weight: 600;
-    padding: 8px 16px;
-    border-radius: 6px;
-    margin-bottom: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 10px 24px;
+    border-radius: 100px;
+    margin-bottom: 32px;
 }
 
 /* Prices */
 .pc-strike-price {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 600;
-    color: #8faac7;
-    /* grayish blue */
+    color: #94a3b8;
     text-decoration: line-through;
     margin-bottom: 4px;
+    opacity: 0.7;
 }
 
 .pricing-yellow .pc-strike-price {
@@ -3044,32 +3023,33 @@ button {
 }
 
 .pc-big-price {
-    font-size: 3.5rem;
-    font-weight: 800;
+    font-size: 5.5rem;
+    font-weight: 900;
     color: #0f172a;
-    line-height: 1;
-    margin-bottom: 30px;
-    letter-spacing: -2px;
+    line-height: 0.9;
+    margin-bottom: 32px;
+    letter-spacing: -3px;
 }
 
 .pricing-yellow .pc-big-price {
-    margin-bottom: 16px;
+    margin-bottom: 32px;
 }
 
 /* Top Pill (Yellow Card) */
 .pc-top-pill {
     position: absolute;
-    top: -15px;
+    top: -24px;
     left: 50%;
     transform: translateX(-50%);
     background: white;
     color: #000;
-    font-size: 0.9rem;
+    font-size: 1.05rem;
     font-weight: 700;
-    padding: 10px 16px;
-    border-radius: 8px;
+    padding: 14px 28px;
+    border-radius: 12px;
     white-space: nowrap;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    z-index: 10;
 }
 
 /* Black CTA Button */
@@ -3077,19 +3057,21 @@ button {
     background-color: #000;
     color: white;
     border: none;
-    border-radius: 16px;
+    border-radius: 24px;
     width: 100%;
-    padding: 18px;
-    font-size: 1.4rem;
+    padding: 24px;
+    font-size: 1.8rem;
     font-weight: 700;
     cursor: pointer;
-    margin-bottom: 20px;
-    transition: transform 0.2s, background 0.2s;
+    margin-bottom: 32px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
 .pc-black-btn:hover {
-    transform: translateY(-2px);
-    background-color: #1a1a1a;
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    background-color: #111;
 }
 
 .pc-black-btn.mt-4 {
@@ -3110,7 +3092,9 @@ button {
 
 .pc-learn-more.block-link {
     text-decoration: underline;
-    line-height: 1.4;
+    line-height: 1.5;
+    font-size: 1.2rem;
+    display: inline-block;
 }
 
 .pt-6 {
@@ -3141,6 +3125,7 @@ button {
 .pc-clean-list li svg {
     flex-shrink: 0;
 }
+
 /* Bottom Sheet Trigger Button */
 .bs-trigger {
     width: 100%;
@@ -3155,13 +3140,13 @@ button {
     transition: all 0.2s ease;
     text-align: left;
     margin-bottom: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
 }
 
 .bs-trigger:hover {
     background: #f8fafc;
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
 }
 
 .bs-trigger-title {
@@ -3195,7 +3180,8 @@ button {
     opacity: 0;
     transition: all 0.3s ease;
     display: flex;
-    justify-content: flex-end; /* right aligned like a side pane on desktop */
+    justify-content: flex-end;
+    /* right aligned like a side pane on desktop */
 }
 
 .bottom-sheet-overlay.active {
@@ -3206,13 +3192,15 @@ button {
 .bottom-sheet-content {
     background: #ffffff;
     width: 100%;
-    max-width: 450px; /* Side panel width on desktop */
+    max-width: 450px;
+    /* Side panel width on desktop */
     height: 100%;
     display: flex;
     flex-direction: column;
-    transform: translateX(100%); /* Slide in from right */
+    transform: translateX(100%);
+    /* Slide in from right */
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: -10px 0 40px rgba(0,0,0,0.1);
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
 }
 
 .bottom-sheet-overlay.active .bottom-sheet-content {
@@ -3222,17 +3210,20 @@ button {
 /* Mobile responsive - converts to true bottom sheet */
 @media (max-width: 768px) {
     .bottom-sheet-overlay {
-        align-items: flex-end; /* align to bottom on mobile */
+        align-items: flex-end;
+        /* align to bottom on mobile */
         justify-content: center;
     }
-    
+
     .bottom-sheet-content {
         max-width: 100%;
-        height: 85vh; /* 85% of screen height */
+        height: 85vh;
+        /* 85% of screen height */
         border-radius: 24px 24px 0 0;
-        transform: translateY(100%); /* Slide up from bottom */
+        transform: translateY(100%);
+        /* Slide up from bottom */
     }
-    
+
     .bottom-sheet-overlay.active .bottom-sheet-content {
         transform: translateY(0);
     }
@@ -3287,6 +3278,7 @@ button {
     padding: 20px;
     margin-bottom: 16px;
 }
+
 .bs-body .pc-phase-label {
     font-size: 0.95rem;
     font-weight: 700;
@@ -3295,6 +3287,7 @@ button {
     letter-spacing: 0.05em;
     text-transform: uppercase;
 }
+
 .bs-body .pc-phase ul {
     list-style: none;
     padding: 0;
@@ -3303,6 +3296,7 @@ button {
     flex-direction: column;
     gap: 8px;
 }
+
 .bs-body .pc-phase li {
     font-size: 0.95rem;
     color: #475569;
@@ -3310,22 +3304,26 @@ button {
     align-items: center;
     gap: 8px;
 }
+
 .bs-body .pc-faq-item {
     margin-bottom: 24px;
     padding-bottom: 24px;
     border-bottom: 1px solid #f1f5f9;
 }
+
 .bs-body .pc-faq-item:last-child {
     margin-bottom: 0;
     padding-bottom: 0;
     border-bottom: none;
 }
+
 .bs-body .pc-faq-item strong {
     display: block;
     color: #1e293b;
     font-size: 1.05rem;
     margin-bottom: 8px;
 }
+
 .bs-body .pc-faq-item p {
     color: #475569;
     font-size: 0.95rem;
