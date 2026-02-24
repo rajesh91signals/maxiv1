@@ -455,12 +455,12 @@
                                         <path d="M7 17L17 7M17 7H7m10 0v10" />
                                     </svg>
                                 </div>
-                                <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">Score 50 - 89</span>
+                                <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">Score 50 - 79</span>
                             </a>
                         </div>
                         <!-- Label: Verified Pro -->
                         <div
-                            style="position: absolute; left: 90%; transform: translateX(-50%); text-align: center; width: 140px;">
+                            style="position: absolute; left: 80%; transform: translateX(-50%); text-align: center; width: 140px;">
                             <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
                                 <div
                                     style="background: #F0FDF4; color: #15803D; border: 1.5px solid #86EFAC; padding: 6px 14px; border-radius: 100px; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px;">
@@ -470,7 +470,7 @@
                                     </svg>
                                     <span>VERIFIED PRO</span>
                                 </div>
-                                <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">Score 90 -
+                                <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">Score 80 -
                                     100</span>
                             </div>
                         </div>
@@ -478,18 +478,23 @@
 
                     <!-- The Gradient Bar -->
                     <div
-                        style="height: 48px; background: linear-gradient(90deg, #F87171 0%, #FDE047 50%, #10B981 90%, #8B5CF6 100%); border-radius: 100px; position: relative; box-shadow: inset 0 4px 12px rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.05);">
-                        <!-- Markers -->
-                        <div
-                            style="position: absolute; left: 50%; top: -6px; bottom: -6px; width: 4px; background: white; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.05); z-index: 2;">
-                        </div>
-                        <div
-                            style="position: absolute; left: 90%; top: -6px; bottom: -6px; width: 4px; background: white; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.05); z-index: 2;">
+                        style="height: 48px; background: #f1f5f9; border-radius: 100px; position: relative; box-shadow: inset 0 4px 12px rgba(0,0,0,0.05); border: 2px solid #0f172a; overflow: hidden;">
+
+                        <!-- The Score Connector (Progress Fill) -->
+                        <div class="score-indicator-connector"
+                            style="position: absolute; left: 0; top: 0; bottom: 0; width: 0%; background: linear-gradient(90deg, #F87171 0%, #FDE047 65%, #10B981 100%); transition: width 0.3s ease; border-right: 4px solid #0f172a;">
+                            <!-- Animated Scan Line overlay -->
+                            <div class="scan-line"
+                                style="position: absolute; top: 0; bottom: 0; left: 0; width: 40px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); animation: scan 1.5s infinite;">
+                            </div>
                         </div>
 
-                        <!-- Floating Cursor -->
-                        <div class="score-indicator-dot"
-                            style="position: absolute; left: 0%; top: 50%; transform: translate(-50%, -50%); width: 36px; height: 36px; background: white; border: 6px solid #0f172a; border-radius: 50%; box-shadow: 0 10px 20px rgba(0,0,0,0.2); z-index: 5;">
+                        <!-- Markers (Z-index above fill) -->
+                        <div
+                            style="position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: #0f172a; opacity: 0.2; z-index: 2;">
+                        </div>
+                        <div
+                            style="position: absolute; left: 80%; top: 0; bottom: 0; width: 2px; background: #0f172a; opacity: 0.2; z-index: 2;">
                         </div>
                     </div>
 
@@ -502,7 +507,7 @@
                             style="position: absolute; left: 50%; transform: translateX(-50%); color: #94a3b8;">50</span>
                         <span style="position: absolute; left: 75%; transform: translateX(-50%);">75</span>
                         <span
-                            style="position: absolute; left: 90%; transform: translateX(-50%); color: #94a3b8;">90</span>
+                            style="position: absolute; left: 80%; transform: translateX(-50%); color: #94a3b8;">80</span>
                         <span style="position: absolute; left: 100%; transform: translateX(-50%);">100</span>
                     </div>
                 </div>
@@ -2002,13 +2007,13 @@
             });
 
             // 4. Score Scale Animation (in Feature section)
-            gsap.to(".score-indicator-dot", {
+            gsap.to(".score-indicator-connector", {
                 scrollTrigger: {
                     trigger: ".score-scale-wrapper",
                     start: "top 80%",
                     toggleActions: "play none none none"
                 },
-                left: "78%", /* Representative score */
+                width: "78%", /* Representative score */
                 duration: 2.5,
                 ease: "power3.inOut"
             });
