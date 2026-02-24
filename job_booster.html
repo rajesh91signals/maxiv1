@@ -433,6 +433,71 @@
                     reset</b> designed to bridge the gap between your current profile and career-defining <b>job
                     opportunities at big brands</b>.</p>
 
+            <!-- Score Scale Visual -->
+            <div class="score-scale-wrapper"
+                style="margin-top: 80px; max-width: 900px; margin-left: auto; margin-right: auto; padding: 0 40px;">
+                <div style="position: relative; height: 60px; margin-bottom: 24px;">
+                    <!-- Label: Need Work -->
+                    <div
+                        style="position: absolute; left: 70%; transform: translateX(-50%); text-align: center; width: 200px;">
+                        <a href="#otp-challenge"
+                            style="text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 4px;">
+                            <div
+                                style="background: #FFF7ED; color: #C2410C; border: 1.5px solid #FDBA74; padding: 6px 14px; border-radius: 100px; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px;">
+                                <span>NEED WORK</span>
+                                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M7 17L17 7M17 7H7m10 0v10" />
+                                </svg>
+                            </div>
+                            <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">Score 50 - 89</span>
+                        </a>
+                    </div>
+                    <!-- Label: Verified Pro -->
+                    <div style="position: absolute; right: -20px; text-align: right; width: 140px;">
+                        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;">
+                            <div
+                                style="background: #F0FDF4; color: #15803D; border: 1.5px solid #86EFAC; padding: 6px 14px; border-radius: 100px; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px;">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+                                </svg>
+                                <span>VERIFIED PRO</span>
+                            </div>
+                            <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">Score 90 - 100</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Gradient Bar -->
+                <div
+                    style="height: 48px; background: linear-gradient(90deg, #F87171 0%, #FDE047 50%, #10B981 90%, #8B5CF6 100%); border-radius: 100px; position: relative; box-shadow: inset 0 4px 12px rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.05);">
+                    <!-- Markers -->
+                    <div
+                        style="position: absolute; left: 50%; top: -6px; bottom: -6px; width: 4px; background: white; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.05); z-index: 2;">
+                    </div>
+                    <div
+                        style="position: absolute; left: 90%; top: -6px; bottom: -6px; width: 4px; background: white; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.05); z-index: 2;">
+                    </div>
+
+                    <!-- Floating Cursor -->
+                    <div class="score-indicator-dot"
+                        style="position: absolute; left: 0%; top: 50%; transform: translate(-50%, -50%); width: 36px; height: 36px; background: white; border: 6px solid #0f172a; border-radius: 50%; box-shadow: 0 10px 20px rgba(0,0,0,0.2); z-index: 5;">
+                    </div>
+                </div>
+
+                <!-- Labels -->
+                <div
+                    style="display: flex; justify-content: space-between; margin-top: 16px; font-weight: 900; font-size: 0.8rem; color: #cbd5e1; letter-spacing: 0.15em; padding: 0 12px;">
+                    <span>0</span>
+                    <span>25</span>
+                    <span>50</span>
+                    <span>75</span>
+                    <span>90</span>
+                    <span>100</span>
+                </div>
+            </div>
+
 
         </div>
 
@@ -1924,6 +1989,18 @@
                 duration: 1,
                 delay: 0.6,
                 ease: "power4.out"
+            });
+
+            // 4. Score Scale Animation (in Feature section)
+            gsap.to(".score-indicator-dot", {
+                scrollTrigger: {
+                    trigger: ".score-scale-wrapper",
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                },
+                left: "78%", /* Representative score */
+                duration: 2.5,
+                ease: "power3.inOut"
             });
         });
 
