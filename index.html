@@ -10,8 +10,9 @@
     <link rel="icon" type="image/png" href="assets/mark.png">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap" rel="stylesheet">
-    <!-- GSAP for Scramble Effect -->
+    <!-- GSAP + ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
@@ -115,16 +116,19 @@
 
                     <div class="trust-toolbar centered-toolbar">
                         <div class="toolbar-avatar-group trust-avatars-list">
-                            <div class="tb-avatar" style="background: #ef4444; color: white;">R</div>
+                            <div class="tb-avatar" style="background: #F87171; color: white;">AS</div>
                             <img src="https://i.pravatar.cc/100?img=33" class="tb-avatar" alt="User">
+                            <div class="tb-avatar" style="background: #3B82F6; color: white;">JD</div>
                             <img src="https://i.pravatar.cc/100?img=47" class="tb-avatar" alt="User">
+                            <div class="tb-avatar" style="background: #10B981; color: white;">MK</div>
                         </div>
                         <div class="toolbar-divider"></div>
                         <div class="toolbar-stat">
                             <div class="status-indicator"></div>
-                            <span class="trust-count-val">301 Designers</span>
+                            <span class="trust-count-val">306 Designers</span>
                         </div>
-                        <button class="toolbar-btn">Join</button>
+                        <button class="toolbar-btn"
+                            onclick="document.getElementById('programs').scrollIntoView({ behavior: 'smooth' })">Join</button>
                     </div>
 
 
@@ -464,106 +468,257 @@
                 <h2>Explore our <span class="animated-underline">programs</span></h2>
             </div>
 
-            <div class="course-selector-wrapper">
-                <div class="course-tabs" id="courseTabs">
-                    <!-- Bootcamp Pointer -->
-                    <div class="tab-pointer pointer-left">
-                        <span>For freshers &<br>career upgraders</span>
-                        <svg width="40" height="20" viewBox="0 0 40 20" fill="none">
-                            <path d="M2 5 C 10 18, 25 18, 38 5 M 38 5 L 31 6 M 38 5 L 35 1" stroke="#4B8BF5"
-                                stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </div>
 
-                    <button class="course-tab active" data-tab="bootcamp">12 Week Bootcamp</button>
-                    <button class="course-tab" data-tab="fasttrack">30 Day Fast-track</button>
-                    <div class="tab-slider" id="tabSlider"></div>
 
-                    <!-- Fast-track Pointer -->
-                    <div class="tab-pointer pointer-right">
-                        <span>For seasoned<br>job seekers</span>
-                        <svg width="40" height="20" viewBox="0 0 40 20" fill="none">
-                            <path d="M2 5 C 10 18, 25 18, 38 5 M 38 5 L 31 6 M 38 5 L 35 1" stroke="#4B8BF5"
-                                stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+            <div class="program-stack">
+
+                <!-- ===== CARD 1: 12-Week Bootcamp ===== -->
+                <div class="program-card-wrapper">
+                    <div class="program-card" id="accelerator-program">
+
+                        <div class="card-content-side">
+                            <div class="card-tag-row">
+                                <span class="pc-tag">12
+                                    Weeks Cohort</span>
+                                <span class="pc-tag">Live
+                                    + On-Demand</span>
+                            </div>
+
+                            <div class="card-header-row">
+                                <div class="card-icon-badge"
+                                    style="background:rgba(197,160,89,0.1);border:1px solid rgba(197,160,89,0.25);color:#C5A059;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+                                        <path
+                                            d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+                                        <path d="M9 12H4s.5-1 1-4c1.5 0 3 0 3 0" />
+                                        <path d="M15 15v5s-1 .5-4 1c0-1.5 0-3 0-3" />
+                                    </svg>
+                                </div>
+                                <h3 style="font-size:1.8rem;margin:0;color:#1e293b;font-weight:700;">AI-UX Accelerator
+                                </h3>
+                            </div>
+
+                            <p class="card-description">Don't just learn UX, operate like an AI-native designer. Build
+                                two industry-grade products with agency designers. Be job-ready with confidence</p>
+
+
+
+                            <ul class="pc-clean-list">
+                                <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2ebc15"
+                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg> Practitioner-Led Learning</li>
+                                <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2ebc15"
+                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg> Deep, Portfolio-Defining Projects</li>
+                                <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2ebc15"
+                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg> AI at the Core, Not the Edges</li>
+                                <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2ebc15"
+                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg> Grow Your Network</li>
+                                <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2ebc15"
+                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg> Confidence & Power Skills</li>
+                            </ul>
+
+                            <button class="bs-trigger" onclick="openBottomSheet('sheet-curriculum-details')">
+                                <div style="display:flex;align-items:center;gap:12px;">
+                                    <div class="pc-accordion-icon"
+                                        style="background:rgba(75,139,245,0.1);color:#4B8BF5;">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                                        </svg>
+                                    </div>
+                                    <span class="bs-trigger-title">Full 12-Weeks Curriculum</span>
+                                </div>
+                                <span class="bs-trigger-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </span>
+                            </button>
+
+                            <button class="bs-trigger" onclick="openBottomSheet('sheet-faq-details')">
+                                <div style="display:flex;align-items:center;gap:12px;">
+                                    <div class="pc-accordion-icon"
+                                        style="background:rgba(16,185,129,0.1);color:#10B981;">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                                            <line x1="12" y1="17" x2="12.01" y2="17" />
+                                        </svg>
+                                    </div>
+                                    <span class="bs-trigger-title">Frequently Asked Questions</span>
+                                </div>
+                                <span class="bs-trigger-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
+
+                        <div class="card-visual-side">
+
+                            <div
+                                style="display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 20px; width: 100%; max-width: 380px;">
+                                <span
+                                    style="font-family: 'Just Another Hand', cursive; font-size: 2.2rem; color: #fff; display: inline-block; flex: 1; text-align: left; line-height: 1;">For
+                                    freshers & mid-level career upgraders</span>
+                                <svg width="40" height="45" viewBox="0 0 60 60" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    style="flex-shrink: 0; transform: translateY(10px);">
+                                    <path d="M10 10 Q 30 15 45 45" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                                        fill="none" />
+                                    <path d="M35 43 L 45 45 L 43 35" stroke="#fff" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                </svg>
+                            </div>
+                            <div class="pricing-card pricing-blue">
+                                <div class="pc-breakdown-pill">
+                                    <div class="pc-breakdown-item">
+                                        <div class="pc-b-title">12 Weeks<br>Bootcamp</div>
+                                        <div class="pc-b-price">&#8377;70,000</div>
+                                    </div>
+                                    <div class="pc-b-plus">+</div>
+                                    <div class="pc-breakdown-item">
+                                        <div class="pc-b-title">90 Days Job<br>Booster</div>
+                                        <div class="pc-b-price">&#8377;30,000</div>
+                                    </div>
+                                </div>
+                                <div class="pc-green-badge">Enroll today and save &#8377;25,000</div>
+
+                                <div class="pc-strike-price">&#8377;1,00,000</div>
+                                <div class="pc-big-price">&#8377;75,000</div>
+
+                                <button class="pc-black-btn">Send Enquiry</button>
+                                <a href="#" class="pc-learn-more">Learn more</a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
-                <div class="course-panels">
-                    <!-- Bootcamp Panel -->
-                    <div class="course-panel active" id="bootcampPanel">
-                        <div class="programs-grid">
-                            <div class="flagship-card">
-                                <div class="flagship-grid">
-                                    <div class="flagship-content">
-                                        <span class="tag" style="background: rgba(255,255,255,0.1); color: white;">AI
-                                            native UX Bootcamp
-                                            <h3 class="gsap-split">12 weeks to close gaps, build agency-grade portfolio
-                                                &
-                                                get hired</h3>
+                <!-- ===== CARD 2: 30-Day FastTrack ===== -->
+                <div class="program-card-wrapper">
+                    <div class="program-card" id="fasttrack-program">
 
+                        <div class="card-content-side">
+                            <div class="card-tag-row">
+                                <span class="pc-tag">30 Days FastTrack</span>
+                                <span class="pc-tag">Outcome Focused</span>
+                            </div>
 
-                                            <ul class="flagship-benefits">
-                                                <li>Master AI native UX Bootcamp-driven design workflows</li>
-                                                <li>Build 2 industrial-grade capstone projects</li>
-                                                <li>1:1 Mentorship from top agency pros</li>
-                                                <li>Job readiness: Mock interviews & Storytelling</li>
-                                            </ul>
-                                    </div>
-
-                                    <div class="flagship-pricing-card">
-                                        <span class="jb-price-label">March cohort • Limited seats</span>
-                                        <div class="jb-price-row">
-                                            <span class="jb-price-strike">₹1,00,000</span>
-                                            <span class="jb-price-main">₹75,000</span>
-                                        </div>
-                                        <span class="flagship-save-tag">Save ₹25k</span>
-                                        <button class="flagship-btn">Book Now for ₹1,000</button>
-                                    </div>
+                            <div class="card-header-row">
+                                <div class="card-icon-badge"
+                                    style="background:rgba(183,110,121,0.1);border:1px solid rgba(183,110,121,0.25);color:#B76E79;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m13 2-2 10h8L7 22l2-10H1L13 2z" />
+                                    </svg>
                                 </div>
+                                <h3 style="font-size:1.8rem;margin:0;color:#1e293b;font-weight:700;">UX Job Booster</h3>
+                            </div>
+
+                            <p class="card-description">High-intensity career acceleration for designers needing faster
+                                results. Get interview ready and land offers with expert mentoring in just 30 days.</p>
+
+
+
+                            <ul class="pc-clean-list">
+                                <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2ebc15"
+                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg> Improve your discovery, get found by hiring mangers</li>
+                                <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2ebc15"
+                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg> Get coached on portfolio improvements</li>
+                                <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2ebc15"
+                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg> Get quality job leads & hiring calls</li>
+                                <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2ebc15"
+                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg> Weekly profile drops to active design recruiters</li>
+                                <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2ebc15"
+                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg> Master story telling & ace interviews</li>
+                            </ul>
+                            <button class="bs-trigger" onclick="openBottomSheet('sheet-ft-faq-details')">
+                                <div style="display:flex;align-items:center;gap:12px;">
+                                    <div class="pc-accordion-icon"
+                                        style="background:rgba(183,110,121,0.1);color:#B76E79;">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                                            <line x1="12" y1="17" x2="12.01" y2="17" />
+                                        </svg>
+                                    </div>
+                                    <span class="bs-trigger-title">Frequently Asked Questions</span>
+                                </div>
+                                <span class="bs-trigger-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
+
+                        <div class="card-visual-side">
+
+                            <div
+                                style="display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 20px; width: 100%; max-width: 380px;">
+                                <span
+                                    style="font-family: 'Just Another Hand', cursive; font-size: 2.2rem; color: #fff; display: inline-block; flex: 1; text-align: left; line-height: 1;">For
+                                    seasoned designers needing extra boost</span>
+                                <svg width="40" height="45" viewBox="0 0 60 60" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    style="flex-shrink: 0; transform: translateY(10px);">
+                                    <path d="M10 10 Q 30 15 45 45" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                                        fill="none" />
+                                    <path d="M35 43 L 45 45 L 43 35" stroke="#fff" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                </svg>
+                            </div>
+                            <div class="pricing-card pricing-yellow">
+                                <div class="pc-top-pill">Book a session with design mentor</div>
+
+                                <div class="pc-strike-price pt-6">&#8377;2,500</div>
+                                <div class="pc-big-price">&#8377;1,000</div>
+
+                                <div class="pc-green-badge-small">Save 20% Today</div>
+
+                                <button class="pc-black-btn mt-4">Book Now</button>
+                                <a href="#" class="pc-learn-more block-link">Learn about job booster 30
+                                    days<br>program</a>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Fast-track Panel -->
-                    <div class="course-panel" id="fasttrackPanel">
-                        <div class="programs-grid">
-                            <div class="job-booster-card">
-                                <div class="jb-grid">
-                                    <div class="jb-content">
-                                        <span class="tag" style="background: rgba(0,0,0,0.05); color: #1A1A1A;">Job
-                                            Reach Booster</span>
-                                        <h3 class="gsap-split">In just 4 weeks, follow an actionable curriculum with
-                                            live classes, hands-on templates, and guided office hours</h3>
-
-
-                                        <ul class="jb-benefits">
-                                            <li>Actionable curriculum for rapid career growth</li>
-                                            <li>Weekly live classes & guided office hours</li>
-                                            <li>Hands-on templates for resumes & portfolios</li>
-                                            <li>Weekly profile drops to active design recruiters</li>
-                                            <li>Get quality job leads & hiring calls directly</li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="jb-pricing-card">
-                                        <span class="jb-price-label">March cohort • Limited seats</span>
-                                        <div class="jb-price-row">
-                                            <span class="jb-price-strike">₹2,500</span>
-                                            <span class="jb-price-main">₹1,000</span>
-                                        </div>
-                                        <span class="jb-save-tag">Save ₹1,500</span>
-                                        <button class="jb-btn">Book Now for ₹1,000</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
-            </div>
+
+            </div> <!-- /program-stack -->
 
             <div class="mentor-badge" style="margin-top: 80px;">
-                <span class="mentor-badge-text">Our designer & mentors have worked with</span>
+                <span class="mentor-badge-text">Our designers &amp; mentors have worked with</span>
                 <div class="mentor-logos-tiny">
                     <img src="https://www.vectorlogo.zone/logos/google/google-ar21.svg" alt="Google">
                     <img src="https://www.vectorlogo.zone/logos/amazon/amazon-ar21.svg" alt="Amazon">
@@ -573,8 +728,9 @@
                     <img src="https://www.vectorlogo.zone/logos/sandisk/sandisk-ar21.svg" alt="SanDisk">
                 </div>
             </div>
-        </div>
-    </section>
+
+        </div> <!-- /container -->
+    </section> <!-- programs-section -->
 
 
 
@@ -625,153 +781,17 @@
 
 
 
-    <!-- Community & Networking Section -->
-    <section id="community" class="community-section">
-        <div class="container">
-            <div class="text-center">
-                <span class="hero-tag" style="background: rgba(123, 97, 255, 0.1); color: var(--color-primary);">Inner
-                    Circle</span>
-                <h2>Connect with <span class="animated-underline">Visionaries</span></h2>
-                <p style="max-width: 600px; margin: 0 auto;">Beyond the pixels, it's about the people. Join our
-                    exclusive network of startup founders and elite designers.</p>
-            </div>
-
-            <div class="community-grid">
-                <!-- Card 1: Mixers -->
-                <div class="community-card">
-                    <div>
-                        <span class="community-card-tag">Designer Mixers</span>
-                        <h3>Casual Coffee & <br>Curated Mixers</h3>
-                        <p>Weekly gatherings in major design hubs. Meet your next co-founder, mentor, or design partner
-                            in an informal setting</p>
-                    </div>
-                    <div class="network-avatars">
-                        <img src="https://i.pravatar.cc/100?img=11" class="network-avatar" alt="User">
-                        <img src="https://i.pravatar.cc/100?img=12" class="network-avatar" alt="User">
-                        <img src="https://i.pravatar.cc/100?img=13" class="network-avatar" alt="User">
-                        <div class="network-avatar"
-                            style="background: var(--color-primary); color: white; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700;">
-                            +50</div>
-                    </div>
-                    <div class="community-visual">☕️</div>
-                </div>
-
-                <!-- Card 2: Trips -->
-                <div class="community-card">
-                    <div>
-                        <span class="community-card-tag">Expeditions</span>
-                        <h3>Immersive Design <br>Retreat Trips</h3>
-                        <p>Curated weekend trips to scenic locations. Work, learn, and adventure together with 20+
-                            handpicked founders and designers</p>
-                    </div>
-                    <div class="network-avatars">
-                        <img src="https://i.pravatar.cc/100?img=21" class="network-avatar" alt="User">
-                        <img src="https://i.pravatar.cc/100?img=22" class="network-avatar" alt="User">
-                        <img src="https://i.pravatar.cc/100?img=23" class="network-avatar" alt="User">
-                        <div class="network-avatar"
-                            style="background: #10B981; color: white; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700;">
-                            +20</div>
-                    </div>
-                    <div class="community-visual">🏔️</div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
-    <!-- Personalization Section -->
-    <section id="personalize" class="section personalize-section">
-        <svg class="shape-overlays" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <defs>
-                <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stop-color="#ff8709" />
-                    <stop offset="100%" stop-color="#f7bdf8" />
-                </linearGradient>
-                <linearGradient id="gradient2" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stop-color="#ffd9b0" />
-                    <stop offset="100%" stop-color="#ff8709" />
-                </linearGradient>
-            </defs>
-            <path class="shape-overlays__path" fill="url(#gradient2)"></path>
-            <path class="shape-overlays__path" fill="url(#gradient1)"></path>
-        </svg>
-        <div class="container">
-            <div class="text-center mb-4">
-                <span class="hero-tag">My Improvement Areas</span>
-                <h2>What career <span class="animated-underline">superpower</span> do you need?</h2>
-                <p>Select your goal to find the perfect program</p>
-            </div>
-
-            <div class="superpower-grid">
-                <!-- Card 1 -->
-                <div class="superpower-card" onclick="selectGoal(this)" In just 4 weeks>
-                    <div class="superpower-content">
-                        <span class="superpower-icon">📈</span>
-                        <span class="superpower-text">Crack job interviews</span>
-                    </div>
-                    <span class="superpower-arrow">→</span>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="superpower-card" onclick="selectGoal(this)">
-                    <div class="superpower-content">
-                        <span class="superpower-icon">🦁</span>
-                        <span class="superpower-text">Improve my confidence</span>
-                    </div>
-                    <span class="superpower-arrow">→</span>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="superpower-card" onclick="selectGoal(this)">
-                    <div class="superpower-content">
-                        <span class="superpower-icon">🛠️</span>
-                        <span class="superpower-text">Improve technical skills</span>
-                    </div>
-                    <span class="superpower-arrow">→</span>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="superpower-card" onclick="selectGoal(this)">
-                    <div class="superpower-content">
-                        <span class="superpower-icon">🗣️</span>
-                        <span class="superpower-text">Master storytelling</span>
-                    </div>
-                    <span class="superpower-arrow">→</span>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="superpower-card" onclick="selectGoal(this)">
-                    <div class="superpower-content">
-                        <span class="superpower-icon">📞</span>
-                        <span class="superpower-text">Get more hiring calls</span>
-                    </div>
-                    <span class="superpower-arrow">→</span>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="superpower-card" onclick="selectGoal(this)">
-                    <div class="superpower-content">
-                        <span class="superpower-icon">💰</span>
-                        <span class="superpower-text">Earn from side gigs</span>
-                    </div>
-                    <span class="superpower-arrow">→</span>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Industry Leaders Section -->
-    <section id="leaders" class="section">
+    <section id="leaders" class="section" style="background: var(--color-text-main); color: white; padding: 140px 0;">
         <div class="container">
             <div class="leaders-header">
-                <div>
-                    <span class="hero-tag" style="background: rgba(0,0,0,0.05); color: #666;">Future of
-                        Design</span>
-                    <h2>Role of the UX Designer is <span class="animated-underline">changing fast.</span></h2>
-                </div>
-                <div class="leaders-desc">
-                    Things we look for while hiring designers.
-                </div>
+                <span class="hero-tag" style="background: rgba(255,255,255,0.1); color: #CBD5E1; margin-bottom: 0;">What
+                    Industry leaders are saying</span>
+                <h2 style="color: white; margin-top: 16px;">Role of the UX Designer is <span
+                        class="animated-underline">changing fast.</span></h2>
             </div>
 
             <div class="leaders-grid">
@@ -853,69 +873,84 @@
         </div>
     </div>
 
-    <!-- FAQ Section -->
-    <section id="faq" class="section" style="background: #FAFAFA;">
+
+    <!-- Personalization Section -->
+    <section id="personalize" class="section personalize-section"
+        style="border-radius: 0; margin: 0; max-width: 100%; border-top: 1px solid rgba(0,0,0,0.05);">
         <div class="container">
             <div class="text-center mb-4">
-                <h2>Frequently <span class="animated-underline">Asked Questions</span></h2>
-                <p>Everything you need to know about the programs.</p>
+                <span class="hero-tag">My Improvement Areas</span>
+                <h2 style="color: #0F172A;">What career <span class="animated-underline">superpower</span> do you need?
+                </h2>
+                <p style="color: #475569;">Select your goal to find the perfect program</p>
             </div>
 
-            <div class="faq-grid">
-                <div class="faq-item" onclick="toggleFaq(this)">
-                    <div class="faq-question">
-                        <span>Is this suitable for beginners?</span>
-                        <span class="faq-icon">+</span>
+            <div class="superpower-grid">
+                <!-- Card 1 -->
+                <div class="superpower-card" onclick="selectGoal(this)">
+                    <div class="superpower-content">
+                        <span class="superpower-icon">📈</span>
+                        <span class="superpower-text">Crack job interviews</span>
                     </div>
-                    <div class="faq-answer">
-                        Yes! The UX Pro bootcamp is designed to take you from foundational skills to agency-ready
-                        professional workflows. We cover everything from research to high-fidelity UI.
-                    </div>
+                    <span class="superpower-arrow">→</span>
                 </div>
-                <div class="faq-item" onclick="toggleFaq(this)">
-                    <div class="faq-question">
-                        <span>What is the duration of the programs?</span>
-                        <span class="faq-icon">+</span>
+
+                <!-- Card 2 -->
+                <div class="superpower-card" onclick="selectGoal(this)">
+                    <div class="superpower-content">
+                        <span class="superpower-icon">🦁</span>
+                        <span class="superpower-text">Improve my confidence</span>
                     </div>
-                    <div class="faq-answer">
-                        UX Pro is a 12-week comprehensive bootcamp (also available as a 4-week accelerator). Job
-                        Booster
-                        is a focused 30-day program designed for immediate results.
-                    </div>
+                    <span class="superpower-arrow">→</span>
                 </div>
-                <div class="faq-item" onclick="toggleFaq(this)">
-                    <div class="faq-question">
-                        <span>Do you provide job assistance?</span>
-                        <span class="faq-icon">+</span>
+
+                <!-- Card 3 -->
+                <div class="superpower-card" onclick="selectGoal(this)">
+                    <div class="superpower-content">
+                        <span class="superpower-icon">🛠️</span>
+                        <span class="superpower-text">Improve technical skills</span>
                     </div>
-                    <div class="faq-answer">
-                        Absolutely. Our Job Booster program is specifically built for 10x job reach, including
-                        resume
-                        optimization, portfolio reviews, and direct profile drops to recruiters.
-                    </div>
+                    <span class="superpower-arrow">→</span>
                 </div>
-                <div class="faq-item" onclick="toggleFaq(this)">
-                    <div class="faq-question">
-                        <span>Is there a refund policy?</span>
-                        <span class="faq-icon">+</span>
+
+                <!-- Card 4 -->
+                <div class="superpower-card" onclick="selectGoal(this)">
+                    <div class="superpower-content">
+                        <span class="superpower-icon">🗣️</span>
+                        <span class="superpower-text">Master storytelling</span>
                     </div>
-                    <div class="faq-answer">
-                        We offer a 30-day money-back guarantee for our Job Booster program if you don't see value.
-                        We're
-                        confident in our results.
+                    <span class="superpower-arrow">→</span>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="superpower-card" onclick="selectGoal(this)">
+                    <div class="superpower-content">
+                        <span class="superpower-icon">📞</span>
+                        <span class="superpower-text">Get more hiring calls</span>
                     </div>
+                    <span class="superpower-arrow">→</span>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="superpower-card" onclick="selectGoal(this)">
+                    <div class="superpower-content">
+                        <span class="superpower-icon">💰</span>
+                        <span class="superpower-text">Earn from side gigs</span>
+                    </div>
+                    <span class="superpower-arrow">→</span>
                 </div>
             </div>
         </div>
     </section>
 
+
     <!-- Footer -->
-    <footer class="footer" id="footer">
+    <footer class="footer" id="footer" style="border-top: none; padding-top: 40px;">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="assets/logo.svg"
-                        style="filter: brightness(0) invert(1); opacity: 0.8; margin-bottom: 24px;" height="30">
+                    <img src="assets/logo.svg" style="filter: brightness(0); opacity: 0.6; margin-bottom: 24px;"
+                        height="30">
                     <p>Empowering the next generation of design leaders through AI native UX Bootcamp-driven mentorship
                         and
                         agency-grade
@@ -1352,9 +1387,33 @@
 
 
             // Trust Toolbar Live Joining Animation
-            let count = 301;
+            let count = 306;
             const avatarColors = ['#F87171', '#3B82F6', '#10B981', '#F59E0B', '#8B5CF6', '#EC4899'];
-            const names = ['AS', 'JD', 'MK', 'RP', 'SL', 'BT', 'GW', 'HN', 'KZ', 'MQ'];
+            const designerPool = [
+                { name: "Arjun Singh", img: "33" },
+                { name: "Jessica Davis", img: "47" },
+                { name: "Michael Kapur", img: "11" },
+                { name: "Riya Patel", img: "25" },
+                { name: "Siddharth Luthra", img: "64" },
+                { name: "Beth Thompson", img: "52" },
+                { name: "Gopal Warrier", img: "18" },
+                { name: "Heena Narang", img: "41" },
+                { name: "Kunal Zero", img: "29" },
+                { name: "Megha Qureshi", img: "36" },
+                { name: "Anil Sharma", img: "22" },
+                { name: "Deepa Nair", img: "55" },
+                { name: "Rohit Verma", img: "14" },
+                { name: "Suman Rao", img: "49" },
+                { name: "Vikram Seth", img: "31" },
+                { name: "Neha Gupta", img: "61" },
+                { name: "Rahul Bose", img: "19" },
+                { name: "Priya Das", img: "43" },
+                { name: "Amitabh K.", img: "27" },
+                { name: "Sonia M.", img: "38" }
+            ];
+
+            // Currently shown indices (matches initial HTML)
+            let activeIndices = [0, 1, 2, 3, 4];
 
             function addNewJoiner() {
                 count++;
@@ -1364,29 +1423,38 @@
                     el.innerText = `${count} Designers`;
                 });
 
+                // Find a unique designer not currently in the toolbar
+                let nextIndex;
+                do {
+                    nextIndex = Math.floor(Math.random() * designerPool.length);
+                } while (activeIndices.includes(nextIndex));
+
+                const designer = designerPool[nextIndex];
+                activeIndices.push(nextIndex);
+
                 // Get all avatar groups
                 const avatarGroups = document.querySelectorAll('.trust-avatars-list');
 
                 avatarGroups.forEach(group => {
                     let newElement;
-                    const isInitial = Math.random() > 0.6;
+                    const isInitial = Math.random() > 0.5;
 
                     if (isInitial) {
                         newElement = document.createElement('div');
                         newElement.className = 'tb-avatar';
-                        newElement.innerText = names[Math.floor(Math.random() * names.length)];
+                        // Full name to initials
+                        const parts = designer.name.split(' ');
+                        newElement.innerText = parts.map(p => p[0]).join('').substring(0, 2);
                         newElement.style.background = avatarColors[Math.floor(Math.random() * avatarColors.length)];
                         newElement.style.color = 'white';
                     } else {
                         newElement = document.createElement('img');
-                        const randomId = Math.floor(Math.random() * 70);
-                        newElement.src = `https://i.pravatar.cc/100?img=${randomId}`;
+                        newElement.src = `https://i.pravatar.cc/100?img=${designer.img}`;
                         newElement.className = 'tb-avatar';
                     }
 
                     newElement.style.opacity = '0';
                     newElement.style.transform = 'scale(0) translateX(20px)';
-
                     group.appendChild(newElement);
 
                     gsap.to(newElement, {
@@ -1397,7 +1465,7 @@
                         ease: "back.out(1.7)"
                     });
 
-                    // Keep only last 5-6 avatars
+                    // Maintain strict limit of 5 avatars
                     if (group.children.length > 5) {
                         const first = group.children[0];
                         gsap.to(first, {
@@ -1405,11 +1473,16 @@
                             scale: 0,
                             width: 0,
                             margin: 0,
-                            duration: 0.5,
+                            duration: 0.4,
                             onComplete: () => first.remove()
                         });
                     }
                 });
+
+                // Keep activeIndices in sync
+                if (activeIndices.length > 5) {
+                    activeIndices.shift();
+                }
             }
 
             // Randomly add new joiners
@@ -1443,51 +1516,308 @@
                 }
             });
 
-            // Course Tab Switching Logic
-            const tabs = document.querySelectorAll('.course-tab');
-            const panels = document.querySelectorAll('.course-panel');
-            const slider = document.getElementById('tabSlider');
+            // Accordion Toggle
+            window.toggleAcceleratorAccordion = function (id) {
+                const content = document.getElementById(id + '-content');
+                const icon = document.getElementById(id + '-icon');
+                if (!content) return;
 
-            function updateSlider(tab) {
-                slider.style.width = tab.offsetWidth + 'px';
-                slider.style.left = tab.offsetLeft + 'px';
-            }
+                const isOpen = content.classList.contains('open');
+                content.classList.toggle('open', !isOpen);
+                if (icon) {
+                    icon.textContent = isOpen ? '+' : '−';
+                }
+            };
 
-            // Set initial slider position
-            setTimeout(() => {
-                const activeTab = document.querySelector('.course-tab.active');
-                if (activeTab) updateSlider(activeTab);
-            }, 100);
+            // Register ScrollTrigger
+            gsap.registerPlugin(ScrollTrigger);
 
-            tabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    const target = tab.getAttribute('data-tab');
-
-                    // Update UI
-                    tabs.forEach(t => t.classList.remove('active'));
-                    tab.classList.add('active');
-                    updateSlider(tab);
-
-                    // Switch Panels
-                    panels.forEach(p => {
-                        p.classList.remove('active');
-                        if (p.id === target + 'Panel') {
-                            p.classList.add('active');
+            // Program Card Stacking Effect
+            // As Card 2 scrolls into view, Card 1 scales down / dims
+            const cardWrappers = gsap.utils.toArray('.program-card-wrapper');
+            cardWrappers.forEach((wrapper, i) => {
+                if (i < cardWrappers.length - 1) {
+                    gsap.to(wrapper, {
+                        scale: 0.92,
+                        opacity: 0.7,
+                        yPercent: -3,
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: cardWrappers[i + 1],
+                            start: 'top 80%',
+                            end: 'top 120px',
+                            scrub: 0.8,
                         }
                     });
-
-                    // Re-run split text for the new panel
-                    runSplit();
-                });
-            });
-
-            // Re-run on resize to keep slider aligned
-            window.addEventListener('resize', () => {
-                const activeTab = document.querySelector('.course-tab.active');
-                if (activeTab) updateSlider(activeTab);
+                }
             });
         });
     </script>
+
+
+    <!-- Bottom Sheet: curriculum-details -->
+    <div class="bottom-sheet-overlay" id="sheet-curriculum-details"
+        onclick="closeBottomSheet('sheet-curriculum-details')">
+        <div class="bottom-sheet-content" onclick="event.stopPropagation()">
+            <div class="bs-header">
+                <h3>Full 12-Week Curriculum</h3>
+                <button class="bs-close" onclick="closeBottomSheet('sheet-curriculum-details')">&times;</button>
+            </div>
+            <div class="bs-body">
+                <div class="pc-phase"><span class="pc-phase-label" style="color:#4B8BF5;">Phase
+                        1 &middot; Build the Base</span>
+                    <ul>
+                        <li>&bull; AI Research &amp; Identity Shift</li>
+                        <li>&bull; NotebookLM &amp; Advanced Search</li>
+                        <li>&bull; Visual Language &amp; Jitter Motion</li>
+                    </ul>
+                </div>
+                <div class="pc-phase"><span class="pc-phase-label" style="color:#10B981;">Phase
+                        2 &middot; Master Systems</span>
+                    <ul>
+                        <li>&bull; SaaS Architecture &amp; FinTech</li>
+                        <li>&bull; Component Libraries (AI Gen)</li>
+                        <li>&bull; Complex Design Patterns</li>
+                    </ul>
+                </div>
+                <div class="pc-phase"><span class="pc-phase-label" style="color:#F59E0B;">Phase
+                        3 &middot; Deep Work &amp; Career</span>
+                    <ul>
+                        <li>&bull; Portfolio Crafting (AI Pitch)</li>
+                        <li>&bull; Mock Interviews (Agency Focus)</li>
+                        <li>&bull; Graduation &amp; Job Placement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bottom Sheet: faq-details -->
+    <div class="bottom-sheet-overlay" id="sheet-faq-details" onclick="closeBottomSheet('sheet-faq-details')">
+        <div class="bottom-sheet-content" onclick="event.stopPropagation()">
+            <div class="bs-header">
+                <h3>Frequently Asked Questions</h3>
+                <button class="bs-close" onclick="closeBottomSheet('sheet-faq-details')">&times;</button>
+            </div>
+            <div class="bs-body">
+                <div class="pc-accordion"
+                    style="margin-bottom:12px; border:1px solid #e2e8f0; border-radius:12px; background:#fff;"
+                    onclick="toggleAcceleratorAccordion('who-is-this-program-for-')">
+                    <div class="pc-accordion-header"
+                        style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer;">
+                        <strong style="color: #1e293b; font-size: 1.05rem; margin:0;">Who is this program for?</strong>
+                        <span class="pc-accordion-chevron" id="who-is-this-program-for--icon"
+                            style="color: #94a3b8; font-weight:bold; font-size:1.2rem;">−</span>
+                    </div>
+                    <div id="who-is-this-program-for--content" class="pc-accordion-content open"
+                        style="overflow:hidden; transition:max-height 0.3s ease;">
+                        <div class="pc-accordion-body" style="padding: 0 20px 20px;">
+                            <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0;">For ambitious
+                                freshers, career switchers, pixel-pushers seeking complex work, and aspiring
+                                freelancers.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pc-accordion"
+                    style="margin-bottom:12px; border:1px solid #e2e8f0; border-radius:12px; background:#fff;"
+                    onclick="toggleAcceleratorAccordion('what-tools-will-i-learn-')">
+                    <div class="pc-accordion-header"
+                        style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer;">
+                        <strong style="color: #1e293b; font-size: 1.05rem; margin:0;">What tools will I learn?</strong>
+                        <span class="pc-accordion-chevron" id="what-tools-will-i-learn--icon"
+                            style="color: #94a3b8; font-weight:bold; font-size:1.2rem;">+</span>
+                    </div>
+                    <div id="what-tools-will-i-learn--content" class="pc-accordion-content"
+                        style="overflow:hidden; transition:max-height 0.3s ease;">
+                        <div class="pc-accordion-body" style="padding: 0 20px 20px;">
+                            <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0;">You will master
+                                an AI-native stack including NotebookLM, AI Studio, Figma AI, Jitter, and
+                                Claude/GPT-4o.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pc-accordion"
+                    style="margin-bottom:12px; border:1px solid #e2e8f0; border-radius:12px; background:#fff;"
+                    onclick="toggleAcceleratorAccordion('what-projects-will-i-build-')">
+                    <div class="pc-accordion-header"
+                        style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer;">
+                        <strong style="color: #1e293b; font-size: 1.05rem; margin:0;">What projects will I
+                            build?</strong>
+                        <span class="pc-accordion-chevron" id="what-projects-will-i-build--icon"
+                            style="color: #94a3b8; font-weight:bold; font-size:1.2rem;">+</span>
+                    </div>
+                    <div id="what-projects-will-i-build--content" class="pc-accordion-content"
+                        style="overflow:hidden; transition:max-height 0.3s ease;">
+                        <div class="pc-accordion-body" style="padding: 0 20px 20px;">
+                            <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0;">You will build
+                                two industry-grade products: an E-Learning platform and a complex FinTech
+                                experience.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pc-accordion"
+                    style="margin-bottom:12px; border:1px solid #e2e8f0; border-radius:12px; background:#fff;"
+                    onclick="toggleAcceleratorAccordion('who-are-the-mentors-')">
+                    <div class="pc-accordion-header"
+                        style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer;">
+                        <strong style="color: #1e293b; font-size: 1.05rem; margin:0;">Who are the mentors?</strong>
+                        <span class="pc-accordion-chevron" id="who-are-the-mentors--icon"
+                            style="color: #94a3b8; font-weight:bold; font-size:1.2rem;">+</span>
+                    </div>
+                    <div id="who-are-the-mentors--content" class="pc-accordion-content"
+                        style="overflow:hidden; transition:max-height 0.3s ease;">
+                        <div class="pc-accordion-body" style="padding: 0 20px 20px;">
+                            <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0;">You'll learn
+                                from experienced practitioners and agency veterans who design, ship, and lead
+                                real products.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pc-accordion"
+                    style="margin-bottom:12px; border:1px solid #e2e8f0; border-radius:12px; background:#fff;"
+                    onclick="toggleAcceleratorAccordion('will-this-help-me-get-a-job-')">
+                    <div class="pc-accordion-header"
+                        style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer;">
+                        <strong style="color: #1e293b; font-size: 1.05rem; margin:0;">Will this help me get a
+                            job?</strong>
+                        <span class="pc-accordion-chevron" id="will-this-help-me-get-a-job--icon"
+                            style="color: #94a3b8; font-weight:bold; font-size:1.2rem;">+</span>
+                    </div>
+                    <div id="will-this-help-me-get-a-job--content" class="pc-accordion-content"
+                        style="overflow:hidden; transition:max-height 0.3s ease;">
+                        <div class="pc-accordion-body" style="padding: 0 20px 20px;">
+                            <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0;">Yes, the program
+                                focuses equally on craft, portfolio building, soft skills, and direct
+                                networking with founders to make you job-ready.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bottom Sheet: ft-faq-details -->
+    <div class="bottom-sheet-overlay" id="sheet-ft-faq-details" onclick="closeBottomSheet('sheet-ft-faq-details')">
+        <div class="bottom-sheet-content" onclick="event.stopPropagation()">
+            <div class="bs-header">
+                <h3>Frequently Asked Questions</h3>
+                <button class="bs-close" onclick="closeBottomSheet('sheet-ft-faq-details')">&times;</button>
+            </div>
+            <div class="bs-body">
+                <div class="pc-accordion"
+                    style="margin-bottom:12px; border:1px solid #e2e8f0; border-radius:12px; background:#fff;"
+                    onclick="toggleAcceleratorAccordion('who-is-the-job-booster-program-for-')">
+                    <div class="pc-accordion-header"
+                        style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer;">
+                        <strong style="color: #1e293b; font-size: 1.05rem; margin:0;">Who is the Job Booster program
+                            for?</strong>
+                        <span class="pc-accordion-chevron" id="who-is-the-job-booster-program-for--icon"
+                            style="color: #94a3b8; font-weight:bold; font-size:1.2rem;">−</span>
+                    </div>
+                    <div id="who-is-the-job-booster-program-for--content" class="pc-accordion-content open"
+                        style="overflow:hidden; transition:max-height 0.3s ease;">
+                        <div class="pc-accordion-body" style="padding: 0 20px 20px;">
+                            <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0;">It is ideal for
+                                designers with basic training, self-taught designers, or career switchers
+                                struggling to get interviews.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pc-accordion"
+                    style="margin-bottom:12px; border:1px solid #e2e8f0; border-radius:12px; background:#fff;"
+                    onclick="toggleAcceleratorAccordion('what-can-i-expect-in-30-days-')">
+                    <div class="pc-accordion-header"
+                        style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer;">
+                        <strong style="color: #1e293b; font-size: 1.05rem; margin:0;">What can I expect in 30
+                            days?</strong>
+                        <span class="pc-accordion-chevron" id="what-can-i-expect-in-30-days--icon"
+                            style="color: #94a3b8; font-weight:bold; font-size:1.2rem;">+</span>
+                    </div>
+                    <div id="what-can-i-expect-in-30-days--content" class="pc-accordion-content"
+                        style="overflow:hidden; transition:max-height 0.3s ease;">
+                        <div class="pc-accordion-body" style="padding: 0 20px 20px;">
+                            <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0;">You will have a
+                                recruiter-ready portfolio, strong storytelling, a structured job
+                                strategy, and active interview calls.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pc-accordion"
+                    style="margin-bottom:12px; border:1px solid #e2e8f0; border-radius:12px; background:#fff;"
+                    onclick="toggleAcceleratorAccordion('is-this-a-purely-self-paced-course-')">
+                    <div class="pc-accordion-header"
+                        style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer;">
+                        <strong style="color: #1e293b; font-size: 1.05rem; margin:0;">Is this a purely self-paced
+                            course?</strong>
+                        <span class="pc-accordion-chevron" id="is-this-a-purely-self-paced-course--icon"
+                            style="color: #94a3b8; font-weight:bold; font-size:1.2rem;">+</span>
+                    </div>
+                    <div id="is-this-a-purely-self-paced-course--content" class="pc-accordion-content"
+                        style="overflow:hidden; transition:max-height 0.3s ease;">
+                        <div class="pc-accordion-body" style="padding: 0 20px 20px;">
+                            <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0;">No, you receive
+                                dedicated career mentoring, 3 live 1:1 sessions, weekly group coaching,
+                                and portfolio review clinics.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pc-accordion"
+                    style="margin-bottom:12px; border:1px solid #e2e8f0; border-radius:12px; background:#fff;"
+                    onclick="toggleAcceleratorAccordion('does-the-program-help-me-find-jobs-')">
+                    <div class="pc-accordion-header"
+                        style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer;">
+                        <strong style="color: #1e293b; font-size: 1.05rem; margin:0;">Does the program help me find
+                            jobs?</strong>
+                        <span class="pc-accordion-chevron" id="does-the-program-help-me-find-jobs--icon"
+                            style="color: #94a3b8; font-weight:bold; font-size:1.2rem;">+</span>
+                    </div>
+                    <div id="does-the-program-help-me-find-jobs--content" class="pc-accordion-content"
+                        style="overflow:hidden; transition:max-height 0.3s ease;">
+                        <div class="pc-accordion-body" style="padding: 0 20px 20px;">
+                            <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0;">We provide
+                                structured job search execution, weekly recruiter profile drops, and private
+                                hiring network access.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pc-accordion"
+                    style="margin-bottom:12px; border:1px solid #e2e8f0; border-radius:12px; background:#fff;"
+                    onclick="toggleAcceleratorAccordion('how-do-i-enroll-in-the-program-')">
+                    <div class="pc-accordion-header"
+                        style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer;">
+                        <strong style="color: #1e293b; font-size: 1.05rem; margin:0;">How do I enroll in the
+                            program?</strong>
+                        <span class="pc-accordion-chevron" id="how-do-i-enroll-in-the-program--icon"
+                            style="color: #94a3b8; font-weight:bold; font-size:1.2rem;">+</span>
+                    </div>
+                    <div id="how-do-i-enroll-in-the-program--content" class="pc-accordion-content"
+                        style="overflow:hidden; transition:max-height 0.3s ease;">
+                        <div class="pc-accordion-body" style="padding: 0 20px 20px;">
+                            <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin: 0;">Start with a
+                                Career Consultation & Assessment, which includes a portfolio audit and an
+                                improvement report.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function openBottomSheet(id) {
+            document.getElementById(id).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBottomSheet(id) {
+            document.getElementById(id).classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    </script>
+
 </body>
 
 </html>
