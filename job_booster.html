@@ -244,9 +244,11 @@
         <div class="container">
             <div class="trust-toolbar centered-toolbar" style="margin-bottom: 24px;">
                 <div class="toolbar-avatar-group trust-avatars-list">
-                    <div class="tb-avatar" style="background: #ef4444; color: white;">R</div>
+                    <div class="tb-avatar" style="background: #F87171; color: white;">AS</div>
                     <img src="https://i.pravatar.cc/100?img=33" class="tb-avatar" alt="User">
+                    <div class="tb-avatar" style="background: #3B82F6; color: white;">JD</div>
                     <img src="https://i.pravatar.cc/100?img=47" class="tb-avatar" alt="User">
+                    <div class="tb-avatar" style="background: #10B981; color: white;">MK</div>
                 </div>
                 <div class="toolbar-divider"></div>
                 <div class="toolbar-stat">
@@ -1102,7 +1104,8 @@
     <section id="pricing" class="pricing-section">
         <div class="container">
             <h2 style="font-size: 2.5rem; color: #0F172A; margin-bottom: 24px; text-align: center;">Know Your Score &
-                <span class="animated-underline">Start the Transformation</span></h2>
+                <span class="animated-underline">Start the Transformation</span>
+            </h2>
 
             <p
                 style="color: #64748b; font-size: 1.05rem; font-weight: 500; max-width: 800px; margin: 0 auto 48px; text-align: center; line-height: 1.6;">
@@ -1930,8 +1933,31 @@
         // Trust Toolbar Live Joining Animation
         let count = 306;
         const avatarColors = ['#F87171', '#3B82F6', '#10B981', '#F59E0B', '#8B5CF6', '#EC4899'];
-        const names = ['AS', 'JD', 'MK', 'RP', 'SL', 'BT', 'GW', 'HN', 'KZ', 'MQ'];
-        const MAX_AVATARS = 5;
+        const designerPool = [
+            { name: "Arjun Singh", img: "33" },
+            { name: "Jessica Davis", img: "47" },
+            { name: "Michael Kapur", img: "11" },
+            { name: "Riya Patel", img: "25" },
+            { name: "Siddharth Luthra", img: "64" },
+            { name: "Beth Thompson", img: "52" },
+            { name: "Gopal Warrier", img: "18" },
+            { name: "Heena Narang", img: "41" },
+            { name: "Kunal Zero", img: "29" },
+            { name: "Megha Qureshi", img: "36" },
+            { name: "Anil Sharma", img: "22" },
+            { name: "Deepa Nair", img: "55" },
+            { name: "Rohit Verma", img: "14" },
+            { name: "Suman Rao", img: "49" },
+            { name: "Vikram Seth", img: "31" },
+            { name: "Neha Gupta", img: "61" },
+            { name: "Rahul Bose", img: "19" },
+            { name: "Priya Das", img: "43" },
+            { name: "Amitabh K.", img: "27" },
+            { name: "Sonia M.", img: "38" }
+        ];
+
+        // Currently shown indices (matches initial HTML)
+        let activeIndices = [0, 1, 2, 3, 4];
 
         function addNewJoiner() {
             count++;
@@ -1941,29 +1967,38 @@
                 el.innerText = `${count} Designers`;
             });
 
+            // Find a unique designer not currently in the toolbar
+            let nextIndex;
+            do {
+                nextIndex = Math.floor(Math.random() * designerPool.length);
+            } while (activeIndices.includes(nextIndex));
+
+            const designer = designerPool[nextIndex];
+            activeIndices.push(nextIndex);
+
             // Get all avatar groups
             const avatarGroups = document.querySelectorAll('.trust-avatars-list');
 
             avatarGroups.forEach(group => {
                 let newElement;
-                const isInitial = Math.random() > 0.6;
+                const isInitial = Math.random() > 0.5;
 
                 if (isInitial) {
                     newElement = document.createElement('div');
                     newElement.className = 'tb-avatar';
-                    newElement.innerText = names[Math.floor(Math.random() * names.length)];
+                    // Full name to initials
+                    const parts = designer.name.split(' ');
+                    newElement.innerText = parts.map(p => p[0]).join('').substring(0, 2);
                     newElement.style.background = avatarColors[Math.floor(Math.random() * avatarColors.length)];
                     newElement.style.color = 'white';
                 } else {
                     newElement = document.createElement('img');
-                    const randomId = Math.floor(Math.random() * 70);
-                    newElement.src = `https://i.pravatar.cc/100?img=${randomId}`;
+                    newElement.src = `https://i.pravatar.cc/100?img=${designer.img}`;
                     newElement.className = 'tb-avatar';
                 }
 
                 newElement.style.opacity = '0';
                 newElement.style.transform = 'scale(0) translateX(20px)';
-
                 group.appendChild(newElement);
 
                 gsap.to(newElement, {
@@ -1974,8 +2009,8 @@
                     ease: "back.out(1.7)"
                 });
 
-                // Maintain strict limit of MAX_AVATARS
-                if (group.children.length > MAX_AVATARS) {
+                // Maintain strict limit of 5 avatars
+                if (group.children.length > 5) {
                     const first = group.children[0];
                     gsap.to(first, {
                         opacity: 0,
@@ -1987,6 +2022,11 @@
                     });
                 }
             });
+
+            // Keep activeIndices in sync (remove one index per joiner event)
+            if (activeIndices.length > 5) {
+                activeIndices.shift();
+            }
         }
 
         // Randomly add new joiners
