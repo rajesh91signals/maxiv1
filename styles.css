@@ -335,7 +335,7 @@ button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 16px 36px;
+    padding: 18px 40px;
     border-radius: var(--radius-pill);
     font-weight: 500;
     font-size: 1rem;
@@ -725,7 +725,7 @@ button {
 .scorer-btn {
     background-color: var(--color-text-main);
     color: white;
-    padding: 12px 28px;
+    padding: 16px 32px;
     /* Reduced from 14px 32px */
     border-radius: 12px;
     font-weight: 600;
@@ -796,21 +796,34 @@ button {
     }
 
     .scorer-input-wrapper {
-        flex-direction: column;
-        background: transparent;
-        box-shadow: none;
-        gap: 16px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        background: white;
+        padding: 6px 6px 6px 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e2e8f0;
+        gap: 0;
+        border-radius: 16px;
+    }
+
+    .platform-icon-container {
+        margin-right: 8px;
     }
 
     .scorer-input {
-        width: 100%;
-        background: white;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        text-align: center;
+        width: auto;
+        flex: 1;
+        background: transparent;
+        box-shadow: none;
+        text-align: left;
+        padding: 12px 0;
+        min-width: 150px;
     }
 
     .scorer-btn {
         width: 100%;
+        margin-top: 8px;
+        padding: 16px 28px;
     }
 }
 

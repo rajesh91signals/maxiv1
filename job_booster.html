@@ -234,7 +234,7 @@
             }
 
             .jb-hero h1 {
-                font-size: 2.2rem;
+                font-size: clamp(2.2rem, 8vw, 4rem);
             }
         }
 
@@ -249,8 +249,8 @@
 
         @media (max-width: 640px) {
             .hero-title-new {
-                font-size: 2.2rem !important;
-                line-height: 1.2 !important;
+                font-size: clamp(1.75rem, 9vw, 3rem) !important;
+                line-height: 1.1 !important;
             }
 
             .hero-title-new br {
@@ -348,7 +348,7 @@
             }
 
             .hiring-bar-module h3 {
-                font-size: 1.6rem !important;
+                font-size: 1.45rem !important;
                 white-space: normal !important;
                 line-height: 1.3 !important;
             }
@@ -381,23 +381,79 @@
             #mid-eligibility-form {
                 margin-top: 40px !important;
                 height: auto !important;
-                flex-direction: column;
+                flex-direction: row !important;
+                flex-wrap: wrap !important;
                 box-shadow: 4px 4px 0 #0f172a !important;
+                background: white !important;
+                padding: 6px 6px 6px 16px !important;
+                align-items: center !important;
             }
 
             #mid-eligibility-form .scorer-input {
-                padding: 16px !important;
-                width: 100%;
-                border-bottom: 1px solid #e2e8f0 !important;
+                padding: 12px 0 !important;
+                width: auto !important;
+                flex: 1 !important;
+                border-bottom: none !important;
+                min-width: 150px !important;
             }
 
             #mid-eligibility-form .scorer-btn {
-                width: 100%;
-                padding: 16px !important;
+                width: 100% !important;
+                padding: 18px !important;
+                margin-top: 8px !important;
             }
 
             #mid-eligibility-hint p {
                 font-size: 0.85rem !important;
+            }
+
+            .footer-col-mobile {
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+            }
+
+            .footer-col-mobile>div {
+                text-align: center !important;
+            }
+
+            .footer-col-mobile .footer-socials {
+                justify-content: center !important;
+                margin-top: 24px;
+            }
+
+            .bento-card {
+                padding: 24px !important;
+            }
+
+            .bento-title {
+                font-size: clamp(1.2rem, 5vw, 1.5rem) !important;
+                line-height: 1.3 !important;
+            }
+
+            .mobile-center-logo {
+                margin: 0 auto 24px auto !important;
+                display: block !important;
+            }
+
+            .footer-col-mobile p,
+            .footer-col-mobile div {
+                text-align: center !important;
+            }
+        }
+
+        /* Expert Layout Fixes for Ultra Mobile */
+        @media (max-width: 400px) {
+            .marker-50 {
+                display: none !important;
+            }
+
+            .score-scale-wrapper span {
+                font-size: 0.55rem !important;
+            }
+
+            .footer-socials {
+                gap: 16px !important;
             }
         }
 
@@ -432,8 +488,7 @@
                         xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
-                    </svg><span class="animated-underline">Verified Pro Designer</span></span><br>cohort top brands hire
-                from
+                    </svg><span class="animated-underline">Verified Pro</span></span> club top brands hire from
                 <span
                     style="display: inline-flex; align-items: center; margin-left: 16px; vertical-align: middle; gap: 8px;">
                     <!-- Amazon -->
@@ -467,11 +522,6 @@
                     </span>
                 </span>
             </h1>
-            <p class="subtitle" style="max-width: 700px; margin: 0 auto; line-height: 1.6;">The exclusive club of
-                <b>top UX Designers and Design Leaders</b> where top global brands find their next talent. Join our
-                30-day intensive reset to bridge your final execution gaps, master high-stakes storytelling, and unlock
-                premium hiring access.
-            </p>
 
             <div class="scorer-input-wrapper"
                 style="margin: 48px auto 0; box-shadow: 0 20px 40px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
@@ -696,14 +746,16 @@
                         <div
                             style="position: absolute; inset: 0; display: flex; z-index: 10; pointer-events: none; align-items: center;">
                             <div style="width: 50%;"></div>
-                            <div style="width: 30%; display: flex; align-items: center; justify-content: center;">
+                            <div
+                                style="width: 30%; display: flex; align-items: center; justify-content: center; text-wrap: nowrap;">
                                 <span
-                                    style="font-size: 0.7rem; font-weight: 800; color: #0f172a; opacity: 0.8; letter-spacing: 0.08em; text-transform: uppercase;">Need
+                                    style="font-size: clamp(0.55rem, 2vw, 0.7rem); font-weight: 800; color: #0f172a; opacity: 0.8; letter-spacing: 0.08em; text-transform: uppercase;">Need
                                     Improvement</span>
                             </div>
-                            <div style="width: 20%; display: flex; align-items: center; justify-content: center;">
+                            <div
+                                style="width: 20%; display: flex; align-items: center; justify-content: center; text-wrap: nowrap;">
                                 <span
-                                    style="font-size: 0.7rem; font-weight: 800; color: #ffffff; opacity: 0.9; letter-spacing: 0.08em; text-transform: uppercase;">Verified
+                                    style="font-size: clamp(0.55rem, 2vw, 0.7rem); font-weight: 800; color: #ffffff; opacity: 0.9; letter-spacing: 0.08em; text-transform: uppercase;">Verified
                                     Pro</span>
                             </div>
                         </div>
@@ -713,7 +765,8 @@
                     <div
                         style="position: relative; height: 20px; margin-top: 16px; font-weight: 900; font-size: 0.8rem; color: #cbd5e1; letter-spacing: 0.15em;">
                         <span style="position: absolute; left: 0%; transform: translateX(-50%);">0</span>
-                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">50</span>
+                        <span class="marker-50"
+                            style="position: absolute; left: 50%; transform: translateX(-50%);">50</span>
                         <span
                             style="position: absolute; left: 80%; transform: translateX(-50%); color: #10b981;">80</span>
                         <span
@@ -2194,14 +2247,14 @@
             </div>
     </section>
 
-    <footer class="footer" id="footer" style="border-top: 1px solid #f1f5f9; padding: 80px 0 60px;">
+    <footer class="footer" id="footer" style="border-top: 1px solid #f1f5f9; padding: 60px 0;">
         <div class="container">
-            <div
+            <div class="footer-col-mobile"
                 style="display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap;">
                 <!-- Left Block -->
-                <div style="flex: 1; min-width: 300px; text-align: left;">
+                <div style="flex: 1; min-width: 280px; text-align: left;">
                     <img src="assets/logo.svg" style="filter: brightness(0); opacity: 0.6; margin-bottom: 24px;"
-                        height="30">
+                        height="30" class="mobile-center-logo">
                     <p
                         style="max-width: 440px; line-height: 1.6; color: #64748b; font-size: 0.95rem; margin-bottom: 20px; font-family: 'Inter', sans-serif;">
                         Empowering the next generation of design leaders through AI native UX Bootcamp-driven mentorship
@@ -2217,7 +2270,7 @@
                 </div>
 
                 <!-- Right Block -->
-                <div style="text-align: right; min-width: 200px;">
+                <div style="text-align: right; min-width: 200px; flex: 1;">
                     <div style="margin-bottom: 32px;">
                         <a href="https://wa.me/919900000000" target="_blank"
                             style="color: #10b981; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 0.95rem;">
@@ -2225,7 +2278,7 @@
                             Connect on WhatsApp
                         </a>
                     </div>
-                    <div style="display: flex; justify-content: flex-end; gap: 24px;">
+                    <div class="footer-socials" style="display: flex; justify-content: flex-end; gap: 24px;">
                         <a href="#" style="opacity: 0.4; transition: all 0.2s;" onmouseover="this.style.opacity='1'"
                             onmouseout="this.style.opacity='0.4'">
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="#0f172a"
