@@ -32,7 +32,7 @@
                 </svg>
             </div>
             <div class="nav-right">
-                <a href="#pricing" class="btn btn-primary">Book Consultation</a>
+                <a href="#pricing" class="btn btn-primary">Enroll</a>
             </div>
         </div>
     </nav>
@@ -234,7 +234,176 @@
             }
 
             .jb-hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
+            }
+        }
+
+        /* Additional Global Responsive Fixes */
+        .container {
+            width: 100%;
+            padding-right: 20px;
+            padding-left: 20px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        @media (max-width: 640px) {
+            .hero-title-new {
+                font-size: 2.2rem !important;
+                line-height: 1.2 !important;
+            }
+
+            .hero-title-new br {
+                display: none;
+            }
+
+            .hero-title-new span svg {
+                width: 24px !important;
+                height: 24px !important;
+            }
+
+            .hero-brand-icon {
+                width: 32px !important;
+                height: 32px !important;
+                border-width: 2px !important;
+            }
+
+            .hero-brand-icon img,
+            .hero-brand-icon svg,
+            .hero-brand-icon span {
+                transform: scale(0.8) !important;
+            }
+
+            .trust-toolbar {
+                flex-direction: row !important;
+                gap: 12px !important;
+                padding: 6px 12px 6px 16px !important;
+                height: 48px !important;
+                width: fit-content !important;
+                margin: 0 auto 24px !important;
+                align-items: center !important;
+                font-size: 0.85rem !important;
+            }
+
+            .toolbar-divider {
+                display: block !important;
+                height: 20px !important;
+                margin: 0 4px !important;
+            }
+
+            .tb-avatar {
+                width: 28px !important;
+                height: 28px !important;
+                margin-right: -8px !important;
+            }
+
+            .contrast-title {
+                font-size: 1.8rem !important;
+                margin-bottom: 30px !important;
+            }
+
+            .reasons-title {
+                font-size: 1.2rem !important;
+            }
+
+            .reasons-content p {
+                font-size: 1.1rem !important;
+                padding-left: 0 !important;
+            }
+
+            .nav {
+                padding: 12px 0 !important;
+            }
+
+            .nav-logo img {
+                height: 30px !important;
+            }
+
+            .nav-right .btn {
+                padding: 8px 16px !important;
+                font-size: 0.8rem !important;
+                border-radius: 100px !important;
+            }
+
+            .nav-cta-hint {
+                display: none !important;
+            }
+
+            .reasons-header {
+                gap: 16px !important;
+            }
+
+            .reasons-number {
+                width: 44px !important;
+                height: 44px !important;
+                font-size: 1.1rem !important;
+            }
+        }
+
+        /* Hiring Bar Module Responsive Styles */
+        @media (max-width: 640px) {
+            .hiring-bar-module {
+                padding: 40px 20px !important;
+                margin-bottom: 40px !important;
+            }
+
+            .hiring-bar-module h3 {
+                font-size: 1.6rem !important;
+                white-space: normal !important;
+                line-height: 1.3 !important;
+            }
+
+            .skill-tag {
+                padding: 4px 10px !important;
+            }
+
+            .skill-tag span {
+                font-size: 0.6rem !important;
+            }
+
+            .score-scale-wrapper {
+                margin-top: 20px !important;
+            }
+
+            .score-scale-wrapper>div:first-child {
+                height: 40px !important;
+            }
+
+            .score-indicator-scrubber {
+                width: 36px !important;
+                height: 36px !important;
+            }
+
+            .score-scale-wrapper span {
+                font-size: 0.6rem !important;
+            }
+
+            #mid-eligibility-form {
+                margin-top: 40px !important;
+                height: auto !important;
+                flex-direction: column;
+                box-shadow: 4px 4px 0 #0f172a !important;
+            }
+
+            #mid-eligibility-form .scorer-input {
+                padding: 16px !important;
+                width: 100%;
+                border-bottom: 1px solid #e2e8f0 !important;
+            }
+
+            #mid-eligibility-form .scorer-btn {
+                width: 100%;
+                padding: 16px !important;
+            }
+
+            #mid-eligibility-hint p {
+                font-size: 0.85rem !important;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .hiring-bar-module {
+                max-width: 1100px !important;
             }
         }
     </style>
@@ -242,7 +411,7 @@
     <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <div class="trust-toolbar centered-toolbar" style="margin-bottom: 24px;">
+            <div class="trust-toolbar centered-toolbar" style="margin-bottom: 24px; padding: 6px 20px !important;">
                 <div class="toolbar-avatar-group trust-avatars-list">
                     <div class="tb-avatar" style="background: #F87171; color: white;">AS</div>
                     <img src="https://i.pravatar.cc/100?img=33" class="tb-avatar" alt="User">
@@ -255,8 +424,6 @@
                     <div class="status-indicator"></div>
                     <span class="trust-count-val">306 Designers</span>
                 </div>
-                <button class="toolbar-btn"
-                    onclick="document.getElementById('otp-challenge').scrollIntoView({ behavior: 'smooth' })">Join</button>
             </div>
 
             <h1 class="hero-title-new" id="hero-title">Join the <span
@@ -270,13 +437,13 @@
                 <span
                     style="display: inline-flex; align-items: center; margin-left: 16px; vertical-align: middle; gap: 8px;">
                     <!-- Amazon -->
-                    <span
+                    <span class="hero-brand-icon"
                         style="width: 44px; height: 44px; border-radius: 50%; border: 3px solid #f8fafc; background: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg" alt="Amazon"
                             style="width: 20px;">
                     </span>
                     <!-- EY -->
-                    <span
+                    <span class="hero-brand-icon"
                         style="width: 44px; height: 44px; border-radius: 50%; border: 3px solid #f8fafc; background: #ffe600; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
                         <svg viewBox="0 0 100 100" style="width: 24px; height: 24px;">
                             <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle"
@@ -285,7 +452,7 @@
                         </svg>
                     </span>
                     <!-- Swiggy -->
-                    <span
+                    <span class="hero-brand-icon"
                         style="width: 44px; height: 44px; border-radius: 50%; border: 3px solid #f8fafc; background: #fc8019; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
                         <svg viewBox="0 0 100 100" style="width: 22px; height: 22px;">
                             <path fill="#fff"
@@ -293,16 +460,18 @@
                         </svg>
                     </span>
                     <!-- Porter -->
-                    <span
+                    <span class="hero-brand-icon"
                         style="width: 44px; height: 44px; border-radius: 50%; border: 3px solid #f8fafc; background: #2F65CB; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
                         <span
                             style="color: #fff; font-weight: 800; font-family: 'Inter', sans-serif; font-size: 9px; letter-spacing: 0.5px;">PORTER</span>
                     </span>
                 </span>
             </h1>
-            <p class="subtitle" style="max-width: 700px; margin: 0 auto; line-height: 1.6;">A high-intensity UX career
-                acceleration program designed for designers who already know
-                UX fundamentals but need <b>execution, mentoring, and hiring access</b> to land interviews fast.</p>
+            <p class="subtitle" style="max-width: 700px; margin: 0 auto; line-height: 1.6;">The exclusive club of
+                <b>top UX Designers and Design Leaders</b> where top global brands find their next talent. Join our
+                30-day intensive reset to bridge your final execution gaps, master high-stakes storytelling, and unlock
+                premium hiring access.
+            </p>
 
             <div class="scorer-input-wrapper"
                 style="margin: 48px auto 0; box-shadow: 0 20px 40px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
@@ -425,76 +594,118 @@
 
 
         <div class="container text-center" style="margin-bottom: 80px;">
-            <h2
-                style="font-size: 3rem; color: #1e293b; font-weight: 800; margin-bottom: 20px; letter-spacing: -0.02em;">
-                <span class="animated-underline">30 days OTP Challenge: Be Verified Pro</span>
-            </h2>
-            <p style="color: #475569; font-size: 1.2rem; max-width: 800px; margin: 0 auto;">A <b>30-day intensive career
-                    reset</b> designed to bridge the gap between your current profile and career-defining <b>job
-                    opportunities at big brands</b>.</p>
-
             <!-- Hiring Bar Module -->
             <div class="hiring-bar-module"
-                style="background: #fff; border: 2px solid #0f172a; border-radius: 32px; padding: 60px 40px; box-shadow: 10px 10px 0 #0f172a; max-width: 1000px; margin: 80px auto 0;">
+                style="background: #fff; border: 2px solid #0f172a; border-radius: 32px; padding: 60px 40px; box-shadow: 10px 10px 0 #0f172a; max-width: 1000px; margin: 0 auto 80px;">
+                <div
+                    style="display: inline-flex; align-items: center; gap: 8px; background: #f0fdf4; padding: 6px 14px; border-radius: 100px; border: 1.5px solid #86efac; margin-bottom: 30px;">
+                    <svg width="16" height="18" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        style="flex-shrink: 0;">
+                        <path d="M12 0L2 4V12C2 18.23 6.27 24.06 12 25.14C17.73 24.06 22 18.23 22 12V4L12 0Z"
+                            fill="#10B981" />
+                        <path d="M7 12.5L10.5 16L17 9.5" stroke="white" stroke-width="2.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <span
+                        style="font-size: 0.85rem; font-weight: 800; color: #166534; text-transform: uppercase; letter-spacing: 0.05em;">
+                        Verified Pro Designer
+                    </span>
+                </div>
                 <h3
-                    style="font-size: 2rem; color: #0f172a; font-weight: 900; margin-bottom: 60px; text-transform: uppercase; letter-spacing: -0.02em;">
-                    The design hiring has a high bar</h3>
+                    style="font-size: 2.22rem; color: #0f172a; font-weight: 900; margin-bottom: 40px; letter-spacing: -0.02em; white-space: nowrap;">
+                    Design hiring now has a very high bar</h3>
+
+                <!-- Skill Parameters (Portfolio -> Design -> AI -> Comm -> Story) -->
+                <div class="skill-tags-container"
+                    style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 40px;">
+                    <div class="skill-tag"
+                        style="background: #f8fafc; padding: 6px 14px; border-radius: 100px; border: 1.5px solid #e2e8f0; opacity: 0.15; filter: grayscale(1); transition: all 0.4s ease; display: flex; align-items: center; gap: 6px;">
+                        <svg class="skill-check" width="12" height="12" viewBox="0 0 12 12" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" style="display: none; flex-shrink: 0;">
+                            <path d="M2.5 6L5 8.5L9.5 3.5" stroke="white" stroke-width="2.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span
+                            style="font-size: 0.7rem; font-weight: 800; color: #475569; text-transform: uppercase; letter-spacing: 0.05em;">Portfolio</span>
+                    </div>
+                    <div class="skill-tag"
+                        style="background: #f8fafc; padding: 6px 14px; border-radius: 100px; border: 1.5px solid #e2e8f0; opacity: 0.15; filter: grayscale(1); transition: all 0.4s ease; display: flex; align-items: center; gap: 6px;">
+                        <svg class="skill-check" width="12" height="12" viewBox="0 0 12 12" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" style="display: none; flex-shrink: 0;">
+                            <path d="M2.5 6L5 8.5L9.5 3.5" stroke="white" stroke-width="2.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span
+                            style="font-size: 0.7rem; font-weight: 800; color: #475569; text-transform: uppercase; letter-spacing: 0.05em;">Design
+                            Skills</span>
+                    </div>
+                    <div class="skill-tag"
+                        style="background: #f8fafc; padding: 6px 14px; border-radius: 100px; border: 1.5px solid #e2e8f0; opacity: 0.15; filter: grayscale(1); transition: all 0.4s ease; display: flex; align-items: center; gap: 6px;">
+                        <svg class="skill-check" width="12" height="12" viewBox="0 0 12 12" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" style="display: none; flex-shrink: 0;">
+                            <path d="M2.5 6L5 8.5L9.5 3.5" stroke="white" stroke-width="2.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span
+                            style="font-size: 0.7rem; font-weight: 800; color: #475569; text-transform: uppercase; letter-spacing: 0.05em;">AI
+                            Skills</span>
+                    </div>
+                    <div class="skill-tag"
+                        style="background: #f8fafc; padding: 6px 14px; border-radius: 100px; border: 1.5px solid #e2e8f0; opacity: 0.15; filter: grayscale(1); transition: all 0.4s ease; display: flex; align-items: center; gap: 6px;">
+                        <svg class="skill-check" width="12" height="12" viewBox="0 0 12 12" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" style="display: none; flex-shrink: 0;">
+                            <path d="M2.5 6L5 8.5L9.5 3.5" stroke="white" stroke-width="2.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span
+                            style="font-size: 0.7rem; font-weight: 800; color: #475569; text-transform: uppercase; letter-spacing: 0.05em;">Soft
+                            Skills</span>
+                    </div>
+                    <div class="skill-tag"
+                        style="background: #f8fafc; padding: 6px 14px; border-radius: 100px; border: 1.5px solid #e2e8f0; opacity: 0.15; filter: grayscale(1); transition: all 0.4s ease; display: flex; align-items: center; gap: 6px;">
+                        <svg class="skill-check" width="12" height="12" viewBox="0 0 12 12" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" style="display: none; flex-shrink: 0;">
+                            <path d="M2.5 6L5 8.5L9.5 3.5" stroke="white" stroke-width="2.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span
+                            style="font-size: 0.7rem; font-weight: 800; color: #475569; text-transform: uppercase; letter-spacing: 0.05em;">Confidence</span>
+                    </div>
+                </div>
 
                 <div class="score-scale-wrapper" style="max-width: 850px; margin: 0 auto;">
-                    <div style="position: relative; height: 60px; margin-bottom: 24px;">
-                        <!-- Label: Need Work -->
-                        <div
-                            style="position: absolute; left: 50%; transform: translateX(-50%); text-align: center; width: 200px;">
-                            <a href="#otp-challenge"
-                                style="text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 4px;">
-                                <div
-                                    style="background: #FFF7ED; color: #C2410C; border: 1.5px solid #FDBA74; padding: 6px 14px; border-radius: 100px; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px;">
-                                    <span>NEED WORK</span>
-                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M7 17L17 7M17 7H7m10 0v10" />
-                                    </svg>
-                                </div>
-                                <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">Score 50 - 79</span>
-                            </a>
-                        </div>
-                        <!-- Label: Verified Pro -->
-                        <div
-                            style="position: absolute; left: 80%; transform: translateX(-50%); text-align: center; width: 140px;">
-                            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
-                                <div
-                                    style="background: #F0FDF4; color: #15803D; border: 1.5px solid #86EFAC; padding: 6px 14px; border-radius: 100px; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px;">
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                                        <path
-                                            d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
-                                    </svg>
-                                    <span>VERIFIED PRO</span>
-                                </div>
-                                <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">Score 80 -
-                                    100</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- The Gradient Bar -->
+                    <!-- The Gradient Bar (Full Gradient) -->
                     <div
-                        style="height: 48px; background: #f1f5f9; border-radius: 100px; position: relative; box-shadow: inset 0 4px 12px rgba(0,0,0,0.05); border: 2px solid #0f172a; overflow: hidden;">
+                        style="height: 48px; background: linear-gradient(90deg, #F87171 0%, #FDE047 65%, #10B981 100%); border-radius: 100px; position: relative; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 2px solid #0f172a; overflow: hidden;">
 
-                        <!-- The Score Connector (Progress Fill) -->
-                        <div class="score-indicator-connector"
-                            style="position: absolute; left: 0; top: 0; bottom: 0; width: 0%; background: linear-gradient(90deg, #F87171 0%, #FDE047 65%, #10B981 100%); transition: width 0.3s ease; border-right: 4px solid #0f172a;">
-                            <!-- Animated Scan Line overlay -->
-                            <div class="scan-line"
-                                style="position: absolute; top: 0; bottom: 0; left: 0; width: 40px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); animation: scan 1.5s infinite;">
-                            </div>
+                        <!-- Current Score Scrubber (Circular with Profile icon) -->
+                        <div class="score-indicator-scrubber"
+                            style="position: absolute; left: 0%; top: 50%; transform: translate(-50%, -50%); width: 42px; height: 42px; background: #fff; border: 2.5px solid #0f172a; border-radius: 50%; z-index: 15; box-shadow: 0 4px 15px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; font-size: 24px;">
+                            <span class="scrubber-emoji">😐</span>
                         </div>
 
                         <!-- Markers (Z-index above fill) -->
                         <div
-                            style="position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: #0f172a; opacity: 0.2; z-index: 2;">
+                            style="position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: #0f172a; opacity: 0.15; z-index: 2;">
                         </div>
                         <div
-                            style="position: absolute; left: 80%; top: 0; bottom: 0; width: 2px; background: #0f172a; opacity: 0.2; z-index: 2;">
+                            style="position: absolute; left: 80%; top: 0; bottom: 0; width: 2px; background: #0f172a; opacity: 0.15; z-index: 2;">
+                        </div>
+
+                        <!-- Labels Inside the Bar -->
+                        <div
+                            style="position: absolute; inset: 0; display: flex; z-index: 10; pointer-events: none; align-items: center;">
+                            <div style="width: 50%;"></div>
+                            <div style="width: 30%; display: flex; align-items: center; justify-content: center;">
+                                <span
+                                    style="font-size: 0.7rem; font-weight: 800; color: #0f172a; opacity: 0.8; letter-spacing: 0.08em; text-transform: uppercase;">Need
+                                    Improvement</span>
+                            </div>
+                            <div style="width: 20%; display: flex; align-items: center; justify-content: center;">
+                                <span
+                                    style="font-size: 0.7rem; font-weight: 800; color: #ffffff; opacity: 0.9; letter-spacing: 0.08em; text-transform: uppercase;">Verified
+                                    Pro</span>
+                            </div>
                         </div>
                     </div>
 
@@ -502,52 +713,93 @@
                     <div
                         style="position: relative; height: 20px; margin-top: 16px; font-weight: 900; font-size: 0.8rem; color: #cbd5e1; letter-spacing: 0.15em;">
                         <span style="position: absolute; left: 0%; transform: translateX(-50%);">0</span>
-                        <span style="position: absolute; left: 25%; transform: translateX(-50%);">25</span>
+                        <span style="position: absolute; left: 50%; transform: translateX(-50%);">50</span>
                         <span
-                            style="position: absolute; left: 50%; transform: translateX(-50%); color: #94a3b8;">50</span>
-                        <span style="position: absolute; left: 75%; transform: translateX(-50%);">75</span>
+                            style="position: absolute; left: 80%; transform: translateX(-50%); color: #10b981;">80</span>
                         <span
-                            style="position: absolute; left: 80%; transform: translateX(-50%); color: #94a3b8;">80</span>
-                        <span style="position: absolute; left: 100%; transform: translateX(-50%);">100</span>
+                            style="position: absolute; left: 100%; transform: translateX(-50%); color: #059669;">100</span>
                     </div>
                 </div>
-                <!-- Skill Parameters -->
-                <div
-                    style="margin-top: 50px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; border-top: 1px solid #f1f5f9; padding-top: 30px;">
-                    <div
-                        style="background: #f8fafc; padding: 10px 16px; border-radius: 12px; display: flex; align-items: center; gap: 8px; border: 1px solid #e2e8f0;">
-                        <span style="font-size: 1rem;">🎨</span>
-                        <span
-                            style="font-size: 0.85rem; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.05em;">Design
-                            Skills</span>
+
+                <!-- Eligibility Form Field -->
+                <div id="mid-eligibility-form" class="scorer-input-wrapper"
+                    style="margin: 60px auto 0; box-shadow: 0 20px 40px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; max-width: 700px;">
+                    <div class="platform-icon-container">
+                        <img src="" alt="" class="platform-icon">
                     </div>
+                    <input type="text" class="scorer-input" placeholder="Paste your Portfolio or LinkedIn link...">
+                    <button class="scorer-btn">Know your score</button>
+                </div>
+
+                <!-- Why Verified Pro? -->
+                <div style="margin-top: 60px; border-top: 1px solid #f1f5f9; padding-top: 40px;">
+                    <h4
+                        style="font-size: 0.85rem; color: #94a3b8; font-weight: 800; margin-bottom: 32px; text-transform: uppercase; letter-spacing: 0.15em; text-align: center;">
+                        Why Verified Pro?</h4>
                     <div
-                        style="background: #f8fafc; padding: 10px 16px; border-radius: 12px; display: flex; align-items: center; gap: 8px; border: 1px solid #e2e8f0;">
-                        <span style="font-size: 1rem;">🤖</span>
-                        <span
-                            style="font-size: 0.85rem; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.05em;">AI
-                            Skills</span>
-                    </div>
-                    <div
-                        style="background: #f8fafc; padding: 10px 16px; border-radius: 12px; display: flex; align-items: center; gap: 8px; border: 1px solid #e2e8f0;">
-                        <span style="font-size: 1rem;">💬</span>
-                        <span
-                            style="font-size: 0.85rem; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.05em;">Communication</span>
-                    </div>
-                    <div
-                        style="background: #f8fafc; padding: 10px 16px; border-radius: 12px; display: flex; align-items: center; gap: 8px; border: 1px solid #e2e8f0;">
-                        <span style="font-size: 1rem;">📖</span>
-                        <span
-                            style="font-size: 0.85rem; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.05em;">Storytelling</span>
-                    </div>
-                    <div
-                        style="background: #f8fafc; padding: 10px 16px; border-radius: 12px; display: flex; align-items: center; gap: 8px; border: 1px solid #e2e8f0;">
-                        <span style="font-size: 1rem;">💼</span>
-                        <span
-                            style="font-size: 0.85rem; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.05em;">Portfolio</span>
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 40px; text-align: left; max-width: 900px; margin: 0 auto;">
+                        <div style="display: flex; gap: 16px;">
+                            <div
+                                style="flex-shrink: 0; width: 40px; height: 40px; background: #f0fdf4; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #10b981;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <div style="font-weight: 800; color: #0f172a; margin-bottom: 6px; font-size: 0.95rem;">
+                                    Expert Credibility</div>
+                                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5;">Audit report validated
+                                    by agency-grade designers from top tech companies.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 16px;">
+                            <div
+                                style="flex-shrink: 0; width: 40px; height: 40px; background: #eef2ff; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #6366f1;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="8.5" cy="7" r="4"></circle>
+                                    <polyline points="17 11 19 13 23 9"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <div style="font-weight: 800; color: #0f172a; margin-bottom: 6px; font-size: 0.95rem;">
+                                    Priority Hiring</div>
+                                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5;">Direct access to
+                                    private hiring networks and premium 'hidden' job roles.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 16px;">
+                            <div
+                                style="flex-shrink: 0; width: 40px; height: 40px; background: #fff7ed; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #f97316;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M23 7l-7 5 7 5V7z"></path>
+                                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                                </svg>
+                            </div>
+                            <div>
+                                <div style="font-weight: 800; color: #0f172a; margin-bottom: 6px; font-size: 0.95rem;">
+                                    Video-First Edge</div>
+                                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5;">A decision-ready
+                                    profile with video walkthroughs that land interviews 3x faster.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <h2
+                style="font-size: 3rem; color: #1e293b; font-weight: 800; margin-bottom: 20px; letter-spacing: -0.02em;">
+                <span class="animated-underline">Start your OTP Challenge</span>
+            </h2>
+            <p style="color: #475569; font-size: 1.1rem; max-width: 800px; margin: 0 auto; line-height: 1.6;">A
+                <b>30-day intensive career
+                    reset</b> designed to bridge the gap between your current profile and career-defining <b>job
+                    opportunities at big brands</b>.
+            </p>
 
 
         </div>
@@ -613,16 +865,16 @@
 
             .bento-card {
                 background: #ffffff;
-                border: 1px solid #e2e8f0;
+                border: 2px solid #0f172a;
                 border-radius: 24px;
                 padding: 32px;
                 display: flex;
                 flex-direction: column;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+                box-shadow: 8px 8px 0 #0f172a;
                 position: relative;
                 overflow: hidden;
                 text-align: left;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
                 min-height: 380px;
             }
 
@@ -649,6 +901,18 @@
             @media(max-width: 900px) {
                 .bento-grid {
                     grid-template-columns: 1fr;
+                    gap: 20px;
+                }
+
+                .bento-card {
+                    padding: 24px;
+                    min-height: auto;
+                }
+
+                .bento-title {
+                    font-size: 1.1rem;
+                    min-height: auto;
+                    margin-bottom: 16px;
                 }
 
                 .bento-col-2 {
@@ -657,12 +921,15 @@
             }
         </style>
 
-        <div class="container" style="max-width: 1100px; padding: 0 20px; text-align: left;">
+        <div class="container"
+            style="max-width: 1100px; padding: 0 20px; text-align: left; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
             <div class="phase-label optimize"><span>01.</span> Optimize</div>
+            <span style="font-size: 0.85rem; color: #64748b; font-weight: 500; letter-spacing: 0.02em;">Profile Reset •
+                High Signal Portfolio • Industry Readiness</span>
         </div>
         <div class="bento-grid" style="margin-top: 0;">
             <!-- 1) NEW SPANNING ITEM: Decision-Ready Profile -->
-            <div style="grid-column: 1 / -1; background:#ffffff; border: 1px solid #e2e8f0; border-radius:32px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); padding:60px; display:flex; gap: 60px; align-items: center;"
+            <div style="grid-column: 1 / -1; background:#ffffff; border: 2px solid #0f172a; border-radius:24px; box-shadow: 10px 10px 0 #0f172a; padding:60px; display:flex; gap: 60px; align-items: center;"
                 class="profile-span-card">
                 <style>
                     @media (max-width: 900px) {
@@ -737,7 +1004,7 @@
                                 <div>
                                     <div style="display: flex; align-items: center; gap: 8px; margin: 0 0 4px 0;">
                                         <h4 style="margin:0; font-size:1.25rem; color:#f8fafc; font-weight: 700;">
-                                            Rita Kumari</h4>
+                                            Pallavi Singh</h4>
                                     </div>
                                     <div style="font-size: 0.9rem; color: #cbd5e1;">4 Years experience as Product
                                         Designer</div>
@@ -765,7 +1032,7 @@
                         <!-- Video Section -->
                         <div
                             style="border-radius:12px; height:160px; overflow: hidden; margin-bottom:24px; position:relative; box-shadow: inset 0 0 20px rgba(0,0,0,0.5);">
-                            <video src="assets/uxportfolio_walk.mp4" autoplay loop muted playsinline
+                            <video src="assets/girl_talk.mp4" autoplay loop muted playsinline
                                 style="width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.9;"></video>
                         </div>
 
@@ -815,8 +1082,11 @@
             </div>
         </div>
 
-        <div class="container" style="max-width: 1100px; padding: 0 20px; margin-top: 40px; text-align: left;">
+        <div class="container"
+            style="max-width: 1100px; padding: 0 20px; margin-top: 40px; text-align: left; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
             <div class="phase-label transform"><span>02.</span> Transform</div>
+            <span style="font-size: 0.85rem; color: #64748b; font-weight: 500; letter-spacing: 0.02em;">Execution Reset
+                • Storytelling • Confidence • 1:1 Coaching</span>
         </div>
         <div class="bento-grid" style="margin-top: 0;">
             <!-- Card 1: Unlearn -->
@@ -863,8 +1133,11 @@
             </div>
         </div>
 
-        <div class="container" style="max-width: 1100px; padding: 0 20px; margin-top: 40px; text-align: left;">
+        <div class="container"
+            style="max-width: 1100px; padding: 0 20px; margin-top: 40px; text-align: left; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
             <div class="phase-label push"><span>03.</span> Push</div>
+            <span style="font-size: 0.85rem; color: #64748b; font-weight: 500; letter-spacing: 0.02em;">Network Reset •
+                Private Hiring • High-Ticket Gig access</span>
         </div>
 
 
@@ -1004,6 +1277,7 @@
                         font-weight: 800;
                         margin: 0;
                         letter-spacing: -0.01em;
+                        font-family: 'Inter', sans-serif;
                         transition: all 0.3s ease;
                     }
 
@@ -1039,12 +1313,12 @@
 
                 <div id="reasons-accordion">
                     <!-- Point 1: Agency & Legacy -->
-                    <div class="reasons-accordion-item active">
+                    <div class="reasons-accordion-item">
                         <div class="reasons-header">
                             <div class="reasons-number"
                                 style="background: #FDE047; color: #020617; box-shadow: 0 4px 20px rgba(253, 224, 71, 0.3);">
                                 1</div>
-                            <h3 class="reasons-title">WE ARE A UX AGENCY WITH 20 YEARS OF LEGACY</h3>
+                            <h3 class="reasons-title">WE'RE UX AGENCY FIRST</h3>
                             <div class="reasons-toggle-icon">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1054,7 +1328,7 @@
                         </div>
                         <div class="reasons-content">
                             <p
-                                style="color: #94a3b8; font-size: 1.15rem; line-height: 1.7; margin-bottom: 24px; max-width: 680px;">
+                                style="color: #94a3b8; font-size: 1.15rem; line-height: 1.7; margin-bottom: 24px; max-width: 680px; font-family: 'Inter', sans-serif;">
                                 With two decades of hands-on agency leadership, we don’t just teach design—we live it.
                                 Our team at Maximoat are also practicing designers working at top agencies and global
                                 brands, ensuring you learn from the best in the business. We have also tied up with
@@ -1071,7 +1345,7 @@
                             <div class="reasons-number"
                                 style="background: #86EFAC; color: #020617; box-shadow: 0 4px 20px rgba(134, 239, 172, 0.3);">
                                 2</div>
-                            <h3 class="reasons-title">BENEFIT FROM OUR GLOBAL NETWORK</h3>
+                            <h3 class="reasons-title">GLOBAL HIRING NETWORK</h3>
                             <div class="reasons-toggle-icon">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1080,7 +1354,8 @@
                             </div>
                         </div>
                         <div class="reasons-content">
-                            <p style="color: #94a3b8; font-size: 1.15rem; line-height: 1.7; margin: 0;">
+                            <p
+                                style="color: #94a3b8; font-size: 1.15rem; line-height: 1.7; margin: 0; font-family: 'Inter', sans-serif;">
                                 Leverage our deep connections with GCCs, global brands operating in India,
                                 leading startups, and top-tier agencies. From high-impact roles to exclusive
                                 remote and freelance opportunities, we open up doors that traditional
@@ -1094,7 +1369,7 @@
                             <div class="reasons-number"
                                 style="background: #FDBA74; color: #020617; box-shadow: 0 4px 20px rgba(253, 186, 116, 0.3);">
                                 3</div>
-                            <h3 class="reasons-title">WE PRIORITIZE CONFIDENCE & SOFT SKILLS</h3>
+                            <h3 class="reasons-title">FOCUS ON SOFT + TECHNICAL SKILLS</h3>
                             <div class="reasons-toggle-icon">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1103,7 +1378,8 @@
                             </div>
                         </div>
                         <div class="reasons-content">
-                            <p style="color: #94a3b8; font-size: 1.15rem; line-height: 1.7; margin: 0;">
+                            <p
+                                style="color: #94a3b8; font-size: 1.15rem; line-height: 1.7; margin: 0; font-family: 'Inter', sans-serif;">
                                 Technical skills are easily learned, but mastering storytelling, clear
                                 thinking, and high-stakes presentation is what truly sets you apart. We
                                 build these core soft skills alongside agency-grade workflows to give you
@@ -1129,13 +1405,20 @@
                         }
 
                         .testi-card-premium {
-                            min-width: 360px;
+                            min-width: 320px;
                             background: rgba(15, 23, 42, 0.6);
                             border: 1px solid rgba(255, 255, 255, 0.1);
                             backdrop-filter: blur(12px);
                             border-radius: 24px;
-                            padding: 32px;
+                            padding: 24px;
                             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                        }
+
+                        @media (max-width: 480px) {
+                            .testi-card-premium {
+                                min-width: 280px;
+                                padding: 20px;
+                            }
                         }
 
                         .testi-card-premium:hover {
@@ -1252,11 +1535,11 @@
 
                 .high-level-roadmap {
                     display: flex;
-                    align-items: center;
+                    align-items: flex-start;
                     justify-content: center;
                     gap: 0;
-                    margin: 60px auto 40px;
-                    max-width: 1100px;
+                    margin: 40px auto;
+                    max-width: 1000px;
                     position: relative;
                 }
 
@@ -1264,28 +1547,29 @@
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    gap: 12px;
-                    width: 250px;
+                    gap: 8px;
+                    width: 140px;
                     text-align: center;
                     position: relative;
                     z-index: 2;
+                    flex-shrink: 0;
                 }
 
                 .node-icon {
-                    width: 54px;
-                    height: 54px;
+                    width: 44px;
+                    height: 44px;
                     background: #fff;
                     border: 2px solid #0f172a;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    font-size: 1.2rem;
-                    box-shadow: 4px 4px 0 #0f172a;
+                    font-size: 1rem;
+                    box-shadow: 3px 3px 0 #0f172a;
                 }
 
                 .node-label {
-                    font-size: 0.9rem;
+                    font-size: 0.8rem;
                     font-weight: 800;
                     color: #0f172a;
                     text-transform: uppercase;
@@ -1293,34 +1577,35 @@
                 }
 
                 .node-subcopy {
-                    font-size: 0.8rem;
+                    font-size: 0.75rem;
                     color: #64748b;
                     font-weight: 500;
-                    margin-top: -4px;
-                    line-height: 1.4;
+                    margin-top: -2px;
+                    line-height: 1.3;
                 }
 
                 .roadmap-line {
                     flex-grow: 1;
                     height: 2px;
                     border-top: 2px dashed #cbd5e1;
-                    margin-top: -38px;
+                    margin-top: 22px;
                     position: relative;
                     z-index: 1;
+                    min-width: 100px;
                 }
 
                 .process-badge {
                     background: #0f172a;
                     color: white;
-                    padding: 12px 24px;
-                    border-radius: 12px;
+                    padding: 8px 14px;
+                    border-radius: 10px;
                     text-align: center;
-                    font-size: 0.85rem;
-                    min-width: 200px;
+                    font-size: 0.7rem;
+                    min-width: 150px;
                     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
                     border: 1px solid rgba(255, 255, 255, 0.1);
                     position: absolute;
-                    top: -42px;
+                    top: -32px;
                     left: 50%;
                     transform: translateX(-50%);
                     z-index: 3;
@@ -1405,24 +1690,14 @@
                     }
 
                     .high-level-roadmap {
-                        flex-direction: column;
-                        gap: 40px;
+                        transform: scale(0.9);
                     }
+                }
 
-                    .roadmap-line {
-                        height: 40px;
-                        width: 2px;
-                        border-left: 2px dashed #cbd5e1;
-                        border-top: none;
-                        margin: -20px 0;
-                    }
-
-                    .process-badge {
-                        position: relative;
-                        top: 0;
-                        left: 0;
-                        transform: none;
-                        margin: 10px 0;
+                @media (max-width: 640px) {
+                    .high-level-roadmap {
+                        transform: scale(0.8);
+                        margin: 20px -20px;
                     }
                 }
 
@@ -1574,8 +1849,8 @@
                 <!-- Step 1 -->
                 <div class="step-card">
                     <div class="step-number">Step 01</div>
-                    <h3 class="step-title" style="margin-bottom: 24px;">Get Your Portfolio and Job Readiness Assessment
-                    </h3>
+                    <h3 class="step-title" style="margin-bottom: 24px;">Let's start with your Portfolio and Job
+                        Readiness Audit</h3>
                     <div style="text-align: left; width: 100%; margin-top: 4px;">
                         <div
                             style="font-weight: 800; color: #0f172a; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px;">
@@ -1613,28 +1888,28 @@
                             onmouseover="this.style.transform='scale(1.02)'; this.style.background='#1e293b';"
                             onmouseout="this.style.transform='scale(1)'; this.style.background='#0f172a';">Continue to
                             Pay</a>
+                        <p
+                            style="font-size: 0.85rem; color: #0f172a; margin-top: 12px; text-align: center; font-weight: 800; opacity: 0.7;">
+                            Pay via UPI</p>
                     </div>
-                    <p
-                        style="font-size: 0.85rem; color: #64748b; margin-top: 12px; text-align: center; font-weight: 600;">
-                        Supports UPI and Credit Card payments</p>
                 </div>
 
                 <!-- Step 2 -->
                 <div class="step-card"
                     style="background: #f8fafc; border-style: dashed; border-color: #cbd5e1; box-shadow: none;">
+
                     <div class="step-number">Step 02</div>
                     <h3 class="step-title">The Transformation</h3>
-                    <p class="step-desc">After your audit, we'll enroll you in the program that guarantees your success
-                        based on your current skill level.</p>
+                    <p class="step-desc">After your audit, you choose your path for success.</p>
 
-                    <div class="step-stack">
-                        <!-- Elite Outcome -->
+                    <div class="step-stack" style="margin-top: 24px;">
+                        <!-- Premium Hiring Path Block -->
                         <div class="stack-option"
-                            style="border: 2px solid #10b981; background: #f0fdf4; box-shadow: 0 4px 20px rgba(16, 185, 129, 0.1);">
+                            style="border: 2px solid #10b981; background: #f0fdf4; box-shadow: 8px 8px 0 #10b981; width: 100%; margin-bottom: 24px; border-radius: 24px;">
                             <div class="option-info">
                                 <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
                                     <div class="badge-qualify" style="background: #dcfce7; color: #15803d; margin: 0;">
-                                        90+ SCORE</div>
+                                        SCORE 80+</div>
                                     <div class="badge-qualify"
                                         style="background: #10b981; color: white; margin: 0; border: none; display: flex; align-items: center; gap: 4px;">
                                         <svg width="12" height="12" viewBox="0 0 24 24" fill="white"
@@ -1645,28 +1920,44 @@
                                         VERIFIED PRO
                                     </div>
                                 </div>
-                                <div class="option-title" style="color: #065f46;">Unlock Premium Hiring Path</div>
-                                <p class="option-desc">Direct push to hiring networks & premium roles.</p>
+                                <div class="option-title" style="color: #065f46;">👑 Unlock Premium Hiring Path
+                                    (EXCLUSIVE)</div>
+                                <p class="option-desc" style="margin-bottom: 16px;">Direct push to hiring networks &
+                                    premium roles.</p>
+                                <ul
+                                    style="list-style: none; padding: 0; font-size: 0.85rem; color: #15803d; font-weight: 600; text-align: left;">
+                                    <li style="margin-bottom: 6px; display: flex; gap: 8px;"><span>✦</span> Direct
+                                        partner network referrals</li>
+                                    <li style="margin-bottom: 6px; display: flex; gap: 8px;"><span>✦</span> Verified Pro
+                                        tag for LinkedIn/Portfolio</li>
+                                    <li style="margin-bottom: 0; display: flex; gap: 8px;"><span>✦</span> Priority
+                                        access to high-ticket roles</li>
+                                </ul>
                             </div>
                         </div>
 
-                        <div class="stack-option" id="otp-challenge">
+                        <!-- 30-Day OTP Block -->
+                        <div class="stack-option" id="otp-challenge"
+                            style="width: 100%; border: 2px solid #0f172a; background: white; box-shadow: 8px 8px 0 #0f172a; border-radius: 24px;">
                             <div class="option-info">
                                 <div class="badge-qualify"
-                                    style="background: #dcfce7; color: #15803d; margin-top: 0; margin-bottom: 8px;">
-                                    70-89 Score</div>
-                                <div class="option-title">30-Day OTP</div>
-                                <p class="option-desc">Intensive profile & craft reset for pros.</p>
-                            </div>
-                        </div>
-
-                        <div class="stack-option">
-                            <div class="option-info">
-                                <div class="badge-qualify"
-                                    style="background: #fef9c3; color: #854d0e; margin-top: 0; margin-bottom: 8px;">
-                                    50-69 Score</div>
-                                <div class="option-title">12-Week Bootcamp</div>
-                                <p class="option-desc">Comprehensive agency-grade career shift.</p>
+                                    style="background: #e0e7ff; color: #4338ca; margin-top: 0; margin-bottom: 12px;">
+                                    SCORE 50-80</div>
+                                <div class="option-title">Join 30-Day OTP Career Transformation</div>
+                                <p class="option-desc" style="margin-bottom: 16px;">Intensive profile & craft reset for
+                                    professionals.</p>
+                                <ul
+                                    style="list-style: none; padding: 0; font-size: 0.85rem; color: #475569; font-weight: 500; text-align: left;">
+                                    <li style="margin-bottom: 6px; display: flex; gap: 8px;"><span
+                                            style="color: #6366f1;">✓</span> 1:1 Intensive Craft Mentorship</li>
+                                    <li style="margin-bottom: 6px; display: flex; gap: 8px;"><span
+                                            style="color: #6366f1;">✓</span> Decision-Ready Profile build</li>
+                                    <li style="margin-bottom: 0; display: flex; gap: 8px;"><span
+                                            style="color: #6366f1;">✓</span> Advanced Product Thinking modules</li>
+                                </ul>
+                                <a href="javascript:void(0)" onclick="ensureFAQOpen()"
+                                    style="color: #6366f1; font-weight: 700; text-decoration: none; font-size: 0.8rem; margin-top: 16px; display: flex; align-items: center; gap: 4px;">Learn
+                                    more →</a>
                             </div>
                         </div>
                     </div>
@@ -1675,7 +1966,7 @@
 
             <!-- Standalone FAQ Section -->
             <div
-                style="margin-top: 80px; max-width: 1100px; margin-left: auto; margin-right: auto; background: #fff; border: 2px solid #0f172a; border-radius: 20px; box-shadow: 8px 8px 0 #0f172a; overflow: hidden; text-align: left;">
+                style="margin-top: 80px; max-width: 1100px; margin-left: auto; margin-right: auto; background: #fff; border: 2px solid #0f172a; border-radius: 24px; box-shadow: 10px 10px 0 #0f172a; overflow: hidden; text-align: left;">
                 <div id="faq-toggle-header"
                     style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: 24px 32px; background: white; transition: background 0.2s;">
                     <h2 style="font-size: 1.5rem; font-weight: 800; color: #0f172a; margin: 0;">Frequently Asked
@@ -1692,8 +1983,10 @@
                             <span>1. Is this program for absolute beginners?</span>
                             <span class="faq-icon">+</span>
                         </div>
-                        <div class="faq-answer">No. Maximoat is designed for designers who know UX/UI basics but are
-                            struggling with portfolio craft, execution, or landing interviews.
+                        <div class="faq-answer">No. This program is designed for experienced designers who have
+                            potential
+                            but are struggling with portfolio craft, storytelling, and landing interviews. We'll be
+                            launching a beginner program shortly, stay tuned.
                             <div style="margin-top: 12px;"><a href="#pricing"
                                     style="color: #6366f1; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: flex; align-items: center; gap: 4px;">Audit
                                     My Skills Now →</a></div>
@@ -1703,8 +1996,7 @@
                     <!-- 2. Already completed a bootcamp (Moved from #9) -->
                     <div class="faq-item">
                         <div class="faq-question">
-                            <span>2. I’ve already completed a bootcamp and have a portfolio, but I'm still not getting
-                                hired. Can Maximoat help?</span>
+                            <span>2. I’ve finished a bootcamp but I'm not getting hired. Can Maximoat help?</span>
                             <span class="faq-icon">+</span>
                         </div>
                         <div class="faq-answer">This is a very common challenge. Most bootcamp portfolios end up looking
@@ -1721,51 +2013,123 @@
                     <!-- 3. Audit & Fee (Combined) -->
                     <div class="faq-item">
                         <div class="faq-question">
-                            <span>3. Why is there a ₹2,500 fee for the Audit and is it deductible?</span>
+                            <span>3. What do I get as part of the Audit and is the fee deductible?</span>
                             <span class="faq-icon">+</span>
                         </div>
-                        <div class="faq-answer">Unlike generic automated scans, this is an AI + Design Expert audit that
-                            requires a manual human review to produce a comprehensive Gap Analysis report. While
-                            comparable programs charge ₹10,000+, we keep this fee low and ensure it is **fully
-                            deductible** from your main program enrollment fee (30-day or 12-week).
-                            <div style="margin-top: 12px;"><a href="#pricing"
-                                    style="color: #6366f1; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: flex; align-items: center; gap: 4px;">Book
-                                    Your Expert Audit →</a></div>
+                        <div class="faq-answer">
+                            <p style="margin-bottom: 12px;">Unlike generic automated AI scans, our audit provides a
+                                deep-dive evaluation of your skills and portfolio. Here’s what you get for the ₹2,500
+                                fee:</p>
+                            <ul style="list-style: none; padding: 0; margin-bottom: 16px;">
+                                <li style="margin-bottom: 8px; display: flex; gap: 8px;"><span>✓</span> AI-powered
+                                    Portfolio Review + Expert Design Audit</li>
+                                <li style="margin-bottom: 8px; display: flex; gap: 8px;"><span>✓</span> Comprehensive
+                                    Gap Analysis Report</li>
+                                <li style="margin-bottom: 8px; display: flex; gap: 8px;"><span>✓</span> Mock Interview
+                                    Test</li>
+                                <li style="margin-bottom: 8px; display: flex; gap: 8px;"><span>✓</span> 1:1 Consultation
+                                    Session to discuss next steps</li>
+                                <li style="margin-bottom: 8px; display: flex; gap: 8px;"><span>✓</span> Exclusive access
+                                    to Maximoat events & programs</li>
+                                <li style="margin-bottom: 0; display: flex; gap: 8px;"><span>✓</span> Networking
+                                    opportunities within our community</li>
+                            </ul>
+                            <p>This fee is **fully deductible** from your 30-Day OTP Career Transformation fee should
+                                you choose to enroll.</p>
+                            <div style="margin-top: 24px; text-align: left;">
+                                <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 8px;">
+                                    <div style="font-size: 1.25rem; font-weight: 800; color: #0f172a;">₹2,500</div>
+                                    <div
+                                        style="font-size: 0.9rem; color: #64748b; text-decoration: line-through; font-weight: 500;">
+                                        ₹5,000</div>
+                                </div>
+                                <a href="#pricing" class="btn btn-primary"
+                                    style="display: inline-block; padding: 12px 24px; text-decoration: none;">Book Your
+                                    Expert Audit NOW</a>
+                            </div>
                         </div>
                     </div>
 
                     <!-- 4. Timeline -->
                     <div class="faq-item">
                         <div class="faq-question">
-                            <span>4. When will my consultation happen?</span>
+                            <span>4. So when will I get my 1:1 consultation?</span>
                             <span class="faq-icon">+</span>
                         </div>
-                        <div class="faq-answer">Your 1:1 session is typically scheduled within 48 hours of booking.
-                            You'll receive a calendar link immediately after payment.
+                        <div class="faq-answer">Your 1:1 session is typically scheduled within 48 to 72 hours of
+                            booking.
+                            You'll receive a calendar link shortly after the payment.
                             <div style="margin-top: 12px;"><a href="#pricing"
                                     style="color: #6366f1; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: flex; align-items: center; gap: 4px;">Book
                                     Your Audit Now →</a></div>
                         </div>
                     </div>
 
-                    <!-- 5. Scoring & Verification -->
-                    <div class="faq-item" id="faq-verified-pro">
+                    <!-- 5. 30-Day OTP Transformation Details (Combined with Fee) -->
+                    <div class="faq-item">
                         <div class="faq-question">
-                            <span>5. How do I qualify for the Verified Pro badge?</span>
+                            <span>5. What's included in the 30-Day OTP and what's the fee?</span>
                             <span class="faq-icon">+</span>
                         </div>
-                        <div class="faq-answer">There will be an assessment that you will need to pass to qualify for
-                            the verified badge. Once you pass all our assessments, you'll receive a verified badge which
-                            industry recruiters can look up against our site.
+                        <div class="faq-answer">
+                            <p style="margin-bottom: 12px;">This 30-day intensive reset focuses on bridging the gap
+                                between "good" and "hirable." Here’s what you get:</p>
+                            <ul style="list-style: none; padding: 0; margin-bottom: 16px;">
+                                <li style="margin-bottom: 8px; display: flex; gap: 8px;"><span>✓</span> 1:1 Intensive
+                                    Craft Mentorship</li>
+                                <li style="margin-bottom: 8px; display: flex; gap: 8px;"><span>✓</span> Decision-Ready
+                                    Profile build</li>
+                                <li style="margin-bottom: 8px; display: flex; gap: 8px;"><span>✓</span> Advanced Product
+                                    Thinking modules</li>
+                                <li style="margin-bottom: 0; display: flex; gap: 8px;"><span>✓</span> Direct Hiring
+                                    Network Push</li>
+                            </ul>
+                            <p style="margin-bottom: 16px;">Your initial ₹2,500 audit fee is <strong>fully
+                                    deductible</strong> from this amount.</p>
+                            <div style="text-align: left;">
+                                <a href="#pricing" class="btn btn-primary"
+                                    style="display: inline-block; padding: 12px 24px; text-decoration: none;">Enroll in
+                                    30-Day Transformation for ₹30,000 <span
+                                        style="font-size: 0.8rem; opacity: 0.7; text-decoration: line-through; margin-left: 4px;">₹50,000</span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Scoring & Verification -->
+                    <div class="faq-item" id="faq-verified-pro">
+                        <div class="faq-question">
+                            <span>6. How do I qualify for the Verified Pro badge?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">In the audit, if you score 80 and above, you automatically qualify for
+                            the Verified Pro badge program if you choose to enroll with us. Else, you will need to
+                            complete the transformation program and then go through an assessment again to get a
+                            Verified Pro badge.
                             <div style="margin-top: 12px;"><a href="#pricing"
                                     style="color: #6366f1; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: flex; align-items: center; gap: 4px;">Get
                                     Verified Now →</a></div>
                         </div>
                     </div>
 
+                    <!-- 7. Premium Hiring Path Details -->
                     <div class="faq-item">
                         <div class="faq-question">
-                            <span>6. What happens if my score is below 50?</span>
+                            <span>7. What is included in the "Unlock Premium Hiring Path"?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">If you score 80+, you qualify for our exclusive hiring path. This
+                            includes direct referrals to our partner network (top startups and agencies), a permanent
+                            profile on our hiring portal, and hands-on help in negotiating high-ticket roles.
+                            <div style="margin-top: 12px;"><a href="#pricing"
+                                    style="color: #6366f1; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: flex; align-items: center; gap: 4px;">Aim
+                                    for 80+ Score →</a></div>
+                        </div>
+                    </div>
+
+                    <!-- 8. Below 50 Score -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>8. What happens if my score is below 50?</span>
                             <span class="faq-icon">+</span>
                         </div>
                         <div class="faq-answer">If your score is below 50, we evaluate your profile on a case-by-case
@@ -1777,97 +2141,109 @@
                         </div>
                     </div>
 
-                    <!-- 7. Flexibility -->
+                    <!-- 9. Why Maximoat? -->
                     <div class="faq-item">
                         <div class="faq-question">
-                            <span>7. Can I switch programs later?</span>
+                            <span>9. What is the story behind Maximoat?</span>
                             <span class="faq-icon">+</span>
                         </div>
-                        <div class="faq-answer">Absolutely. Our mentors will evaluate your portfolio and suggest whether
-                            you need a fast-track reset or a deep-dive cohort.
-                            <div style="margin-top: 12px;"><a href="#pricing"
-                                    style="color: #6366f1; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: flex; align-items: center; gap: 4px;">Let
-                                    Mentors Decide for You →</a></div>
-                        </div>
-                    </div>
-
-                    <!-- 8. Placement -->
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>8. Do you offer placement guarantees?</span>
-                            <span class="faq-icon">+</span>
-                        </div>
-                        <div class="faq-answer">We provide high-intensity leads, direct recruiter access, and the exact
-                            craft required to get hired. We don't sell "guarantees"—we build competence that converts.
-                            <div style="margin-top: 12px;"><a href="#pricing"
-                                    style="color: #6366f1; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: flex; align-items: center; gap: 4px;">Start
-                                    My Transformation →</a></div>
-                        </div>
-                    </div>
-
-                    <!-- 9. Program Fees -->
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>9. What are your program fees for 30-day and 12-week bootcamp?</span>
-                            <span class="faq-icon">+</span>
-                        </div>
-                        <div class="faq-answer">The official program fees are ₹30,000 for the 30-Day Fast-Track and
-                            ₹1,00,000 for the 12-Week Bootcamp. Note that there could be time-to-time discounts
-                            available depending on your enrollment window.
-                            <div style="margin-top: 12px;"><a href="#pricing"
-                                    style="color: #6366f1; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: flex; align-items: center; gap: 4px;">Book
-                                    Your Audit to Get Started →</a></div>
-                        </div>
-                    </div>
-
-                    <!-- 10. Why Maximoat? -->
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>10. Why did we start Maximoat?</span>
-                            <span class="faq-icon">+</span>
-                        </div>
-                        <div class="faq-answer">Maximoat was the brainchild of Rajesh and the team at 91signals. With
-                            over 20 years in the industry, they’ve worked with countless designers and seen them grow
-                            and prosper. As AI reshapes the future, pure execution jobs will become harder to find,
-                            giving those with strong product thinking and soft skills a massive advantage. We started
-                            Maximoat to help designers stay ahead of this curve, with plans to scale to other
-                            professions soon.
-                            <div style="margin-top: 12px;"><a href="#pricing"
+                        <div class="faq-answer">
+                            <p style="margin-bottom: 12px;">Maximoat is the brainchild of Rajesh Kumar and the team at
+                                91signals. After 20+ years of mentoring designers and seeing the industry shift with AI,
+                                we realized that pure execution is no longer enough. We started Maximoat to help talent
+                                move to a more strategic, "Decision-Ready" level.</p>
+                            <ul style="list-style: none; padding: 0; margin-bottom: 16px;">
+                                <li style="margin-bottom: 8px; display: flex; gap: 8px;"><span>⚡</span>
+                                    <strong>Expertise:</strong> Experience across global brands like Amazon, Flipkart,
+                                    and EY.
+                                </li>
+                                <li style="margin-bottom: 8px; display: flex; gap: 8px;"><span>⚡</span>
+                                    <strong>Mission:</strong> Helping you stay ahead of the AI curve with high-signal
+                                    portfolios.
+                                </li>
+                                <li style="margin-bottom: 8px; display: flex; gap: 8px;"><span>⚡</span>
+                                    <strong>Vision:</strong> Scaling this framework beyond design into Engineering and
+                                    Marketing paths.
+                                </li>
+                            </ul>
+                            <div style="margin-top: 16px;">
+                                <a href="mailto:hello@91signals.com"
                                     style="color: #6366f1; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: flex; align-items: center; gap: 4px;">Join
-                                    the Future of Design →</a></div>
+                                    the movement: hello@91signals.com →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 10. Beginners Track -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>10. Do you have a program for beginners?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Currently, our programs are optimized for experienced designers who have potential but
+                                are struggling with portfolio craft and storytelling. However, a dedicated beginner
+                                track is launching shortly to help you build a solid foundation from scratch. Stay
+                                tuned!</p>
+                            <div style="margin-top: 12px;"><a href="#pricing"
+                                    style="color: #6366f1; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: flex; align-items: center; gap: 4px;">Get
+                                    Notified →</a></div>
                         </div>
                     </div>
                 </div>
             </div>
     </section>
 
-    <footer class="footer" id="footer" style="border-top: none; padding-top: 40px;">
+    <footer class="footer" id="footer" style="border-top: 1px solid #f1f5f9; padding: 80px 0 60px;">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
+            <div
+                style="display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap;">
+                <!-- Left Block -->
+                <div style="flex: 1; min-width: 300px; text-align: left;">
                     <img src="assets/logo.svg" style="filter: brightness(0); opacity: 0.6; margin-bottom: 24px;"
                         height="30">
-                    <p>Empowering the next generation of design leaders through AI native UX Bootcamp-driven
-                        mentorship
-                        and
-                        agency-grade
-                        training.</p>
+                    <p
+                        style="max-width: 440px; line-height: 1.6; color: #64748b; font-size: 0.95rem; margin-bottom: 20px; font-family: 'Inter', sans-serif;">
+                        Empowering the next generation of design leaders through AI native UX Bootcamp-driven mentorship
+                        and agency-grade training.
+                    </p>
+                    <p
+                        style="color: #475569; font-size: 0.9rem; margin-bottom: 24px; font-weight: 500; font-family: 'Inter', sans-serif;">
+                        2263, Sector 1, HSR Layout, Bangalore, India</p>
+                    <div
+                        style="opacity: 0.4; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; font-family: 'Inter', sans-serif;">
+                        &copy; 2026 Realmoat Technologies Private Limited
+                    </div>
                 </div>
-                <div>
-                    <h4>Programs</h4>
-                    <a href="#">UX Pro Bootcamp</a>
-                    <a href="#">Job Booster</a>
-                    <a href="#">Mentorship</a>
+
+                <!-- Right Block -->
+                <div style="text-align: right; min-width: 200px;">
+                    <div style="margin-bottom: 32px;">
+                        <a href="https://wa.me/919900000000" target="_blank"
+                            style="color: #10b981; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 0.95rem;">
+                            <img src="https://cdn.simpleicons.org/whatsapp/10b981" width="20" height="20">
+                            Connect on WhatsApp
+                        </a>
+                    </div>
+                    <div style="display: flex; justify-content: flex-end; gap: 24px;">
+                        <a href="#" style="opacity: 0.4; transition: all 0.2s;" onmouseover="this.style.opacity='1'"
+                            onmouseout="this.style.opacity='0.4'">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="#0f172a"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                        <a href="#" style="opacity: 0.4; transition: all 0.2s;" onmouseover="this.style.opacity='1'"
+                            onmouseout="this.style.opacity='0.4'">
+                            <img src="https://cdn.simpleicons.org/youtube/0f172a" width="22" height="22">
+                        </a>
+                        <a href="#" style="opacity: 0.4; transition: all 0.2s;" onmouseover="this.style.opacity='1'"
+                            onmouseout="this.style.opacity='0.4'">
+                            <img src="https://cdn.simpleicons.org/instagram/0f172a" width="22" height="22">
+                        </a>
+                    </div>
                 </div>
-                <div>
-                    <h4>Company</h4>
-                    <a href="#">About Us</a>
-                    <a href="#">Success Stories</a>
-                    <a href="#">Contact</a>
-                </div>
-            </div>
-            <div class="text-center" style="margin-top: 80px; opacity: 0.3; font-size: 0.85rem;">
-                &copy; 2024 Maximoat. All rights reserved.
             </div>
         </div>
     </footer>
@@ -1922,12 +2298,22 @@
             const faqSectionIcon = document.getElementById('faq-section-icon');
 
             if (faqHeader && faqContent) {
-                faqHeader.addEventListener('click', () => {
-                    const isHidden = faqContent.style.display === 'none' || faqContent.style.display === '';
-                    faqContent.style.display = isHidden ? 'block' : 'none';
-                    faqSectionIcon.style.transform = isHidden ? 'rotate(0deg)' : 'rotate(-90deg)';
-                    faqHeader.style.background = isHidden ? '#f8fafc' : 'white';
-                });
+                const toggleFAQ = (show) => {
+                    const isCurrentlyHidden = faqContent.style.display === 'none' || faqContent.style.display === '';
+                    if (show === undefined) show = isCurrentlyHidden;
+
+                    faqContent.style.display = show ? 'block' : 'none';
+                    faqSectionIcon.style.transform = show ? 'rotate(0deg)' : 'rotate(-90deg)';
+                    faqHeader.style.background = show ? '#f8fafc' : 'white';
+                };
+
+                faqHeader.addEventListener('click', () => toggleFAQ());
+
+                // Global helper for the CTAs
+                window.ensureFAQOpen = () => {
+                    toggleFAQ(true);
+                    faqHeader.scrollIntoView({ behavior: 'smooth' });
+                };
             }
 
             // Individual FAQ Item Accordion Logic
@@ -2042,17 +2428,52 @@
                 ease: "power4.out"
             });
 
-            // 4. Score Scale Animation (in Feature section)
-            gsap.to(".score-indicator-connector", {
+            // 4. Score Scale Animation with Skill Tag "Filling"
+            const scoreTimeline = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".score-scale-wrapper",
                     start: "top 80%",
                     toggleActions: "play none none none"
-                },
-                width: "78%", /* Representative score */
-                duration: 2.5,
+                }
+            });
+
+            scoreTimeline.to(".score-indicator-scrubber", {
+                left: "80%",
+                duration: 3,
                 ease: "power3.inOut"
             });
+
+            scoreTimeline.set(".scrubber-emoji", { innerText: "😊" }, "-=0.3");
+
+            scoreTimeline.to(".skill-tag", {
+                backgroundColor: "#10B981", // Stronger Green
+                borderColor: "#10B981",
+                opacity: 1,
+                filter: "grayscale(0)",
+                stagger: 0.5,
+                duration: 0.4,
+                ease: "power2.out"
+            }, 0.2);
+
+            scoreTimeline.to(".skill-tag span:last-child", {
+                color: "#ffffff",
+                stagger: 0.5,
+                duration: 0.4
+            }, 0.2);
+
+            scoreTimeline.set(".skill-check", {
+                display: "block",
+                stagger: 0.5
+            }, 0.2);
+
+            scoreTimeline.from(".skill-check", {
+                scale: 0,
+                opacity: 0,
+                duration: 0.3,
+                stagger: 0.5,
+                ease: "back.out(2)"
+            }, 0.2);
+
         });
 
         // Trust Toolbar Live Joining Animation
@@ -2134,17 +2555,9 @@
                     ease: "back.out(1.7)"
                 });
 
-                // Maintain strict limit of 5 avatars
-                if (group.children.length > 5) {
-                    const first = group.children[0];
-                    gsap.to(first, {
-                        opacity: 0,
-                        scale: 0,
-                        width: 0,
-                        margin: 0,
-                        duration: 0.4,
-                        onComplete: () => first.remove()
-                    });
+                // Strict limit of 5 avatars
+                while (group.children.length > 5) {
+                    group.children[0].remove();
                 }
             });
 
