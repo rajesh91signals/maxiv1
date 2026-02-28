@@ -1092,36 +1092,46 @@
 
                             @media (max-width: 600px) {
                                 .profile-span-card {
-                                    padding: 24px !important;
-                                    gap: 24px !important;
+                                    padding: 48px 24px !important;
+                                    gap: 40px !important;
+                                    margin-left: -16px !important;
+                                    margin-right: -16px !important;
+                                    border-radius: 32px !important;
+                                    border-left: 0 !important;
+                                    border-right: 0 !important;
                                 }
 
                                 .profile-span-card h2 {
-                                    text-align: center;
+                                    text-align: left !important;
+                                    font-size: clamp(2rem, 8vw, 2.5rem) !important;
                                 }
 
                                 .profile-span-card p {
-                                    text-align: center;
+                                    text-align: left !important;
+                                    font-size: 1.1rem !important;
+                                    margin-bottom: 32px !important;
                                 }
 
                                 .profile-span-card ul {
                                     display: flex;
                                     flex-direction: column;
-                                    align-items: center;
-                                    text-align: center;
+                                    align-items: flex-start !important;
+                                    text-align: left !important;
                                 }
 
                                 .profile-span-card li {
-                                    justify-content: center;
-                                    text-align: left;
+                                    justify-content: flex-start !important;
+                                    text-align: left !important;
                                     width: 100%;
-                                    max-width: 250px;
+                                    max-width: none !important;
+                                    font-size: 1rem !important;
+                                    margin-bottom: 16px !important;
                                 }
                             }
                         </style>
                         <div style="flex: 1;">
                             <h2
-                                style="font-size: clamp(1.6rem, 6vw, 2.5rem); color: #0f172a; margin-bottom: 24px; line-height: 1.25; font-family: 'Inter', sans-serif; font-weight: 800; letter-spacing: -0.02em; text-wrap: balance;">
+                                style="font-size: clamp(2rem, 6vw, 2.5rem); color: #0f172a; margin-bottom: 24px; line-height: 1.25; font-family: 'Inter', sans-serif; font-weight: 800; letter-spacing: -0.02em; text-wrap: balance;">
                                 We don't just fix your portfolio.<br class="mobile-break">We build your <span
                                     class="animated-underline" style="z-index: 1;">Decision-Ready Profile.</span>
                             </h2>
