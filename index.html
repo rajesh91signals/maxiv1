@@ -1017,7 +1017,8 @@
                     <div style="margin-bottom: 32px; display: flex; justify-content: center;">
                         <div class="phase-label optimize"><span>01.</span> Optimize</div>
                     </div>
-                    <div class="bento-grid" style="margin-top: 0; padding-left: 0; padding-right: 0; max-width: none;">
+                    <div class="bento-grid"
+                        style="margin-top: 0; padding-right: 8px; padding-left: 0; max-width: none;">
                         <!-- 1) NEW SPANNING ITEM: Decision-Ready Profile -->
                         <div style="grid-column: 1 / -1; background:#ffffff; border: 2px solid #0f172a; border-radius:24px; box-shadow: 10px 10px 0 #0f172a; padding:60px; display:flex; gap: 60px; align-items: center;"
                             class="profile-span-card">
@@ -1039,7 +1040,7 @@
 
                                     .profile-span-card h2 {
                                         text-align: left !important;
-                                        font-size: clamp(2rem, 8vw, 2.5rem) !important;
+                                        font-size: clamp(1.6rem, 6vw, 2rem) !important;
                                     }
 
                                     .profile-span-card p {
@@ -1567,6 +1568,25 @@
                     }
 
                     @media (max-width: 640px) {
+                        .step-card {
+                            padding: 24px !important;
+                            box-shadow: 6px 6px 0 #0f172a !important;
+                            margin-right: 6px;
+                            margin-bottom: 6px;
+                        }
+
+                        .bento-card {
+                            box-shadow: 6px 6px 0 #0f172a !important;
+                        }
+
+                        .profile-span-card {
+                            box-shadow: 6px 6px 0 #0f172a !important;
+                        }
+
+                        .step-title {
+                            font-size: 1.35rem !important;
+                        }
+
                         .high-level-roadmap {
                             gap: 4px;
                             margin: 40px -10px;
@@ -1760,11 +1780,11 @@
                             </div>
                             <div
                                 style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
-                                <div style="display: flex; align-items: baseline; gap: 12px;">
+                                <div style="display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;">
                                     <span
-                                        style="font-size: 3rem; font-weight: 800; line-height: 1; color: #0f172a;">₹2,500</span>
+                                        style="font-size: clamp(2.2rem, 8vw, 3rem); font-weight: 800; line-height: 1; color: #0f172a;">₹2,500</span>
                                     <span
-                                        style="text-decoration: line-through; opacity: 0.6; font-size: 1.3rem; font-weight: 600; color: #0f172a;">₹5,000</span>
+                                        style="text-decoration: line-through; opacity: 0.6; font-size: clamp(1rem, 4vw, 1.3rem); font-weight: 600; color: #0f172a;">₹5,000</span>
                                 </div>
                                 <div
                                     style="background: rgba(0, 0, 0, 0.08); padding: 10px 16px; border-radius: 12px; font-weight: 900; font-size: 0.95rem; border: 1px solid rgba(0, 0, 0, 0.1); color: #0f172a;">
