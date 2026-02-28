@@ -361,9 +361,6 @@
             /* Hiring Bar Module Responsive Styles */
             @media (max-width: 640px) {
                 .hiring-bar-module {
-                    border-radius: 32px !important; /* Maximize width while keeping curves */
-                    margin-left: -20px !important;
-                    margin-right: -20px !important;
                     padding: 40px 20px !important;
                     margin-bottom: 40px !important;
                 }
@@ -393,35 +390,35 @@
                 .score-indicator-scrubber {
                     width: 36px !important;
                     height: 36px !important;
-                    font-size: 30px !important;
                 }
 
                 .score-scale-wrapper span {
-                    font-size: 0.5rem !important;
-                    letter-spacing: 0px !important;
+                    font-size: 0.6rem !important;
                 }
 
                 #mid-eligibility-form {
                     margin-top: 40px !important;
                     height: auto !important;
-                    flex-direction: column !important; /* Stack vertically on mobile so placeholder fits */
+                    flex-direction: row !important;
+                    flex-wrap: wrap !important;
                     box-shadow: 4px 4px 0 #0f172a !important;
                     background: white !important;
-                    padding: 12px !important;
-                    align-items: stretch !important;
-                    gap: 8px !important;
+                    padding: 6px 6px 6px 16px !important;
+                    align-items: center !important;
                 }
 
                 #mid-eligibility-form .scorer-input {
-                    padding: 12px 8px !important;
-                    width: 100% !important;
-                    font-size: 0.9rem !important;
-                    border-bottom: 1px solid #e2e8f0 !important;
+                    padding: 12px 0 !important;
+                    width: auto !important;
+                    flex: 1 !important;
+                    border-bottom: none !important;
+                    min-width: 150px !important;
                 }
 
                 #mid-eligibility-form .scorer-btn {
                     width: 100% !important;
-                    padding: 16px !important;
+                    padding: 18px !important;
+                    margin-top: 8px !important;
                 }
 
                 #mid-eligibility-hint p {
@@ -468,25 +465,6 @@
                 }
             }
 
-            
-                .experience-module {
-                    border-radius: 32px !important;
-                    margin-left: -20px !important;
-                    margin-right: -20px !important;
-                    padding-left: 20px !important;
-                    padding-right: 20px !important;
-                }
-
-                .contrast-grid {
-                    padding: 0 10px !important;
-                    gap: 30px !important;
-                }
-
-                .contrast-hard,
-                .contrast-smart {
-                    padding: 40px 20px 30px 20px !important;
-                }
-
             /* Expert Layout Fixes for Ultra Mobile */
             @media (max-width: 400px) {
                 .marker-50 {
@@ -511,7 +489,6 @@
                     box-shadow: 6px 6px 0 #0f172a !important;
                 }
 
-
                 .nav-content {
                     display: flex !important;
                     justify-content: space-between !important;
@@ -522,26 +499,6 @@
                 .nav-cta-hint {
                     display: none !important;
                 }
-
-                .contrast-hard,
-                .contrast-smart {
-                    padding: 40px 16px 24px 16px !important;
-                }
-
-                .experience-module {
-                    padding-left: 12px !important;
-                    padding-right: 12px !important;
-                }
-
-                .contrast-grid {
-                    padding: 0 !important;
-                }
-
-                .contrast-badge {
-                    padding: 6px 14px !important;
-                    font-size: 0.75rem !important;
-                }
-
             }
 
             @media (min-width: 1200px) {
@@ -642,7 +599,7 @@
 
 
 
-                <div class="experience-module"
+                <div
                     style="margin: 60px auto 80px; max-width: var(--container-width); padding: 60px 40px; border-radius: 32px; background: #020617; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
                     <h2
                         style="font-size: 1.8rem; margin-bottom: 50px; text-align: center; font-weight: 700; color: #f8fafc;">
@@ -748,8 +705,15 @@
                 <!-- Hiring Bar Module -->
                 <div class="hiring-bar-module"
                     style="background: #fff; border: 2px solid #0f172a; border-radius: 32px; padding: 60px 40px; box-shadow: 10px 10px 0 #0f172a; max-width: 1000px; margin: 0 auto 80px;">
-                    <div class="verified-pro-branding" style="margin-bottom: 30px; color: #64748b;">
-                        <span>Are you ready?</span>
+                    <div class="verified-pro-branding" style="margin-bottom: 30px;">
+                        <svg width="16" height="18" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            style="flex-shrink: 0;">
+                            <path d="M12 0L2 4V12C2 18.23 6.27 24.06 12 25.14C17.73 24.06 22 18.23 22 12V4L12 0Z"
+                                fill="#10B981" />
+                            <path d="M7 12.5L10.5 16L17 9.5" stroke="white" stroke-width="2.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span>Verified Pro Designer</span>
                     </div>
                     <h3
                         style="font-size: 2.22rem; color: #0f172a; font-weight: 900; margin-bottom: 40px; letter-spacing: -0.02em; white-space: nowrap;">
@@ -801,49 +765,53 @@
                                 style="font-size: 0.7rem; font-weight: 800; color: #475569; text-transform: uppercase; letter-spacing: 0.05em;">Soft
                                 Skills</span>
                         </div>
-
+                        <div class="skill-tag"
+                            style="background: #f8fafc; padding: 6px 14px; border-radius: 100px; border: 1.5px solid #e2e8f0; opacity: 0.15; filter: grayscale(1); transition: all 0.4s ease; display: flex; align-items: center; gap: 6px;">
+                            <svg class="skill-check" width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" style="display: none; flex-shrink: 0;">
+                                <path d="M2.5 6L5 8.5L9.5 3.5" stroke="white" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span
+                                style="font-size: 0.7rem; font-weight: 800; color: #475569; text-transform: uppercase; letter-spacing: 0.05em;">Confidence</span>
+                        </div>
                     </div>
 
                     <div class="score-scale-wrapper" style="max-width: 850px; margin: 0 auto;">
-                        <!-- The Gradient Bar (Full Gradient) wrapper to prevent overflow hiding the scrubber -->
-                        <div style="position: relative;">
-                            <div
-                                style="height: 48px; background: linear-gradient(90deg, #F87171 0%, #FDE047 65%, #10B981 100%); border-radius: 100px; position: relative; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 2px solid #0f172a; overflow: hidden;">
+                        <!-- The Gradient Bar (Full Gradient) -->
+                        <div
+                            style="height: 48px; background: linear-gradient(90deg, #F87171 0%, #FDE047 65%, #10B981 100%); border-radius: 100px; position: relative; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 2px solid #0f172a; overflow: hidden;">
 
-                                <!-- Markers (Z-index above fill) -->
-                                <div
-                                    style="position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: #0f172a; opacity: 0.15; z-index: 2;">
-                                </div>
-                                <div
-                                    style="position: absolute; left: 80%; top: 0; bottom: 0; width: 2px; background: #0f172a; opacity: 0.15; z-index: 2;">
-                                </div>
-
-                                <style>
-                                    .mobile-break { display: none; }
-                                    @media (max-width: 600px) {
-                                        .mobile-break { display: block; }
-                                    }
-                                </style>
-                                <!-- Labels Inside the Bar -->
-                                <div
-                                    style="position: absolute; inset: 0; z-index: 10; pointer-events: none;">
-                                    <div
-                                        style="position: absolute; left: 50%; width: 30%; height: 100%; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 4px;">
-                                        <span
-                                            style="font-size: clamp(0.5rem, 1.5vw, 0.7rem); font-weight: 800; color: #0f172a; opacity: 0.8; letter-spacing: 0.05em; text-transform: uppercase; line-height: 1.1;">Need<br class="mobile-break">&nbsp;Improvement</span>
-                                    </div>
-                                    <div
-                                        style="position: absolute; left: 80%; width: 20%; height: 100%; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 4px;">
-                                        <span
-                                            style="font-size: clamp(0.5rem, 1.5vw, 0.7rem); font-weight: 800; color: #14532d; letter-spacing: 0.05em; text-transform: uppercase; background: rgba(16, 185, 129, 0.15); padding: 2px 4px; border-radius: 4px; line-height: 1.1;">Verified<br class="mobile-break">&nbsp;Pro</span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Current Score Scrubber (Floating Emoji) -->
+                            <!-- Current Score Scrubber (Circular with Profile icon) -->
                             <div class="score-indicator-scrubber"
-                                style="position: absolute; left: 0%; top: 50%; transform: translate(-50%, -50%); width: 42px; height: 42px; background: transparent; border: none; z-index: 15; display: flex; align-items: center; justify-content: center; font-size: 36px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));">
+                                style="position: absolute; left: 0%; top: 50%; transform: translate(-50%, -50%); width: 42px; height: 42px; background: #fff; border: 2.5px solid #0f172a; border-radius: 50%; z-index: 15; box-shadow: 0 4px 15px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; font-size: 24px;">
                                 <span class="scrubber-emoji">😐</span>
+                            </div>
+
+                            <!-- Markers (Z-index above fill) -->
+                            <div
+                                style="position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: #0f172a; opacity: 0.15; z-index: 2;">
+                            </div>
+                            <div
+                                style="position: absolute; left: 80%; top: 0; bottom: 0; width: 2px; background: #0f172a; opacity: 0.15; z-index: 2;">
+                            </div>
+
+                            <!-- Labels Inside the Bar -->
+                            <div
+                                style="position: absolute; inset: 0; display: flex; z-index: 10; pointer-events: none; align-items: center;">
+                                <div style="width: 50%;"></div>
+                                <div
+                                    style="width: 30%; display: flex; align-items: center; justify-content: center; text-wrap: nowrap;">
+                                    <span
+                                        style="font-size: clamp(0.55rem, 2vw, 0.7rem); font-weight: 800; color: #0f172a; opacity: 0.8; letter-spacing: 0.08em; text-transform: uppercase;">Need
+                                        Improvement</span>
+                                </div>
+                                <div
+                                    style="width: 20%; display: flex; align-items: center; justify-content: center; text-wrap: nowrap;">
+                                    <span
+                                        style="font-size: clamp(0.55rem, 2vw, 0.7rem); font-weight: 800; color: #14532d; opacity: 1; letter-spacing: 0.08em; text-transform: uppercase; background: rgba(16, 185, 129, 0.1); padding: 2px 6px; border-radius: 4px;">Verified
+                                        Pro</span>
+                                </div>
                             </div>
                         </div>
 
@@ -1470,7 +1438,7 @@
                                         <div class="reasons-number"
                                             style="background: #FDE047; color: #020617; box-shadow: 0 4px 20px rgba(253, 224, 71, 0.3);">
                                             1</div>
-                                        <h3 class="reasons-title">WE ARE A UX AGENCY WITH 20 YEARS OF LEGACY</h3>
+                                        <h3 class="reasons-title">We're a UX agency first</h3>
                                         <div class="reasons-toggle-icon">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                 stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
@@ -1505,7 +1473,7 @@
                                         <div class="reasons-number"
                                             style="background: #86EFAC; color: #020617; box-shadow: 0 4px 20px rgba(134, 239, 172, 0.3);">
                                             2</div>
-                                        <h3 class="reasons-title">GLOBAL HIRING NETWORK</h3>
+                                        <h3 class="reasons-title">Global hiring network</h3>
                                         <div class="reasons-toggle-icon">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                 stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
@@ -1530,7 +1498,7 @@
                                         <div class="reasons-number"
                                             style="background: #FDBA74; color: #020617; box-shadow: 0 4px 20px rgba(253, 186, 116, 0.3);">
                                             3</div>
-                                        <h3 class="reasons-title">FOCUS ON SOFT + TECHNICAL SKILLS</h3>
+                                        <h3 class="reasons-title">Focus on soft + technical skills</h3>
                                         <div class="reasons-toggle-icon">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                 stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
@@ -2679,7 +2647,7 @@
 
                 scoreTimeline.to(".score-indicator-scrubber", {
                     left: "80%",
-                    duration: 2.5,
+                    duration: 3,
                     ease: "power3.inOut"
                 });
 
