@@ -879,477 +879,485 @@
                         <input type="text" class="scorer-input" placeholder="Paste your Portfolio or LinkedIn link...">
                         <button class="scorer-btn">Know your score</button>
                     </div>
+                </div>
 
-                <h2
-                    style="font-size: 3rem; color: #1e293b; font-weight: 800; margin-bottom: 20px; letter-spacing: -0.02em;">
-                    <span class="animated-underline">Start your OTP Challenge</span>
-                </h2>
-                <p style="color: #475569; font-size: 1.1rem; max-width: 800px; margin: 0 auto; line-height: 1.6;">A
-                    <b>30-day intensive career
-                        reset</b> designed to bridge the gap between your current profile and career-defining <b>job
-                        opportunities at big brands</b>.
-                </p>
+                <div class="container" style="text-align: center; margin-bottom: 80px; margin-top: 40px;">
+                    <h2
+                        style="font-size: 3rem; color: #1e293b; font-weight: 800; margin-bottom: 20px; letter-spacing: -0.02em;">
+                        <span class="animated-underline">Start your OTP Challenge</span>
+                    </h2>
+                    <p class="hide-on-mobile"
+                        style="color: #475569; font-size: 1.1rem; max-width: 800px; margin: 0 auto; line-height: 1.6;">A
+                        <b>30-day intensive career
+                            reset</b> designed to bridge the gap between your current profile and career-defining <b>job
+                            opportunities at big brands</b>.
+                    </p>
+                </div>
 
-
-            </div>
-
-            <style>
-                .pf-reverse {
-                    flex-direction: row-reverse;
-                }
-
-                @media (max-width: 900px) {
+                <style>
                     .pf-reverse {
-                        flex-direction: column-reverse !important;
-                        gap: 40px;
+                        flex-direction: row-reverse;
                     }
-                }
-            </style>
 
-            <style>
-                .phase-label {
-                    display: inline-flex;
-                    align-items: center;
-                    gap: 12px;
-                    color: #020617;
-                    padding: 10px 24px;
-                    border-radius: 100px;
-                    font-size: 0.95rem;
-                    font-weight: 800;
-                    text-transform: uppercase;
-                    letter-spacing: 0.1em;
-                    margin-bottom: 32px;
-                    border: 1px solid rgba(0, 0, 0, 0.05);
-                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-                }
+                    @media (max-width: 900px) {
+                        .pf-reverse {
+                            flex-direction: column-reverse !important;
+                            gap: 40px;
+                        }
+                    }
+                </style>
 
-                .phase-label.optimize {
-                    background: #FDE047;
-                    box-shadow: 0 4px 15px rgba(253, 224, 71, 0.2);
-                }
+                <style>
+                    .phase-label {
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 12px;
+                        color: #020617;
+                        padding: 10px 24px;
+                        border-radius: 100px;
+                        font-size: 0.95rem;
+                        font-weight: 800;
+                        text-transform: uppercase;
+                        letter-spacing: 0.1em;
+                        margin-bottom: 32px;
+                        border: 1px solid rgba(0, 0, 0, 0.05);
+                        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+                    }
 
-                .phase-label.transform {
-                    background: #86EFAC;
-                    box-shadow: 0 4px 15px rgba(134, 239, 172, 0.2);
-                }
+                    .phase-label.optimize {
+                        background: #FDE047;
+                        box-shadow: 0 4px 15px rgba(253, 224, 71, 0.2);
+                    }
 
-                .phase-label.push {
-                    background: #FDBA74;
-                    box-shadow: 0 4px 15px rgba(253, 186, 116, 0.2);
-                }
+                    .phase-label.transform {
+                        background: #86EFAC;
+                        box-shadow: 0 4px 15px rgba(134, 239, 172, 0.2);
+                    }
 
-                .phase-label span {
-                    opacity: 0.6;
-                    font-feature-settings: "tnum";
-                }
+                    .phase-label.push {
+                        background: #FDBA74;
+                        box-shadow: 0 4px 15px rgba(253, 186, 116, 0.2);
+                    }
 
-                /* Bento Grid System */
-                .bento-grid {
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    gap: 40px;
-                    width: 100%;
-                    max-width: var(--container-width);
-                    margin: 0 auto 60px auto;
-                    padding: 0 24px;
-                }
+                    .phase-label span {
+                        opacity: 0.6;
+                        font-feature-settings: "tnum";
+                    }
 
-                .bento-card {
-                    background: #ffffff;
-                    border: 2px solid #0f172a;
-                    border-radius: 24px;
-                    padding: 32px;
-                    display: flex;
-                    flex-direction: column;
-                    box-shadow: 8px 8px 0 #0f172a;
-                    position: relative;
-                    overflow: hidden;
-                    text-align: left;
-                    transition: transform 0.2s ease, box-shadow 0.2s ease;
-                    min-height: 380px;
-                }
-
-                .bento-card:hover {
-                    transform: translateY(-5px);
-                    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-                }
-
-                .bento-title {
-                    color: #0f172a;
-                    font-size: 1.2rem;
-                    font-weight: 600;
-                    line-height: 1.4;
-                    margin: 0 0 24px 0;
-                    letter-spacing: -0.01em;
-                    font-family: 'Inter', sans-serif;
-                    min-height: 3.2rem;
-                }
-
-                .bento-col-2 {
-                    grid-column: span 2;
-                }
-
-                @media(max-width: 900px) {
+                    /* Bento Grid System */
                     .bento-grid {
-                        grid-template-columns: 1fr;
-                        gap: 20px;
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 40px;
+                        width: 100%;
+                        max-width: var(--container-width);
+                        margin: 0 auto 60px auto;
+                        padding: 0 24px;
                     }
 
                     .bento-card {
-                        padding: 24px;
-                        min-height: auto;
+                        background: #ffffff;
+                        border: 2px solid #0f172a;
+                        border-radius: 24px;
+                        padding: 32px;
+                        display: flex;
+                        flex-direction: column;
+                        box-shadow: 8px 8px 0 #0f172a;
+                        position: relative;
+                        overflow: hidden;
+                        text-align: left;
+                        transition: transform 0.2s ease, box-shadow 0.2s ease;
+                        min-height: 380px;
+                    }
+
+                    .bento-card:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
                     }
 
                     .bento-title {
-                        font-size: 1.1rem;
-                        min-height: auto;
-                        margin-bottom: 16px;
+                        color: #0f172a;
+                        font-size: 1.2rem;
+                        font-weight: 600;
+                        line-height: 1.4;
+                        margin: 0 0 24px 0;
+                        letter-spacing: -0.01em;
+                        font-family: 'Inter', sans-serif;
+                        min-height: 3.2rem;
                     }
 
                     .bento-col-2 {
-                        grid-column: span 1;
+                        grid-column: span 2;
                     }
-                }
-            </style>
 
-            <div class="container">
-                <div style="margin-bottom: 32px; display: flex; justify-content: center;">
-                    <div class="phase-label optimize"><span>01.</span> Optimize</div>
-                </div>
-                <div class="bento-grid" style="margin-top: 0; padding-left: 0; padding-right: 0; max-width: none;">
-                    <!-- 1) NEW SPANNING ITEM: Decision-Ready Profile -->
-                    <div style="grid-column: 1 / -1; background:#ffffff; border: 2px solid #0f172a; border-radius:24px; box-shadow: 10px 10px 0 #0f172a; padding:60px; display:flex; gap: 60px; align-items: center;"
-                        class="profile-span-card">
-                        <style>
-                            @media (max-width: 900px) {
-                                .profile-span-card {
-                                    flex-direction: column;
-                                    padding: 32px !important;
-                                    gap: 32px !important;
-                                }
-                            }
+                    @media(max-width: 900px) {
+                        .bento-grid {
+                            grid-template-columns: 1fr;
+                            gap: 20px;
+                        }
 
-                            @media (max-width: 600px) {
-                                .profile-span-card {
-                                    padding: 48px 24px !important;
-                                    gap: 40px !important;
-                                    margin-left: -16px !important;
-                                    margin-right: -16px !important;
-                                    border-radius: 32px !important;
-                                    border-left: 0 !important;
-                                    border-right: 0 !important;
-                                }
+                        .bento-card {
+                            padding: 24px;
+                            min-height: auto;
+                        }
 
-                                .profile-span-card h2 {
-                                    text-align: left !important;
-                                    font-size: clamp(2rem, 8vw, 2.5rem) !important;
-                                }
+                        .bento-title {
+                            font-size: 1.1rem;
+                            min-height: auto;
+                            margin-bottom: 16px;
+                        }
 
-                                .profile-span-card p {
-                                    text-align: left !important;
-                                    font-size: 1.1rem !important;
-                                    margin-bottom: 32px !important;
-                                }
+                        .bento-col-2 {
+                            grid-column: span 1;
+                        }
+                    }
+                </style>
 
-                                .profile-span-card ul {
-                                    display: flex;
-                                    flex-direction: column;
-                                    align-items: flex-start !important;
-                                    text-align: left !important;
+                <div class="container">
+                    <div style="margin-bottom: 32px; display: flex; justify-content: center;">
+                        <div class="phase-label optimize"><span>01.</span> Optimize</div>
+                    </div>
+                    <div class="bento-grid" style="margin-top: 0; padding-left: 0; padding-right: 0; max-width: none;">
+                        <!-- 1) NEW SPANNING ITEM: Decision-Ready Profile -->
+                        <div style="grid-column: 1 / -1; background:#ffffff; border: 2px solid #0f172a; border-radius:24px; box-shadow: 10px 10px 0 #0f172a; padding:60px; display:flex; gap: 60px; align-items: center;"
+                            class="profile-span-card">
+                            <style>
+                                @media (max-width: 900px) {
+                                    .profile-span-card {
+                                        flex-direction: column;
+                                        padding: 32px !important;
+                                        gap: 32px !important;
+                                    }
                                 }
 
-                                .profile-span-card li {
-                                    justify-content: flex-start !important;
-                                    text-align: left !important;
-                                    width: 100%;
-                                    max-width: none !important;
-                                    font-size: 1rem !important;
-                                    margin-bottom: 16px !important;
+                                @media (max-width: 600px) {
+                                    .profile-span-card {
+                                        padding: 48px 24px !important;
+                                        gap: 40px !important;
+                                        margin-left: -16px !important;
+                                        margin-right: -16px !important;
+                                        border-radius: 32px !important;
+                                        border-left: 0 !important;
+                                        border-right: 0 !important;
+                                    }
+
+                                    .profile-span-card h2 {
+                                        text-align: left !important;
+                                        font-size: clamp(2rem, 8vw, 2.5rem) !important;
+                                    }
+
+                                    .profile-span-card p {
+                                        text-align: left !important;
+                                        font-size: 1.1rem !important;
+                                        margin-bottom: 32px !important;
+                                    }
+
+                                    .profile-span-card ul {
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: flex-start !important;
+                                        text-align: left !important;
+                                    }
+
+                                    .profile-span-card li {
+                                        justify-content: flex-start !important;
+                                        text-align: left !important;
+                                        width: 100%;
+                                        max-width: none !important;
+                                        font-size: 1rem !important;
+                                        margin-bottom: 16px !important;
+                                    }
                                 }
-                            }
-                        </style>
-                        <div style="flex: 1;">
-                            <h2
-                                style="font-size: clamp(2rem, 6vw, 2.5rem); color: #0f172a; margin-bottom: 24px; line-height: 1.25; font-family: 'Inter', sans-serif; font-weight: 800; letter-spacing: -0.02em; text-wrap: balance;">
-                                We don't just fix your portfolio.<br class="mobile-break">We build your <span
-                                    class="animated-underline" style="z-index: 1;">Decision-Ready Profile.</span>
-                            </h2>
-                            <p class="hide-on-mobile"
-                                style="color: #475569; font-size: 1.1rem; line-height: 1.6; margin-bottom: 32px; text-wrap: balance;">
-                                Traditional portfolios get 5 seconds of attention. Upgrade to an enhanced portfolio with
-                                a
-                                video-first profile built for fast approvals.
-                            </p>
-                            <ul style="list-style: none; padding: 0;">
-                                <li
-                                    style="display:flex; align-items:center; gap:16px; margin-bottom:20px; color:#334155; font-weight:600; font-size: 1.05rem;">
-                                    <span
-                                        style="background:#e0e7ff; padding:8px; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-size: 1.2rem;">🎨</span>
-                                    Optimize your portfolio
-                                </li>
-                                <li
-                                    style="display:flex; align-items:center; gap:16px; margin-bottom:20px; color:#334155; font-weight:600; font-size: 1.05rem;">
-                                    <span
-                                        style="background:#e0e7ff; padding:8px; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-size: 1.2rem;">🎥</span>
-                                    Record video interviews
-                                </li>
-                                <li
-                                    style="display:flex; align-items:center; gap:16px; margin-bottom:20px; color:#334155; font-weight:600; font-size: 1.05rem;">
-                                    <span
-                                        style="background:#e0e7ff; padding:8px; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-size: 1.2rem;">📊</span>
-                                    Validated competency rating
-                                </li>
-                                <li
-                                    style="display:flex; align-items:center; gap:16px; margin-bottom:20px; color:#334155; font-weight:600; font-size: 1.05rem;">
-                                    <span
-                                        style="background:#e0e7ff; padding:8px; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-size: 1.2rem;">🔍</span>
-                                    Fix your personal SEO and LinkedIn
-                                </li>
-                                <li
-                                    style="display:flex; align-items:center; gap:16px; margin-bottom:0; color:#334155; font-weight:600; font-size: 1.05rem;">
-                                    <span
-                                        style="background:#e0e7ff; padding:8px; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-size: 1.2rem;">📣</span>
-                                    Mock interview test
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div style="flex: 1; max-width: 450px; width: 100%;">
-                            <!-- Profile HTML Mockup -->
-                            <div
-                                style="background: #11131a; border-radius: 20px; padding: 32px; border: 1px solid rgba(255,255,255,0.06); box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.05); position: relative; font-family: 'Inter', sans-serif;">
-                                <!-- Header -->
-                                <div
-                                    style="margin-bottom:20px; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:20px;">
-                                    <div style="display:flex; align-items:center; gap:16px; margin-bottom: 12px;">
-                                        <div
-                                            style="width:56px; height:56px; border-radius:50%; background:rgba(16,185,129,0.1); display: flex; align-items:center; justify-content:center; color:#10b981; border: 1px solid rgba(16,185,129,0.2);">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                fill="currentColor" width="28" height="28">
-                                                <path fill-rule="evenodd"
-                                                    d="M12.516 2.17a.75.75 0 00-1.032 0 11.209 11.209 0 01-7.877 3.08.75.75 0 00-.722.515A12.74 12.74 0 002.25 9.735c0 5.905 3.324 10.99 8.28 13.18a.75.75 0 00.94 0c4.956-2.19 8.28-7.275 8.28-13.18a12.74 12.74 0 00-.635-3.97.75.75 0 00-.722-.515 11.209 11.209 0 01-7.877-3.08zM10.22 13.91l4.97-4.97a.75.75 0 011.06 1.06l-5.5 5.5a.75.75 0 01-1.06 0l-2.25-2.25a.75.75 0 011.06-1.06l1.72 1.72z"
-                                                    clip-rule="evenodd" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <div
-                                                style="display: flex; align-items: center; gap: 8px; margin: 0 0 4px 0;">
-                                                <h4
-                                                    style="margin:0; font-size:1.25rem; color:#f8fafc; font-weight: 700;">
-                                                    Pallavi Singh</h4>
-                                            </div>
-                                            <div style="font-size: 0.9rem; color: #cbd5e1;">4 Years experience as
-                                                Product
-                                                Designer</div>
-                                        </div>
-                                    </div>
-                                    <!-- Tags and Availability -->
-                                    <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom: 12px;">
-                                        <span
-                                            style="font-size: 0.8rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 12px;">Enterprise</span>
-                                        <span
-                                            style="font-size: 0.8rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 12px;">Fintech</span>
-                                        <span
-                                            style="font-size: 0.8rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 12px;">Mobile
-                                            app</span>
-                                    </div>
-                                    <div
-                                        style="font-size: 0.85rem; color: #94a3b8; display: flex; align-items: center; gap: 6px;">
-                                        <span
-                                            style="width: 8px; height: 8px; background: #10b981; border-radius: 50%; display: inline-block;"></span>
-                                        Bangalore <span style="color:rgba(255,255,255,0.2); margin:0 4px;">|</span> In
-                                        15
-                                        days
-                                        <span style="color:rgba(255,255,255,0.2); margin:0 4px;">|</span> On-Site /
-                                        Remote
-                                    </div>
-                                </div>
-
-                                <!-- Video Section -->
-                                <div
-                                    style="border-radius:12px; height:160px; overflow: hidden; margin-bottom:24px; position:relative; box-shadow: inset 0 0 20px rgba(0,0,0,0.5);">
-                                    <video src="assets/girl_talk.mp4" autoplay loop muted playsinline
-                                        style="width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.9;"></video>
-                                </div>
-
-                                <!-- Stats with Bar Graph -->
-                                <div style="color:#d1d5db;">
-                                    <div style="margin-bottom:16px;">
-                                        <div
-                                            style="display:flex; justify-content:space-between; margin-bottom:6px; font-size:1rem;">
-                                            <span>Storytelling</span><span
-                                                style="color:#34d399; font-weight: 600;">90/100</span>
-                                        </div>
-                                        <div
-                                            style="width: 100%; background: rgba(255,255,255,0.1); height: 8px; border-radius: 4px; overflow:hidden;">
-                                            <div
-                                                style="width: 90%; background: #10b981; height: 100%; border-radius: 4px;">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div style="margin-bottom:16px;">
-                                        <div
-                                            style="display:flex; justify-content:space-between; margin-bottom:6px; font-size:1rem;">
-                                            <span>Product Thinking</span><span
-                                                style="color:#34d399; font-weight: 600;">80/100</span>
-                                        </div>
-                                        <div
-                                            style="width: 100%; background: rgba(255,255,255,0.1); height: 8px; border-radius: 4px; overflow:hidden;">
-                                            <div
-                                                style="width: 80%; background: #10b981; height: 100%; border-radius: 4px;">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div style="margin-bottom:0;">
-                                        <div
-                                            style="display:flex; justify-content:space-between; margin-bottom:6px; font-size:1rem;">
-                                            <span>Visual Craft</span><span
-                                                style="color:#34d399; font-weight: 600;">75/100</span>
-                                        </div>
-                                        <div
-                                            style="width: 100%; background: rgba(255,255,255,0.1); height: 8px; border-radius: 4px; overflow:hidden;">
-                                            <div
-                                                style="width: 75%; background: #10b981; height: 100%; border-radius: 4px;">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div style="margin-top: 60px; margin-bottom: 32px; display: flex; justify-content: center;">
-                    <div class="phase-label transform"><span>02.</span> Transform</div>
-                </div>
-                <div class="bento-grid" style="margin-top: 0; padding-left: 0; padding-right: 0; max-width: none;">
-                    <!-- Card 1: Unlearn -->
-                    <div class="bento-card">
-                        <h3 class="bento-title">Unlearn old knowledge and start to think from first principles</h3>
-                        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;">
-                            <span
-                                style="background: #f1f5f9; color: #475569; padding: 6px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 600;">First
-                                Principles Thinking</span>
-                            <span
-                                style="background: #f1f5f9; color: #475569; padding: 6px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 600;">Systems
-                                Thinking</span>
-                            <span
-                                style="background: #f1f5f9; color: #475569; padding: 6px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 600;">5
-                                Whys</span>
-                        </div>
-                        <div
-                            style="margin-top: auto; overflow: hidden; position: relative; margin-left: -32px; margin-right: -32px; margin-bottom: -32px; height: 200px; display: flex; align-items: center; justify-content: center;">
-                            <img src="assets/Brain-Exercise-nobg.png" alt="Unlearn Concepts"
-                                style="width: 100%; height: 100%; object-fit: contain; display: block;">
-                        </div>
-                    </div>
-
-                    <!-- Card 2: AI Mindset -->
-                    <div class="bento-card">
-                        <h3 class="bento-title">Develop AI product design mindset and domain knowledge</h3>
-                        <div
-                            style="margin-top: auto; overflow: hidden; position: relative; margin-left: -32px; margin-right: -32px; margin-bottom: -32px;">
-                            <img src="assets/mentor_feed.png" alt="Portfolio Coaching"
-                                style="width: 100%; height: 200px; object-fit: contain; object-position: bottom right; display: block; transform: scale(1.25); transform-origin: bottom right;">
-                        </div>
-                    </div>
-
-                    <!-- Card 3: 1:1 Mentoring -->
-                    <div class="bento-card">
-                        <h3 class="bento-title">1:1 mentoring to transform storytelling and confidence</h3>
-                        <div
-                            style="margin-top: auto; overflow: hidden; position: relative; margin-left: -32px; margin-right: -32px; margin-bottom: -32px; border-top: 1px solid #e2e8f0;">
-                            <img src="assets/mentorship.png" alt="1:1 Transformation Session"
-                                style="width: 100%; height: 200px; object-fit: cover; display: block;">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div style="margin-top: 60px; margin-bottom: 32px; display: flex; justify-content: center;">
-                    <div class="phase-label push"><span>03.</span> Push</div>
-                </div>
-                <div class="bento-grid" style="margin-top: 0; padding-left: 0; padding-right: 0; max-width: none;">
-                    <!-- Card 1 -->
-                    <div class="bento-card">
-                        <h3 class="bento-title">Weekly high-signal profile drops to premium design recruiters</h3>
-                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: auto;">
-                            <div class="job-box">
-                                <span style="font-size: 1.8rem; display:block; margin-bottom:12px;">🏢</span>
-                                MNCs
-                            </div>
-                            <div class="job-box">
-                                <span style="font-size: 1.8rem; display:block; margin-bottom:12px;">🚀</span>
-                                Startups
-                            </div>
-                            <div class="job-box">
-                                <span style="font-size: 1.8rem; display:block; margin-bottom:12px;">🎨</span>
-                                Agencies
-                            </div>
-                            <div class="job-box">
-                                <span style="font-size: 1.8rem; display:block; margin-bottom:12px;">🏠</span>
-                                Remote
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="bento-card">
-                        <h3 class="bento-title">Access exclusive hiring links and boards not shared on public platforms
-                        </h3>
-                        <div
-                            style="margin-top: auto; display: flex; justify-content: flex-end; align-items: flex-end; margin-right: -32px; margin-bottom: -32px;">
-                            <img src="assets/jb.png" alt="Premium Job Boards"
-                                style="max-width: 80%; height: 200px; object-fit: contain; object-position: bottom right; display: block;">
-                        </div>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="bento-card">
-                        <h3 class="bento-title">Unlock vetted high-ticket freelance gigs and premium side-hustles</h3>
-
-                        <div
-                            style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:12px; display:flex; gap:12px; align-items:flex-start;">
-                            <div
-                                style="width:36px; height:36px; border-radius:50%; background:#f0fdf4; flex-shrink:0; display:flex; align-items:center; justify-content:center; color:#16a34a; font-weight:bold; font-size:1.2rem; border: 1px solid #dcfce7;">
-                                $
-                            </div>
-                            <div>
-                                <div
-                                    style="display:flex; justify-content:space-between; margin-bottom:4px; align-items:center;">
-                                    <strong style="font-size:0.85rem; color:#0f172a;">Project: Fintech Audit</strong>
-                                </div>
-                                <p style="margin:0; font-size:0.8rem; color:#16a34a; font-weight: 600;">+ Rs. XX Earned
+                            </style>
+                            <div style="flex: 1;">
+                                <h2
+                                    style="font-size: clamp(2rem, 6vw, 2.5rem); color: #0f172a; margin-bottom: 24px; line-height: 1.25; font-family: 'Inter', sans-serif; font-weight: 800; letter-spacing: -0.02em; text-wrap: balance;">
+                                    We don't just fix your portfolio.<br class="mobile-break">We build your <span
+                                        class="animated-underline" style="z-index: 1;">Decision-Ready Profile.</span>
+                                </h2>
+                                <p class="hide-on-mobile"
+                                    style="color: #475569; font-size: 1.1rem; line-height: 1.6; margin-bottom: 32px; text-wrap: balance;">
+                                    Traditional portfolios get 5 seconds of attention. Upgrade to an enhanced portfolio
+                                    with
+                                    a
+                                    video-first profile built for fast approvals.
                                 </p>
+                                <ul style="list-style: none; padding: 0;">
+                                    <li
+                                        style="display:flex; align-items:center; gap:16px; margin-bottom:20px; color:#334155; font-weight:600; font-size: 1.05rem;">
+                                        <span
+                                            style="background:#e0e7ff; padding:8px; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-size: 1.2rem;">🎨</span>
+                                        Optimize your portfolio
+                                    </li>
+                                    <li
+                                        style="display:flex; align-items:center; gap:16px; margin-bottom:20px; color:#334155; font-weight:600; font-size: 1.05rem;">
+                                        <span
+                                            style="background:#e0e7ff; padding:8px; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-size: 1.2rem;">🎥</span>
+                                        Record video interviews
+                                    </li>
+                                    <li
+                                        style="display:flex; align-items:center; gap:16px; margin-bottom:20px; color:#334155; font-weight:600; font-size: 1.05rem;">
+                                        <span
+                                            style="background:#e0e7ff; padding:8px; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-size: 1.2rem;">📊</span>
+                                        Validated competency rating
+                                    </li>
+                                    <li
+                                        style="display:flex; align-items:center; gap:16px; margin-bottom:20px; color:#334155; font-weight:600; font-size: 1.05rem;">
+                                        <span
+                                            style="background:#e0e7ff; padding:8px; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-size: 1.2rem;">🔍</span>
+                                        Fix your personal SEO and LinkedIn
+                                    </li>
+                                    <li
+                                        style="display:flex; align-items:center; gap:16px; margin-bottom:0; color:#334155; font-weight:600; font-size: 1.05rem;">
+                                        <span
+                                            style="background:#e0e7ff; padding:8px; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-size: 1.2rem;">📣</span>
+                                        Mock interview test
+                                    </li>
+                                </ul>
                             </div>
-                        </div>
 
-                        <div
-                            style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:0; display:flex; gap:12px; align-items:flex-start; position:relative; overflow:hidden;">
-                            <div
-                                style="width:36px; height:36px; border-radius:50%; background:linear-gradient(135deg, #4f46e5 0%, #3730a3 100%); flex-shrink:0; display:flex; align-items:center; justify-content:center; color:#fff; font-size:1rem; border: 1px solid rgba(79,70,229,0.2);">
-                                ✨</div>
-                            <div>
+                            <div style="flex: 1; max-width: 450px; width: 100%;">
+                                <!-- Profile HTML Mockup -->
                                 <div
-                                    style="display:flex; justify-content:space-between; margin-bottom:4px; align-items:center;">
-                                    <strong style="font-size:0.85rem; color:#0f172a;">New Gig Invitation</strong>
+                                    style="background: #11131a; border-radius: 20px; padding: 32px; border: 1px solid rgba(255,255,255,0.06); box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.05); position: relative; font-family: 'Inter', sans-serif;">
+                                    <!-- Header -->
+                                    <div
+                                        style="margin-bottom:20px; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:20px;">
+                                        <div style="display:flex; align-items:center; gap:16px; margin-bottom: 12px;">
+                                            <div
+                                                style="width:56px; height:56px; border-radius:50%; background:rgba(16,185,129,0.1); display: flex; align-items:center; justify-content:center; color:#10b981; border: 1px solid rgba(16,185,129,0.2);">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                    fill="currentColor" width="28" height="28">
+                                                    <path fill-rule="evenodd"
+                                                        d="M12.516 2.17a.75.75 0 00-1.032 0 11.209 11.209 0 01-7.877 3.08.75.75 0 00-.722.515A12.74 12.74 0 002.25 9.735c0 5.905 3.324 10.99 8.28 13.18a.75.75 0 00.94 0c4.956-2.19 8.28-7.275 8.28-13.18a12.74 12.74 0 00-.635-3.97.75.75 0 00-.722-.515 11.209 11.209 0 01-7.877-3.08zM10.22 13.91l4.97-4.97a.75.75 0 011.06 1.06l-5.5 5.5a.75.75 0 01-1.06 0l-2.25-2.25a.75.75 0 011.06-1.06l1.72 1.72z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <div
+                                                    style="display: flex; align-items: center; gap: 8px; margin: 0 0 4px 0;">
+                                                    <h4
+                                                        style="margin:0; font-size:1.25rem; color:#f8fafc; font-weight: 700;">
+                                                        Pallavi Singh</h4>
+                                                </div>
+                                                <div style="font-size: 0.9rem; color: #cbd5e1;">4 Years experience as
+                                                    Product
+                                                    Designer</div>
+                                            </div>
+                                        </div>
+                                        <!-- Tags and Availability -->
+                                        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom: 12px;">
+                                            <span
+                                                style="font-size: 0.8rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 12px;">Enterprise</span>
+                                            <span
+                                                style="font-size: 0.8rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 12px;">Fintech</span>
+                                            <span
+                                                style="font-size: 0.8rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 12px;">Mobile
+                                                app</span>
+                                        </div>
+                                        <div
+                                            style="font-size: 0.85rem; color: #94a3b8; display: flex; align-items: center; gap: 6px;">
+                                            <span
+                                                style="width: 8px; height: 8px; background: #10b981; border-radius: 50%; display: inline-block;"></span>
+                                            Bangalore <span style="color:rgba(255,255,255,0.2); margin:0 4px;">|</span>
+                                            In
+                                            15
+                                            days
+                                            <span style="color:rgba(255,255,255,0.2); margin:0 4px;">|</span> On-Site /
+                                            Remote
+                                        </div>
+                                    </div>
+
+                                    <!-- Video Section -->
+                                    <div
+                                        style="border-radius:12px; height:160px; overflow: hidden; margin-bottom:24px; position:relative; box-shadow: inset 0 0 20px rgba(0,0,0,0.5);">
+                                        <video src="assets/girl_talk.mp4" autoplay loop muted playsinline
+                                            style="width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.9;"></video>
+                                    </div>
+
+                                    <!-- Stats with Bar Graph -->
+                                    <div style="color:#d1d5db;">
+                                        <div style="margin-bottom:16px;">
+                                            <div
+                                                style="display:flex; justify-content:space-between; margin-bottom:6px; font-size:1rem;">
+                                                <span>Storytelling</span><span
+                                                    style="color:#34d399; font-weight: 600;">90/100</span>
+                                            </div>
+                                            <div
+                                                style="width: 100%; background: rgba(255,255,255,0.1); height: 8px; border-radius: 4px; overflow:hidden;">
+                                                <div
+                                                    style="width: 90%; background: #10b981; height: 100%; border-radius: 4px;">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="margin-bottom:16px;">
+                                            <div
+                                                style="display:flex; justify-content:space-between; margin-bottom:6px; font-size:1rem;">
+                                                <span>Product Thinking</span><span
+                                                    style="color:#34d399; font-weight: 600;">80/100</span>
+                                            </div>
+                                            <div
+                                                style="width: 100%; background: rgba(255,255,255,0.1); height: 8px; border-radius: 4px; overflow:hidden;">
+                                                <div
+                                                    style="width: 80%; background: #10b981; height: 100%; border-radius: 4px;">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="margin-bottom:0;">
+                                            <div
+                                                style="display:flex; justify-content:space-between; margin-bottom:6px; font-size:1rem;">
+                                                <span>Visual Craft</span><span
+                                                    style="color:#34d399; font-weight: 600;">75/100</span>
+                                            </div>
+                                            <div
+                                                style="width: 100%; background: rgba(255,255,255,0.1); height: 8px; border-radius: 4px; overflow:hidden;">
+                                                <div
+                                                    style="width: 75%; background: #10b981; height: 100%; border-radius: 4px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <p style="margin:0; font-size:0.8rem; color:#475569; line-height:1.4;">"We need a
-                                    designer
-                                    for a quick 2-week B2B SaaS project..."</p>
-                            </div>
-                            <div
-                                style="position: absolute; bottom: 0; left: 0; right: 0; height: 30px; background: linear-gradient(to top, #ffffff, transparent);">
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+
+                <div class="container">
+                    <div style="margin-top: 60px; margin-bottom: 32px; display: flex; justify-content: center;">
+                        <div class="phase-label transform"><span>02.</span> Transform</div>
+                    </div>
+                    <div class="bento-grid" style="margin-top: 0; padding-left: 0; padding-right: 0; max-width: none;">
+                        <!-- Card 1: Unlearn -->
+                        <div class="bento-card">
+                            <h3 class="bento-title">Unlearn old knowledge and start to think from first principles</h3>
+                            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;">
+                                <span
+                                    style="background: #f1f5f9; color: #475569; padding: 6px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 600;">First
+                                    Principles Thinking</span>
+                                <span
+                                    style="background: #f1f5f9; color: #475569; padding: 6px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 600;">Systems
+                                    Thinking</span>
+                                <span
+                                    style="background: #f1f5f9; color: #475569; padding: 6px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 600;">5
+                                    Whys</span>
+                            </div>
+                            <div
+                                style="margin-top: auto; overflow: hidden; position: relative; margin-left: -32px; margin-right: -32px; margin-bottom: -32px; height: 200px; display: flex; align-items: center; justify-content: center;">
+                                <img src="assets/Brain-Exercise-nobg.png" alt="Unlearn Concepts"
+                                    style="width: 100%; height: 100%; object-fit: contain; display: block;">
+                            </div>
+                        </div>
+
+                        <!-- Card 2: AI Mindset -->
+                        <div class="bento-card">
+                            <h3 class="bento-title">Develop AI product design mindset and domain knowledge</h3>
+                            <div
+                                style="margin-top: auto; overflow: hidden; position: relative; margin-left: -32px; margin-right: -32px; margin-bottom: -32px;">
+                                <img src="assets/mentor_feed.png" alt="Portfolio Coaching"
+                                    style="width: 100%; height: 200px; object-fit: contain; object-position: bottom right; display: block; transform: scale(1.25); transform-origin: bottom right;">
+                            </div>
+                        </div>
+
+                        <!-- Card 3: 1:1 Mentoring -->
+                        <div class="bento-card">
+                            <h3 class="bento-title">1:1 mentoring to transform storytelling and confidence</h3>
+                            <div
+                                style="margin-top: auto; overflow: hidden; position: relative; margin-left: -32px; margin-right: -32px; margin-bottom: -32px; border-top: 1px solid #e2e8f0;">
+                                <img src="assets/mentorship.png" alt="1:1 Transformation Session"
+                                    style="width: 100%; height: 200px; object-fit: cover; display: block;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div style="margin-top: 60px; margin-bottom: 32px; display: flex; justify-content: center;">
+                        <div class="phase-label push"><span>03.</span> Push</div>
+                    </div>
+                    <div class="bento-grid" style="margin-top: 0; padding-left: 0; padding-right: 0; max-width: none;">
+                        <!-- Card 1 -->
+                        <div class="bento-card">
+                            <h3 class="bento-title">Weekly high-signal profile drops to premium design recruiters</h3>
+                            <div
+                                style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: auto;">
+                                <div class="job-box">
+                                    <span style="font-size: 1.8rem; display:block; margin-bottom:12px;">🏢</span>
+                                    MNCs
+                                </div>
+                                <div class="job-box">
+                                    <span style="font-size: 1.8rem; display:block; margin-bottom:12px;">🚀</span>
+                                    Startups
+                                </div>
+                                <div class="job-box">
+                                    <span style="font-size: 1.8rem; display:block; margin-bottom:12px;">🎨</span>
+                                    Agencies
+                                </div>
+                                <div class="job-box">
+                                    <span style="font-size: 1.8rem; display:block; margin-bottom:12px;">🏠</span>
+                                    Remote
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="bento-card">
+                            <h3 class="bento-title">Access exclusive hiring links and boards not shared on public
+                                platforms
+                            </h3>
+                            <div
+                                style="margin-top: auto; display: flex; justify-content: flex-end; align-items: flex-end; margin-right: -32px; margin-bottom: -32px;">
+                                <img src="assets/jb.png" alt="Premium Job Boards"
+                                    style="max-width: 80%; height: 200px; object-fit: contain; object-position: bottom right; display: block;">
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="bento-card">
+                            <h3 class="bento-title">Unlock vetted high-ticket freelance gigs and premium side-hustles
+                            </h3>
+
+                            <div
+                                style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:12px; display:flex; gap:12px; align-items:flex-start;">
+                                <div
+                                    style="width:36px; height:36px; border-radius:50%; background:#f0fdf4; flex-shrink:0; display:flex; align-items:center; justify-content:center; color:#16a34a; font-weight:bold; font-size:1.2rem; border: 1px solid #dcfce7;">
+                                    $
+                                </div>
+                                <div>
+                                    <div
+                                        style="display:flex; justify-content:space-between; margin-bottom:4px; align-items:center;">
+                                        <strong style="font-size:0.85rem; color:#0f172a;">Project: Fintech
+                                            Audit</strong>
+                                    </div>
+                                    <p style="margin:0; font-size:0.8rem; color:#16a34a; font-weight: 600;">+ Rs. XX
+                                        Earned
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div
+                                style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:0; display:flex; gap:12px; align-items:flex-start; position:relative; overflow:hidden;">
+                                <div
+                                    style="width:36px; height:36px; border-radius:50%; background:linear-gradient(135deg, #4f46e5 0%, #3730a3 100%); flex-shrink:0; display:flex; align-items:center; justify-content:center; color:#fff; font-size:1rem; border: 1px solid rgba(79,70,229,0.2);">
+                                    ✨</div>
+                                <div>
+                                    <div
+                                        style="display:flex; justify-content:space-between; margin-bottom:4px; align-items:center;">
+                                        <strong style="font-size:0.85rem; color:#0f172a;">New Gig Invitation</strong>
+                                    </div>
+                                    <p style="margin:0; font-size:0.8rem; color:#475569; line-height:1.4;">"We need a
+                                        designer
+                                        for a quick 2-week B2B SaaS project..."</p>
+                                </div>
+                                <div
+                                    style="position: absolute; bottom: 0; left: 0; right: 0; height: 30px; background: linear-gradient(to top, #ffffff, transparent);">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </section>
 
         <!-- Pricing / Apply -->
@@ -2004,7 +2012,7 @@
                             </div>
                         </div>
 
-                                                <!-- 6. Why choose Maximoat? -->
+                        <!-- 6. Why choose Maximoat? -->
                         <div class="faq-item">
                             <div class="faq-question">
                                 <span>6. Why choose Maximoat?</span>
@@ -2012,9 +2020,15 @@
                             </div>
                             <div class="faq-answer">
                                 <ul style="list-style: none; padding: 0; margin-bottom: 0;">
-                                    <li style="margin-bottom: 8px;"><strong>1. 20 Years of Legacy:</strong> With two decades of hands-on agency leadership, we don’t just teach design—we live it. Our team are practicing designers from top agencies and global brands.</li>
-                                    <li style="margin-bottom: 8px;"><strong>2. Global Hiring Network:</strong> Leverage our deep connections with GCCs, global brands, startups, and top-tier agencies.</li>
-                                    <li style="margin-bottom: 0;"><strong>3. Focus on Soft + Technical Skills:</strong> We build these core soft skills alongside agency-grade workflows to give you unstoppable confidence.</li>
+                                    <li style="margin-bottom: 8px;"><strong>1. 20 Years of Legacy:</strong> With two
+                                        decades of hands-on agency leadership, we don’t just teach design—we live it.
+                                        Our team are practicing designers from top agencies and global brands.</li>
+                                    <li style="margin-bottom: 8px;"><strong>2. Global Hiring Network:</strong> Leverage
+                                        our deep connections with GCCs, global brands, startups, and top-tier agencies.
+                                    </li>
+                                    <li style="margin-bottom: 0;"><strong>3. Focus on Soft + Technical Skills:</strong>
+                                        We build these core soft skills alongside agency-grade workflows to give you
+                                        unstoppable confidence.</li>
                                 </ul>
                             </div>
                         </div>
